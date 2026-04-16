@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html class="sl-root decks show " data-account="" lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Les bookmarklets, c&#39;est chouette !</title>
+    <meta name="description" content="A presentation created with Slides."/>
+    <meta name="viewport" content="initial-scale=1.0"/>
+
+    <meta name="theme-color" content="#2f2f33"/>
+
+    <meta property="og:title" content="Les bookmarklets, c&#39;est chouette !"/>
+    <meta property="og:description" content="A presentation created with Slides."/>
+    <meta property="og:site_name" content="Slides"/>
+    <meta property="og:image"
+          content="https://media.slid.es/thumbnails/5bb6c38195acf81eaa5b3efd3df8610f/thumb.jpg?1711042493"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://slides.com/feoche/les-bookmarklets-c-est-chouette"/>
+    <meta property="fb:app_id" content="146002942236376"/>
+
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://slides.com/feoche/les-bookmarklets-c-est-chouette"/>
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" media="print"
+          onload="this.onload=null;this.removeAttribute('media');" rel="stylesheet" data-application-font="inter">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"
+              data-application-font="inter">
+    </noscript>
+
+    <link rel="stylesheet" media="all"
+          href="//assets-v2.slid.es/assets/slides/slides-e4bce77e7bfd1ee1b97009bc63979436d231ccacef11289195bcd93c2abe43c7.css"/>
+    <link rel="stylesheet" media="all"
+          href="//assets-v2.slid.es/assets/deck-consumption-b71c8d51cb4605f5f56c8e3c5b5fd88811b4c2a53845dba16d6af59a74bc196b.css"/>
+    <link rel="stylesheet" media="all"
+          href="//assets-v2.slid.es/assets/deck-v2-6b5001589d009084d4d133c29ffb21aff6002a065dc2983718e9d7c56c3c2c46.css"/>
+
+
+    <style id="user-css-output" type="text/css"></style>
+
+    <meta name="csrf-param" content="authenticity_token"/>
+    <meta name="csrf-token"
+          content="TPoQbQMZQp32/vMR1eOBLX/ZdJMSU4rDqNnEV1+636wuuogKPloxvLvO++Xr9+DbBFxWgzmFIExrHU/OsLFZqQ=="/>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWVDH9STBJ"></script>
+    <script type="text/javascript">
+        if (navigator.doNotTrack !== '1' && !/dnt=1/.test(window.location.search)) {
+            window.slidesMeasurementId = 'G-LWVDH9STBJ';
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'G-LWVDH9STBJ', {
+                page_title: 'decks-show'
+            });
+
+        }
+    </script>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Slides">
+    <meta name="twitter:title" content="Les bookmarklets, c&#39;est chouette !">
+    <meta name="twitter:description" content="A presentation created with Slides.">
+    <meta name="twitter:image"
+          content="https://media.slid.es/thumbnails/5bb6c38195acf81eaa5b3efd3df8610f/thumb.jpg?1711042493">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+</head>
+<body>
+
+<div id="container" class="container">
+
+
+    <header class="global-header dark-theme show-on-scroll">
+        <div class="wrapper">
+            <div class="slides-logo logo-animation">
+                <a class="symbol" href="/" aria-label="Go to the Slides homepage">
+                    <div class="box-1"></div>
+                    <div class="box-2"></div>
+                    <div class="box-3"></div>
+                </a>
+                <a class="word" href="/" aria-label="Go to the Slides homepage"></a>
+            </div>
+            <div class="nav-wrapper">
+                <ul class="nav nav-full">
+                    <li class="nav-item " data-page-id="home/explore">
+                        <a class="nav-item-anchor" href="/explore"><span
+                                class="nav-item-label wide">Presentations</span></a>
+                    </li>
+                    <li class="nav-item " data-page-id="home/templates">
+                        <a class="nav-item-anchor" href="/templates"><span class="nav-item-label wide">Templates</span></a>
+                    </li>
+                    <li class="nav-item " data-page-id="home/features">
+                        <a class="nav-item-anchor" href="/features"><span class="nav-item-label">Features</span></a>
+                    </li>
+                    <li class="nav-item " data-page-id="marketing/teams">
+                        <a class="nav-item-anchor" href="/for-teams"><span class="nav-item-label wide">Teams</span></a>
+                    </li>
+                    <li class="nav-item " data-page-id="static/pricing">
+                        <a class="nav-item-anchor" href="/pricing?h=1"><span class="nav-item-label">Pricing</span></a>
+                    </li>
+                    <li class="nav-item-divider hide-in-overlay-menu"></li>
+                    <li class="nav-item hide-in-overlay-menu" data-page-id="sessions/new">
+                        <a class="nav-item-anchor" href="/users/sign_in"><span class="nav-item-label">Log in</span></a>
+                    </li>
+                    <li class="nav-item hide-in-overlay-menu nav-item-highlighted">
+                        <a class="nav-item-anchor" href="/pricing"><span class="nav-item-label">Sign up</span></a>
+                    </li>
+                </ul>
+                <ul class="nav nav-compact">
+                    <li class="nav-item" data-page-id="sessions/new">
+                        <a class="nav-item-anchor" href="/users/sign_in"><span class="nav-item-label">Log in</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item-anchor" href="/pricing"><span class="nav-item-label">Sign up</span></a>
+                    </li>
+                    <li class="nav-item menu-button nav-item-highlighted">
+                        <button class="nav-item-anchor">
+                            <span class="nav-item-label wide">Menu</span>
+                            <svg class="menu-arrow" viewBox="0 0 20 20" width="18" height="18"
+                                 style="vertical-align: middle;">
+                                <path fill="currentColor"
+                                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <main id="main" class="main " role="main">
+
+
+        <div class="marquee">
+
+            <div class="reveal-frame">
+                <div class="reveal-viewport theme-font-opensans theme-color-white-blue">
+                    <div class="reveal" lang="fr">
+                        <div class="slides">
+                            <section data-id="0aa58108a5581b8e229baf1e54f3185d"
+                                     data-background-color="rgb(222, 216, 210)">
+                                <div class="sl-block" data-block-type="text"
+                                     style="width: 806px; left: 237px; top: 248px; height: auto;"
+                                     data-block-id="19f46c1814fb842acc39f7a4ebd41439">
+                                    <div class="sl-block-style"
+                                         style="z-index: 11; filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 0px 4px) opacity(100%);">
+                                        <div class="sl-block-content" data-placeholder-tag="h1"
+                                             data-placeholder-text="Title Text"
+                                             style="z-index: 11; color: rgb(0, 0, 0);">
+                                            <h1>Les bookmarklets, c'est chouette !</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="image" data-name="image-fb9fb7"
+                                     data-block-id="daa36c5b7d2f24516715cae6a9a89707"
+                                     style="width: 1282px; height: 1282px; left: -1px; top: -316.5px; min-width: 1px; min-height: 1px;">
+                                    <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                            data-natural-width="1024"
+                                                                                            data-natural-height="1024"
+                                                                                            data-lazy-loaded=""
+                                                                                            data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11164716/pasted-from-clipboard.png">
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="text"
+                                     style="height: auto; width: 267px; left: 1121px; top: 546.5px;"
+                                     data-name="text-39a29d" data-block-id="3d4016c39625bf83d469ba8ff97668d9">
+                                    <div class="sl-block-style" style="z-index: 12; transform: rotate(-90deg);">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 12; text-align: left; font-size: 98%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html="">
+
+                                            <p style="font-family: 'Quicksand Bold';">François Eoche</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section data-id="641b29365c83a32121c5b3e8b47f3ffa">
+                                <div class="sl-block" data-block-type="image"
+                                     style="width: 1429.71px; height: 720px; left: -71.855px; top: 0px; min-width: 1px; min-height: 1px;"
+                                     data-name="image-5e0ba1" data-block-id="b692397dc1ac566184bfdb177984d0cc">
+                                    <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                            data-natural-width="2500"
+                                                                                            data-natural-height="1259"
+                                                                                            data-lazy-loaded=""
+                                                                                            data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201036/pasted-from-clipboard.png">
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="text"
+                                     style="height: auto; width: 440px; left: 80px; top: 78.0005px;"
+                                     data-name="text-39a29d" data-block-id="64db53bd3e2923bcc1926477cb5a16df">
+                                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                                         style="z-index: 11; text-align: left; font-size: 150%; color: rgb(255, 255, 255);"
+                                         data-has-custom-html="">
+                                        <p style="font-family: 'Quicksand Bold'">François Eoche</p>
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="text"
+                                     style="height: auto; width: 440px; left: 80px; top: 140.5px;"
+                                     data-block-id="2d71752e85fa0e0c1b8cb090b9a418d6" data-name="text-57c33d">
+                                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                                         style="z-index: 12; text-align: left; color: rgb(255, 255, 255);"
+                                         data-has-custom-html="">
+                                        <p style="font-family: 'Quicksand Bold'">Web Cabinetmaker</p>
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="text"
+                                     style="height: auto; width: 949px; left: 80px; top: 191.5px;"
+                                     data-block-id="947016df8ae023201c0a333d59a44700" data-name="text-cbefc7">
+                                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                                         style="z-index: 13; text-align: left; line-height: 3.172; font-size: 124%; color: rgb(255, 255, 255);"
+                                         data-has-custom-html="" data-has-line-height="">
+                                        <ul>
+                                            <li style="font-family: 'Mark Pro' font-weight: 600">OVHcloud Design System
+                                                Leader
+                                            </li>
+                                            <li style="font-family: 'Mark Pro' font-weight: 600">In OVHcloud since
+                                                2017
+                                            </li>
+                                            <li>Web / hybrid / web mobile development</li>
+                                            <li style="font-family: 'Mark Pro' font-weight: 600">Fond of UX &amp; Web
+                                                accessibility
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="image"
+                                     style="width: 320.8px; height: 320.8px; left: 921.6px; top: 199.6px; min-width: 1px; min-height: 1px;"
+                                     data-name="image-bc3dd7" data-block-id="40ab9a26271a3eb66819565729469468">
+                                    <div class="sl-block-content" style="z-index: 14;"><img class=""
+                                                                                            data-natural-width="658"
+                                                                                            data-natural-height="658"
+                                                                                            data-lazy-loaded=""
+                                                                                            data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201359/pasted-from-clipboard.png">
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="stack" data-id="dcea15d4c697c2082bdbb677afc9080a">
+                                <section data-id="45020ebf0c618a7aae26c26e4ebe6c6d"
+                                         data-background-color="rgb(201, 218, 248)">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 1075px; left: 102px; top: 274px; height: auto;"
+                                         data-block-id="54e2763679b2e83e2ad701fbafcf0aa5">
+                                        <div class="sl-block-content" data-placeholder-tag="h1"
+                                             data-placeholder-text="Title Text" style="z-index: 10;"
+                                             data-has-custom-html=""><h1 style="font-family: 'Quicksand Bold'">Les
+                                            bookmarklets, kézako ?</h1></div>
+                                    </div>
+                                </section>
+                                <section data-id="7b3aa576f12aa6282fd30ed75ec768d1"
+                                         data-background-color="rgb(201, 218, 248)">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 1156px; left: 80px; top: 144px; height: auto;"
+                                         data-block-id="932e92881e2509e8cea0bec5f5d2e700">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 11; font-size: 70%; line-height: 1.443;"
+                                             data-has-line-height="">
+                                            <p style="color:rgb(32, 33, 34)">Un <strong><span class="lang-en">bookmarklet</span></strong> (en
+                                                français : <strong>signapplet</strong> (Québec),
+                                                <strong>applisignet</strong>, <strong>marque-page scripté</strong>) est
+                                                un petit programme JavaScript pouvant être stocké :</p>
+
+                                            <ul style="color:rgb(32, 33, 34)">
+                                                <li>soit en tant qu'URL dans un signet (marque-page ou lien favori) avec
+                                                    la plupart des navigateurs Web ;
+                                                </li>
+                                                <li>soit en tant qu'hyperlien dans une page web.</li>
+                                            </ul>
+
+                                            <p style="color:rgb(32, 33, 34)">Les bookmarklets sont aussi appelés
+                                                <strong>favelets</strong>, du fait qu'Internet Explorer associe la
+                                                dénomination <em>favoris</em> aux signets.<br>
+                                                 </p>
+
+                                            <p style="color:rgb(32, 33, 34)">Les bookmarklets peuvent être sauvegardés
+                                                et utilisés comme des signets de pages normales et sont donc des outils
+                                                <strong>'en 1 clic'</strong>. Lors de la sélection du signet, le
+                                                navigateur exécute le code JavaScript du bookmarklet pour apporter des
+                                                fonctionnalités telles que :</p>
+
+                                            <ul style="color:rgb(32, 33, 34)">
+                                                <li>modifier le rendu graphique d'une page web</li>
+                                                <li>récupérer des informations d'une page web</li>
+                                                <li>interroger directement un moteur de recherche</li>
+                                                <li>soumettre la page courante à un service web tiers</li>
+                                            </ul>
+
+                                            <p> </p>
+
+                                            <p style="color:rgb(32, 33, 34)">L'URL d'un bookmarklet commence par
+                                                <strong><code style="color:rgb(0, 0, 0)">javascript:</code></strong> et
+                                                est suivie du code JavaScript à exécuter. Cependant, l'utilisation des
+                                                bookmarklets est limitée car les navigateurs ont une limite de
+                                                caractères pour l'URL.</p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="87417c63dbb6d170039981a8581b529d">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 12; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'">Les
+                                            bookmarklets, kézako ?</p></div>
+                                    </div>
+                                </section>
+                                <section data-id="59f2769f61c0d1ed7d5efa88d95e01aa"
+                                         data-background-color="rgb(201, 218, 248)">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 1156px; left: 79px; top: 156px; height: auto;"
+                                         data-block-id="32c1a6c84ea981c00928ad48643e5791">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 10; font-size: 117%; line-height: 3.042;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Un petit bout de script</li>
+                                                <li>Qui commence par <strong><code style="color:rgb(0, 0, 0)">javascript:</code></strong> 
+                                                </li>
+                                                <li>Qui se lance en un clic</li>
+                                                <li>Et qui fait des trucs.</li>
+                                            </ul>
+
+                                            <p>​<span style="font-size:0.5em">(Et c'est trop bien. Oui c'est vieux - de <strong>2001</strong> O_O - mais c'est bien.)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="073300c681c1b508892df9d0bcdcee2c">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 11; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'">En résumé
+                                            :</p></div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(201, 218, 248)"
+                                         data-id="969854dc0583524ac88b5570d2d34fe4">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="4d8610768d0e63e96b8a0716ec337310">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 10; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'">Les + et
+                                            les -</p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 1156px; left: 80px; top: 157px; height: auto;"
+                                         data-block-id="28db60e97ab54378a981f0fb26721c56" data-name="text-b177e7">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 11; font-size: 117%; line-height: 3.042;"
+                                             data-has-line-height="">
+                                            <p><span style="color:rgb(0, 0, 0); font-size:35.1px">✅ </span><span
+                                                    style="color:rgb(0, 0, 0); font-size:35.1px">Fait pour des petits scripts</span>
+                                            </p>
+
+                                            <p><span style="color:rgb(0, 0, 0); font-size:35.1px">✅ </span><span
+                                                    style="color:rgb(0, 0, 0); font-size:35.1px">Très léger en performance</span>
+                                            </p>
+
+                                            <p><span style="color:rgb(0, 0, 0)">✅ </span>Super facile à
+                                                installer/utiliser</p>
+
+                                            <p><span style="color:rgb(0, 0, 0); font-size:35.1px">✅ </span><span
+                                                    style="color:rgb(0, 0, 0); font-size:35.1px">Pas de permissions nécessaires</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 576px; left: 690px; top: 157px; height: auto;"
+                                         data-block-id="cc24093467bd405f3ec5c4551655c478" data-name="text-30455a">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 117%; line-height: 2.301;"
+                                             data-has-line-height="">
+                                            <p><span style="color:rgb(0, 0, 0)">⛔</span><span
+                                                    style="color:rgb(0, 0, 0); font-size:35.1px"> Pas très connu</span>
+                                            </p>
+
+                                            <p><span style="color:rgb(0, 0, 0); font-size:35.1px">⛔</span><span
+                                                    style="color:rgb(0, 0, 0); font-size:35.1px"> Remplacés par les extensions</span>
+                                            </p>
+
+                                            <p style="color:rgb(0, 0, 0); font-size:35.1px">⛔<span
+                                                    style="font-size:35.1px"> Difficile à maintenir à jour</span></p>
+
+                                            <p style="color:rgb(0, 0, 0); font-size:35.1px"><span
+                                                    style="color:rgb(0, 0, 0); font-size:35.1px">⛔ Pbs de compatibilité</span>
+                                            </p>
+
+                                            <p style="color:rgb(0, 0, 0); font-size:35.1px"><span
+                                                    style="color:rgb(0, 0, 0); font-size:35.1px">⛔ Certains scripts bloqués</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </section>
+                            </section>
+                            <section class="stack" data-id="8d19ed411623476c715f1e3a4312ec96">
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="a304f2c09e8357d6bc52821e8eb28d0f">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 1075px; left: 102px; top: 274px; height: auto;"
+                                         data-block-id="2143d688ed73c2d346f5da882ac029f9">
+                                        <div class="sl-block-content" data-placeholder-tag="h1"
+                                             data-placeholder-text="Title Text" style="z-index: 10;"
+                                             data-has-custom-html=""><h1 style="font-family: 'Quicksand Bold'">Place aux
+                                            examples !</h1></div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="33ce233b31bfd48474bda25896416027">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 1156px; left: 80px; top: 157px; height: auto;"
+                                         data-block-id="6608b3eb64e4efc8cbbf711e0d458751">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 10; font-size: 117%; line-height: 3.042;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>De l'accessibilité <span style="color:rgb(0, 0, 0)">👀</span>
+                                                </li>
+                                                <li>De la visualisation <span style="color:rgb(0, 0, 0)">📰</span>
+                                                </li>
+                                                <li>Des tests <span style="color:rgb(0, 0, 0)">🧠</span>
+                                                </li>
+                                                <li style="color:rgb(0, 0, 0); font-size:35.1px">Un exemple grandeur
+                                                    nature <span style="color:rgb(0, 0, 0)">🌲</span> 
+                                                </li>
+                                                <li>Du bonus ! <span style="color:rgb(0, 0, 0)">🐒</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="8c988b3c51af7748f07f2f1fea489111">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 11; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'">Au
+                                            programme :</p></div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="db6356642b07e9bf80ae8b400ef964b3">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 367px; left: 56.5px; top: 174.435px; height: auto;"
+                                         data-block-id="5775ee1c35cbc34499c9f7e493a872ef">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.443;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Listing des erreurs et warnings de DOM + CSS</li>
+                                                <li>Check des standards WCAG 2.1 d'accessibilité</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="88aa5731c1df393eeee1704133615f0f">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://squizlabs.github.io/HTML_CodeSniffer/" target="_blank">HTML
+                                            Codesniffer</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 799.072px; height: 515.13px; left: 463.036px; top: 174.435px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-949df5" data-block-id="9e5a0846455cfc56d1f4be9f4b83128d">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201129/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="9f55565c611574933958843b60e1bee3">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 367px; left: 56.5px; top: 174.435px; height: auto;"
+                                         data-block-id="46bf1d33ebb54c24369ecd8662a9cc43">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.443;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Vérifier la compatibilité de deux couleurs et leur accessibilité
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="78556942d2d949c09405974d299bc044">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://squizlabs.github.io/HTML_CodeSniffer/" target="_blank">Color </a><a
+                                                href="https://webaim.org/resources/contrastchecker/bookmarklet"
+                                                target="_blank">Contrast Checker</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 821.148px; height: 515.13px; left: 440.96px; top: 174.435px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-0a4f7d" data-block-id="b87811d57247ef519d7ba22f82a368d6">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1288"
+                                                                                                data-natural-height="808"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11207942/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="54a8a3d1b02037e645aef693890f1e0b">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 360px; left: 53px; top: 157px; height: auto;"
+                                         data-block-id="54dc9d14bcd62aaa008b1977a604585b">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 11; font-size: 110%; line-height: 1.664;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Permet de montrer les structures de layout d'une page</li>
+                                                <li>Un code golf de 108 bytes (!)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="766439a510b8a10ac464d23e19cedd64">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 12; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://gist.github.com/addyosmani/fd3999ea7fce242756b1"
+                                                target="_blank">CSS Layout Debugger</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 799.072px; height: 515.13px; left: 463.036px; top: 174.435px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-98fb94" data-block-id="b51ad86e6aa5e5e95f11839d34484429">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201172/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="6908d33a087df213e3af894b4e0b22c3">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 360px; left: 53px; top: 157px; height: auto;"
+                                         data-block-id="a6632170ae2fb935cddba606b07ba0f1">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.664;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Test de page avec/sans JS</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="eef194905b4ffc24b7a3a902666d5a2a">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://workeffortwaste.github.io/nojs-side-by-side/"
+                                                target="_blank">NoJS Side-by-side</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 824.074px; height: 515.365px; left: 438.034px; top: 174.435px;"
+                                         data-name="image-eff056" data-block-id="2194546066c7e38fa01e6247f595c2c5">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1292"
+                                                                                                data-natural-height="808"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11207921/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="ea7095aaeec05ae2a02ce5f9b15e11e6">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 360px; left: 53px; top: 157px; height: auto;"
+                                         data-block-id="44a5b256d684386b28481761ba1d4112">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.664;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Identifier les polices d'écritures à la sélection + les styles de
+                                                    font
+                                                </li>
+                                                <li>WhatFont existe aussi et est devenu une extension navigateur</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="9df5553e19bab401bab98eff51d28658">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://fount.artequalswork.com/" target="_blank">Fount</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 799.437px; height: 515.365px; left: 462.671px; top: 174.435px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-a26ae4" data-block-id="3f1b8509238e7f68dd7295881ebd6638">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201261/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="ee80a75ff9c0a08333858a89f8324dec">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 360px; left: 53px; top: 157px; height: auto;"
+                                         data-block-id="b72cb588d0103e309e2a6756ce84a15b">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.664;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Permet de tester une liste de web-fonts sur un sélecteur CSS donné
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="e38d533d6d491aaf67538241320a568a">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://github.com/danielgavrilov/WebFontPicker/blob/master/bookmarklet.js"
+                                                target="_blank">Web font picker</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 799.437px; height: 515.365px; left: 462.671px; top: 174.435px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-a3f90d" data-block-id="00b4a17a8119583892e45b675267071d">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201203/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="ff4b40fdac2ccf6d3b2b46d4a35d1976">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 360px; left: 53px; top: 157px; height: auto;"
+                                         data-block-id="fffd820293fa132b1a335c72332dfce9">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.664;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Une heatmap visuelle du chargement des assets de la page</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="4803a36a071e7e154393e893719086b3">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://github.com/zeman/perfmap" target="_blank">PerfMap​</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 812.96px; height: 524.083px; left: 449.04px; top: 174.317px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-632d4a" data-block-id="9f4d28a1ba9d4aca2d1aca1e527e574b">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201259/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="7f066d84f264623b12da2cea4113faba">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 360px; left: 53px; top: 157px; height: auto;"
+                                         data-block-id="52feb26cdc46f7a824fc645ab747d217">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.664;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Résultat visuel et en détail des calculs et requêtes de la page</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="de8b79e99688469b367f87eb6dae60a0">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://github.com/micmro/performance-bookmarklet"
+                                                target="_blank">Performance-Bookmarklet</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 812.96px; height: 524.083px; left: 449.04px; top: 174.317px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-cc97d8" data-block-id="b12f51c9a32a523d79cb41ee6b9a5dfc">
+                                        <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);">
+                                            <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                    data-natural-width="1030"
+                                                                                                    data-natural-height="664"
+                                                                                                    data-lazy-loaded=""
+                                                                                                    data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201256/pasted-from-clipboard.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="5db6e776e489c3f16865556255bf18fe">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 360px; left: 53px; top: 157px; height: auto;"
+                                         data-block-id="7c6ca64b19d6fbb332539e84f652d570">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.664;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Montre les metatags utilisés sur la page pour le SEO</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="cbd0ffcdff9ecdfe881a9526bd54db09">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://carlsednaoui.github.io/seo-bookmarklet/install.html"
+                                                target="_blank">OuiSEO</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 812.96px; height: 524.083px; left: 449.04px; top: 174.317px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-07214f" data-block-id="4e72b27f012b8d72575a313ad239751f">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201268/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="be64bfa8333a54386c7ce6881aaa5c21">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 375px; left: 56.5px; top: 164px; height: auto;"
+                                         data-block-id="6452c671a3ed59fe3e9d79b72de9b8b1">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 11; font-size: 110%; line-height: 1.638;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Listing des composants UI</li>
+                                                <li>Highlight en fonction de leur provenance (natif, web component,
+                                                    etc.)
+                                                </li>
+                                                <li>Couverture des composants</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="cf602c5d3ae2ee26db44b6d3833c583b">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 12; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'">Chez
+                                            OVHcloud</p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 746.831px; height: 532.8px; left: 489.157px; top: 156.765px;"
+                                         data-name="image-e5390d" data-block-id="db6fb6fe6ac401398fd55f0a287151fa">
+                                        <div class="sl-block-content" style="z-index: 13;"><img class=""
+                                                                                                data-natural-width="1148"
+                                                                                                data-natural-height="819"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11207894/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="b5baa46ebdd13e68e53eb6f9846fa1c9">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 1075px; left: 102px; top: 274px; height: auto;"
+                                         data-block-id="b0b86e1a46e095c801bf4dfce1d259dc">
+                                        <div class="sl-block-content" data-placeholder-tag="h1"
+                                             data-placeholder-text="Title Text" style="z-index: 10;"
+                                             data-has-custom-html=""><h1 style="font-family: 'Quicksand Bold'">
+                                            Bonus</h1></div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="2e8981d14cbd398bc72429deb51f653f">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 360px; left: 53px; top: 157px; height: auto;"
+                                         data-block-id="00393aa5d114bd2c92e92b1893f50b9c">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 11; font-size: 110%; line-height: 1.664;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Moniteur de FPS, ms pour rendre une frame, la mémoire utilisée en
+                                                    temps réel
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="27910d4c8fc07439944fbec6a275365a">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 12; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://github.com/mrdoob/stats.js" target="_blank">stats.js</a>
+                                        </p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 812.96px; height: 524.083px; left: 449.04px; top: 174.317px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-201bae" data-block-id="e671a088facb1a02d8df497a738874a7">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201263/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="shape"
+                                         style="width: 60px; height: 125px; left: 450px; top: 216px;"
+                                         data-name="shape-5d4f7e" data-block-id="bd29358e3eecda28a2debc5e05f16851">
+                                        <div class="sl-block-content" data-shape-type="arrow-up"
+                                             data-shape-fill-color="rgb(204, 0, 0)" data-shape-stretch="true"
+                                             style="z-index: 13;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                                                 height="100%" preserveaspectratio="none" viewbox="0 0 60 125">
+                                                <polygon points="30,0 60,62.5 42,62.5 42,125 18,125 18,62.5 0,62.5 30,0"
+                                                         class="shape-element" fill="rgb(204, 0, 0)"></polygon>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="b95240923f4b5b7607ae45f6ce438998">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 349px; left: 57px; top: 174.435px; height: auto;"
+                                         data-block-id="cd4eccec13e1b2943215df9c66512890">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.443;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Des bookmarklets de plein de fonctions JS "clés en main"
+                                                    <ul>
+                                                        <li>CleanStorage</li>
+                                                        <li>Debugger</li>
+                                                        <li>...</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="62e5cee2528c90ba85ea450d376d41be">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://bookmarklets.app.quest/" target="_blank">Bookmarklets for
+                                            developers</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 797.885px; height: 514.365px; left: 462.223px; top: 174.435px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-9ecd2d" data-block-id="623e1052cd6f47cc79f964294a0a82a8">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201286/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="8f7f947d2770b1b81a849c3930acf41f">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 525px; left: 57px; top: 174.435px; height: auto;"
+                                         data-block-id="cc7e833299613407e3a8e557e05d3cb5">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 11; font-size: 110%; line-height: 1.443;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Monkey testing de BÂTARD
+                                                    <ul>
+                                                        <li>des clics</li>
+                                                        <li>des scrolls</li>
+                                                        <li>des swipes</li>
+                                                        <li>des touches clavier</li>
+                                                        <li>le tout en même temps</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="e69de754e9d249cf18ac89df68505449">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 12; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://marmelab.com/gremlins.js/" target="_blank">Gremlins.js</a>
+                                        </p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 586.42px; height: 532.8px; left: 673.688px; top: 156px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-f30ce9" data-block-id="7b8dfb26412b7a451d9bdc950bedb171">
+                                        <div class="sl-block-content" style="z-index: 13;"><img class=""
+                                                                                                data-natural-width="689"
+                                                                                                data-natural-height="626"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201281/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="b863d0aaf75c5ad3dae3a31bea4f3ebd">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 349px; left: 57px; top: 174.435px; height: auto;"
+                                         data-block-id="a3af88ac4122ffb685b2c2b857a42ba0">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 11; font-size: 110%; line-height: 1.443;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Check <span style="color:rgb(0, 0, 0)">"classique" </span>des
+                                                    erreurs de DOM 
+                                                </li>
+                                                <li>Les erreurs sont notées sur l'élément qui pose problème, en <strong>Comic
+                                                    Sans MS</strong> sur fond rouge 
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="5e55835f9c35cdc4ea8f1ab03d88ca97">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 12; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://web.archive.org/web/20190309062846/http://heydonworks.com/revenge_css_bookmarklet"
+                                                target="_blank">Revenge.CSS</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 797.885px; height: 514.365px; left: 462.223px; top: 174.435px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-ae3a8c" data-block-id="98b46e37aefe0e278681a8884407aea9">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201146/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="8d0f2ccd2e4c755e1485f1847778e289">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="width: 349px; left: 57px; top: 174.435px; height: auto;"
+                                         data-block-id="dfb311d56418476b70c7f7d1ae04a3fb">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                                             style="text-align: left; z-index: 12; font-size: 110%; line-height: 1.443;"
+                                             data-has-line-height="">
+                                            <ul>
+                                                <li>Rend le texte de toute la page éditable</li>
+                                                <li>Pratique pour faire des PRANKS à ses collègues, faire croire que
+                                                    Martine de la compta a hacké le Pentagone...
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="5cc56453c881c2749cd87d1bf934c20f">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 13; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'"><a
+                                                href="https://github.com/msankhala/editable-bookmarklet"
+                                                target="_blank">ContentEditable</a></p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 821.963px; height: 514.365px; left: 438.145px; top: 174.435px;"
+                                         data-name="image-df7a97" data-block-id="601476322e548865d4d232c425e21b7d">
+                                        <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                                data-natural-width="1288"
+                                                                                                data-natural-height="806"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11207932/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section data-background-color="rgb(180, 167, 214)"
+                                         data-id="fc43e95f8aec9e62c63b47455204c363">
+                                    <div class="sl-block" data-block-type="text"
+                                         style="height: auto; width: 927px; left: 80px; top: 78.0005px;"
+                                         data-name="text-39a29d" data-block-id="de73b109253896883759ea25cbfee744">
+                                        <div class="sl-block-content" data-placeholder-tag="p"
+                                             data-placeholder-text="Text"
+                                             style="z-index: 12; text-align: left; font-size: 150%; color: rgb(0, 0, 0);"
+                                             data-has-custom-html=""><p style="font-family: 'Quicksand Bold'">DIY your
+                                            Bookmarklet : Bookmarkleter</p></div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image"
+                                         style="width: 826.482px; height: 532.8px; left: 226.759px; top: 156px; min-width: 1px; min-height: 1px;"
+                                         data-name="image-3d361c" data-block-id="6ae245e5e86e819dcf168ead36e2d8b6">
+                                        <div class="sl-block-content" style="z-index: 13;"><img class=""
+                                                                                                data-natural-width="1030"
+                                                                                                data-natural-height="664"
+                                                                                                data-lazy-loaded=""
+                                                                                                data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201362/pasted-from-clipboard.png">
+                                        </div>
+                                    </div>
+                                </section>
+                            </section>
+                            <section data-background-color="rgb(234, 153, 153)"
+                                     data-id="0380dab815dfffda1d9d7a288d10f009">
+                                <div class="sl-block" data-block-type="text"
+                                     style="width: 1075px; left: 102.5px; top: 213.5px; height: auto;"
+                                     data-block-id="33a1a1ba534fbccf5349ee6fe79061d4">
+                                    <div class="sl-block-content" data-placeholder-tag="h1"
+                                         data-placeholder-text="Title Text" style="z-index: 10;"
+                                         data-has-custom-html=""><h1 style="font-family: 'Quicksand Bold'">La prochaine
+                                        fois, on parle de Greasemonkey !🙊<br>
+                                        #2015</h1></div>
+                                </div>
+                            </section>
+                            <section data-background-color="rgb(182, 215, 168)"
+                                     data-id="6dd6e1eb32edf426572a0376727e9da1">
+                                <div class="sl-block" data-block-type="text"
+                                     style="width: 431px; left: 80px; top: 591.5px; height: auto;"
+                                     data-block-id="2ca42888f08ffaa94a0172a99942e935" data-name="text-36e6ea">
+                                    <div class="sl-block-content" data-placeholder-tag="h1"
+                                         data-placeholder-text="Title Text"
+                                         style="z-index: 12; font-size: 67%; color: rgb(255, 255, 255);"
+                                         data-has-custom-html=""><h1 style="font-family: 'Quicksand Bold'">Les
+                                        slides</h1></div>
+                                </div>
+                                <div class="sl-block" data-block-type="image"
+                                     style="width: 365.8px; height: 365.8px; left: 112.6px; top: 210.2px; min-width: 1px; min-height: 1px;"
+                                     data-name="image-f641bb" data-block-id="5e1c32707af3fc23eca65c04a1a0d564">
+                                    <div class="sl-block-content" style="z-index: 13;"><img class=""
+                                                                                            data-natural-width="1015"
+                                                                                            data-natural-height="1015"
+                                                                                            data-lazy-loaded=""
+                                                                                            data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201327/pasted-from-clipboard.png">
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="text"
+                                     style="width: 1075px; left: 102.5px; top: 72px; height: auto;"
+                                     data-block-id="1f98556d46b3487c554a03f1e50d0795" data-name="text-ce07b8">
+                                    <div class="sl-block-content" data-placeholder-tag="h1"
+                                         data-placeholder-text="Title Text"
+                                         style="z-index: 14; color: rgb(255, 255, 255);" data-has-custom-html=""><h1
+                                            style="font-family: 'Quicksand Bold'">François Eoche</h1></div>
+                                </div>
+                                <div class="sl-block" data-block-type="text"
+                                     style="width: 431px; left: 769px; top: 591.5px; height: auto;"
+                                     data-block-id="fc041d0a8c66885e41ab86860fd93b16" data-name="text-d8c1ee">
+                                    <div class="sl-block-content" data-placeholder-tag="h1"
+                                         data-placeholder-text="Title Text"
+                                         style="z-index: 15; font-size: 67%; color: rgb(255, 255, 255);"
+                                         data-has-custom-html=""><h1 style="font-family: 'Quicksand Bold'">Les
+                                        réseaux</h1></div>
+                                </div>
+                                <div class="sl-block" data-block-type="image"
+                                     style="width: 365.8px; height: 365.8px; left: 801.6px; top: 210.2px; min-width: 1px; min-height: 1px;"
+                                     data-name="image-921f2e" data-block-id="e993e6d7b6efe3c9b596749c72c982fe">
+                                    <div class="sl-block-content" style="z-index: 11;"><img class=""
+                                                                                            data-natural-width="1026"
+                                                                                            data-natural-height="1026"
+                                                                                            data-lazy-loaded=""
+                                                                                            data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201348/pasted-from-clipboard.png">
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="image"
+                                     style="width: 1429.71px; height: 720px; left: -74.855px; top: 0px; min-width: 1px; min-height: 1px;"
+                                     data-name="image-5e0ba1" data-block-id="2873d424194b1d5ff89f6ac284f1b22b">
+                                    <div class="sl-block-content" style="z-index: 10;"><img class=""
+                                                                                            data-natural-width="2500"
+                                                                                            data-natural-height="1259"
+                                                                                            data-lazy-loaded=""
+                                                                                            data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201036/pasted-from-clipboard.png">
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="image"
+                                     style="width: 129.8px; height: 129.8px; left: 575.1px; top: 328.2px; min-width: 1px; min-height: 1px;"
+                                     data-name="image-4218ed" data-block-id="528ecf38fa8c43243f223e37f23142e1">
+                                    <div class="sl-block-content" style="z-index: 16;"><img class=""
+                                                                                            data-natural-width="413"
+                                                                                            data-natural-height="413"
+                                                                                            data-lazy-loaded=""
+                                                                                            data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11201354/pasted-from-clipboard.png">
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="deck-kudos">
+                            <button class="kudos-button kudos-trigger" data-kudos-id="3105228"
+                                    data-kudoed-by-user="false">
+                                <div class="kudos-heart">
+                                    <span class="kudos-icon icon i-heart-fill"></span>
+                                </div>
+                                <div class="kudos-count" data-kudos-value="0" data-kudos-id="3105228"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pill summary-pill">
+                <div class="pill-picture"
+                     style="background-image: url(https://www.gravatar.com/avatar/f4d3b715809bd27990843b59cb71300b?s=140&amp;d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png)"></div>
+                <div class="pill-content">
+                    <h4 class="pill-title">Les bookmarklets, c&#39;est chouette !</h4>
+                    <p class="pill-description">By François Eoche</p>
+                </div>
+            </div>
+
+            <div class="pill instructions-pill">
+                <div class="pill-picture"></div>
+                <div class="pill-content">
+                    <h4 class="pill-title"></h4>
+                    <p class="pill-description"></p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="column">
+            <header class="deck-card">
+                <div class="deck-card-header">
+                    <div class="deck-sharing">
+                        <div class="deck-promotion">
+                            <a class="button cta made-with-slides" href="/?ref=capltfs">Made with Slides.com</a>
+                        </div>
+                        <div class="deck-social">
+                            <a href="#" class="deck-social-button facebook-share-button"
+                               data-tooltip="Share on Facebook">
+                            </a>
+                            <a href="#" class="deck-social-button twitter-share-button" data-tooltip="Share on Twitter">
+                                <span class="icon i-twitter"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="deck-options">
+                        <a class="button icon-button white fullscreen-button" data-tooltip="Fullscreen"
+                           href="/feoche/les-bookmarklets-c-est-chouette/fullscreen"><span
+                                class="icon i-fullscreen"></span></a>
+                        <button class="button icon-button white share-button" data-tooltip="Share"><span
+                                class="icon i-share"></span></button>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="deck-card-body">
+                    <div class="deck-info">
+                        <h1 class="title">Les bookmarklets, c&#39;est chouette !</h1>
+                        <ul class="deck-meta">
+                            <li data-tooltip="Published date" data-tooltip-delay="500">
+                                <span class="icon i-clock"></span>
+                                <time class="value ago" datetime="2024-01-22 14:07:16 UTC"></time>
+                            </li>
+                            <li data-tooltip="Kudos" data-tooltip-delay="500">
+                                <span class="icon i-heart-fill"></span>
+                                <span class="value" data-kudos-value="0" data-kudos-id="3105228"></span>
+                            </li>
+                            <li data-tooltip="Views" data-tooltip-delay="500">
+                                <span class="icon i-eye"></span>
+                                <span class="value">451</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="user-info">
+                        <div class="picture"
+                             style="background-image: url(https://www.gravatar.com/avatar/f4d3b715809bd27990843b59cb71300b?s=140&amp;d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png)"></div>
+                        <div class="text">
+                            <h3 class="title">
+                                <a href="/feoche" class="username">François Eoche</a>
+                            </h3>
+                            <p class="description"></p>
+                            <ul class="links">
+                                <li><a target="_blank" rel="nofollow" href="http://francoiseoche.fr"><span
+                                        class="icon i-link"></span>francoiseoche.fr</a></li>
+                                <li><a href="https://twitter.com/feoche" target="_blank"><span
+                                        class="icon i-twitter"></span>feoche</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+            </header>
+
+            <section class="deck-list related-decks">
+                <h2>More from <a href="/feoche">François Eoche</a></h2>
+                <ul class="carousel">
+                    <li class="sl-deck-thumbnail" data-preview-url="/feoche/les-bookmarklets-c-est-chouette-f857a9">
+                        <a class="deck-link" href="/feoche/les-bookmarklets-c-est-chouette-f857a9"></a>
+                        <div class="deck-thumb">
+                            <img class="deck-thumb-image"
+                                 data-src="https://media.slid.es/thumbnails/d97ec995be0e017aca163ece521c958c/thumb.jpg?1715934529"/>
+                        </div>
+                        <footer class="deck-details">
+                            <div class="top">
+                                <div class="title">Comment une mauvaise UX a sauvé mon voyage</div>
+                            </div>
+                            <div class="bottom">
+                                <a class="author" href="/feoche">
+                                    <span class="picture"
+                                          style="background-image: url(https://www.gravatar.com/avatar/f4d3b715809bd27990843b59cb71300b?s=140&amp;d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png)"></span>
+                                    <span class="name">François Eoche</span>
+                                </a>
+                                <div class="stats">
+                                    <div>375<span class="icon i-eye"></span></div>
+                                </div>
+                            </div>
+                        </footer>
+                    </li>
+                    <li class="sl-deck-thumbnail" data-preview-url="/feoche/ovhcloud-design-system">
+                        <a class="deck-link" href="/feoche/ovhcloud-design-system"></a>
+                        <div class="deck-thumb">
+                            <img class="deck-thumb-image"
+                                 data-src="https://media.slid.es/thumbnails/d71b6c721af0ab2aa24bdbbdeb6ae209/thumb.jpg?1675440651"/>
+                        </div>
+                        <footer class="deck-details">
+                            <div class="top">
+                                <div class="title">Very Tech Trip - Design System for techs</div>
+                            </div>
+                            <div class="bottom">
+                                <a class="author" href="/feoche">
+                                    <span class="picture"
+                                          style="background-image: url(https://www.gravatar.com/avatar/f4d3b715809bd27990843b59cb71300b?s=140&amp;d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png)"></span>
+                                    <span class="name">François Eoche</span>
+                                </a>
+                                <div class="stats">
+                                    <div>537<span class="icon i-eye"></span></div>
+                                </div>
+                            </div>
+                        </footer>
+                    </li>
+                    <li class="sl-deck-thumbnail" data-preview-url="/feoche/francois-eoche">
+                        <a class="deck-link" href="/feoche/francois-eoche"></a>
+                        <div class="deck-thumb">
+                            <img class="deck-thumb-image"
+                                 data-src="https://media.slid.es/thumbnails/be48ffb2929b8b92564ac1355431eca1/thumb.jpg?1658310545"/>
+                        </div>
+                        <footer class="deck-details">
+                            <div class="top">
+                                <div class="title">François Eoche</div>
+                            </div>
+                            <div class="bottom">
+                                <a class="author" href="/feoche">
+                                    <span class="picture"
+                                          style="background-image: url(https://www.gravatar.com/avatar/f4d3b715809bd27990843b59cb71300b?s=140&amp;d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png)"></span>
+                                    <span class="name">François Eoche</span>
+                                </a>
+                                <div class="stats">
+                                    <div>119<span class="icon i-eye"></span></div>
+                                </div>
+                            </div>
+                        </footer>
+                    </li>
+                    <li class="sl-deck-thumbnail" data-preview-url="/feoche/deck">
+                        <a class="deck-link" href="/feoche/deck"></a>
+                        <div class="deck-thumb">
+                            <img class="deck-thumb-image"
+                                 data-src="https://media.slid.es/thumbnails/38e4e5fc646a3f26b82a9246f28cc9c5/thumb.jpg?1593764828"/>
+                        </div>
+                        <footer class="deck-details">
+                            <div class="top">
+                                <div class="title">Domotique 101 avec Jeedom</div>
+                            </div>
+                            <div class="bottom">
+                                <a class="author" href="/feoche">
+                                    <span class="picture"
+                                          style="background-image: url(https://www.gravatar.com/avatar/f4d3b715809bd27990843b59cb71300b?s=140&amp;d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png)"></span>
+                                    <span class="name">François Eoche</span>
+                                </a>
+                                <div class="stats">
+                                    <div>1254<span class="icon i-eye"></span></div>
+                                </div>
+                            </div>
+                        </footer>
+                    </li>
+
+                </ul>
+            </section>
+
+        </div>
+    </main>
+    <footer class="global-footer ">
+        <div class="global-footer-links">
+            <div class="link-group">
+                <h4>Tour</h4>
+                <a href="https://slides.com/explore">Presentations</a>
+                <a href="https://slides.com/recent">Trending decks</a>
+                <a href="https://slides.com/templates">Templates</a>
+                <a href="https://slides.com/features">Features</a>
+                <a href="https://slides.com/pricing">Pricing</a>
+                <a href="https://slides.com/for-teams">Slides for Teams</a>
+                <a href="https://slides.com/for-developers">Slides for Developers</a>
+            </div>
+
+            <div class="link-group">
+                <h4>Help</h4>
+                <a href="https://help.slides.com" target="_blank" rel="noopener">Forum</a>
+                <a href="https://help.slides.com/knowledgebase" target="_blank" rel="noopener">Knowledge Base</a>
+                <a href="https://slides.com/developers">Developers Docs</a>
+                <a href="https://slides.com/developers/api">API Docs</a>
+                <a href="https://help.slides.com" data-feedback-mode="smartvote">Leave Feedback</a>
+                <a href="https://help.slides.com" data-feedback-mode="contact">Report an Issue</a>
+            </div>
+
+            <div class="link-group">
+                <h4>Company</h4>
+                <a href="https://slides.com/news">News</a>
+                <a href="https://slides.com/changelog">Changelog</a>
+                <a href="https://slides.com/about">About Slides</a>
+                <a href="https://slides.com/security">Security</a>
+                <a href="https://slides.com/partners">Partners</a>
+            </div>
+
+            <div class="link-group">
+                <h4>Resources</h4>
+                <a href="https://slides.com/slides-ai-gpt">Make slides with AI</a>
+                <a href="https://slides.com/embed-google-maps">Embed Google Maps</a>
+                <a href="https://slides.com/embed-google-forms">Embed Google Forms</a>
+                <a href="https://slides.com/embed-youtube">Embed YouTube</a>
+                <a href="https://slides.com/import-pdf">Convert PDF to Slides</a>
+                <a href="https://slides.com/import-ppt">Convert PPT to Slides</a>
+                <a href="https://slides.com/tools/markdown-to-presentation">Convert Markdown to Slides</a>
+            </div>
+        </div>
+
+        <div class="global-footer-bottom">
+            <div class="social">
+                <a href="https://twitter.com/slides" target="_blank" rel="noopener" class="twitter-link"
+                   aria-label="Go to Slides' Twitter profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="32" viewBox="0 0 34 32">
+                        <path fill="currentColor"
+                              d="M33.482 5.964q0 .179-.089.321-1.143 1.857-3.196 3.393v.589q.071 4.054-1.786 8.161-2.393 5.304-7.098 8.295T10.75 29.714q-4.732 0-8.929-2.179-1.143-.589-1.554-.893-.268-.214-.268-.482 0-.232.17-.402t.402-.17q.25 0 .786.045t.804.045q3.643 0 6.696-1.893-1.839-.429-3.232-1.714t-1.982-3.089q-.036-.143-.036-.196 0-.214.161-.384t.393-.17q.089 0 .25.036t.214.036q-1.589-.982-2.536-2.625t-.946-3.5q0-.268.205-.455t.491-.188q.179 0 .625.205t.536.241q-1.643-1.964-1.643-4.571 0-.911.259-1.929t.723-1.696q.179-.286.446-.286.286 0 .482.214 1.357 1.5 1.964 2.054 2.196 1.982 4.929 3.17t5.661 1.438q-.071-.375-.071-.875 0-2.982 2.116-5.098t5.098-2.116q2.911 0 5.036 2.036 1.696-.357 3.732-1.464.143-.089.286-.089.232 0 .402.17t.17.402q0 .429-.5 1.304t-.911 1.357q.125-.036.536-.188t.768-.286.429-.134q.232 0 .402.17t.17.402z"/>
+                    </svg>
+                </a>
+                <a href="https://facebook.com/slidesapp" target="_blank" rel="noopener" class="facebook-link"
+                   aria-label="Go to Slides' Facebook profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="32" viewBox="0 0 14 32">
+                        <path fill="currentColor"
+                              d="M10 7.339q-.875 0-1.107.277t-.232 1.188v1.571h3.875q.286 0 .482.214.196.232.179.518l-.25 3.571q-.036.268-.223.455t-.455.188H8.662v13.714q0 .286-.196.482t-.464.196H3.538q-.286 0-.482-.196t-.196-.482V15.321H.681q-.286 0-.482-.205t-.196-.491v-3.571q0-.286.196-.482t.482-.196H2.86V8.537q0-3.161 1.571-4.705t4.768-1.545q2.143 0 4.018.536.25.071.393.286t.107.464l-.482 3.482q-.036.286-.286.464-.25.161-.536.107-1.357-.286-2.411-.286z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="legal">
+                <a href="https://slides.com/terms">Terms</a>
+                &bull; <a href="https://slides.com/privacy?root=true">Privacy</a>
+                &bull; <span class="copyright">&copy;&nbsp;2026&nbsp;Slides,&nbsp;Inc.</span>
+            </div>
+        </div>
+    </footer>
+
+</div> <!--! end of #container -->
+
+<script>
+    var SLConfig = {
+        "deck": {
+            "id": 3105228,
+            "slug": "les-bookmarklets-c-est-chouette",
+            "title": "Les bookmarklets, c'est chouette !",
+            "description": "",
+            "width": 1280,
+            "height": 720,
+            "margin": 0.05,
+            "visibility": "all",
+            "published_at": "2024-01-22T14:07:16.411Z",
+            "sanitize_messages": null,
+            "thumbnail_url": "https://s3.amazonaws.com/media-p.slid.es/thumbnails/5bb6c38195acf81eaa5b3efd3df8610f/thumb.jpg?1711042493",
+            "view_count": 451,
+            "user": {
+                "id": 419370,
+                "username": "feoche",
+                "name": "François Eoche",
+                "description": "",
+                "thumbnail_url": "https://www.gravatar.com/avatar/f4d3b715809bd27990843b59cb71300b?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png",
+                "account_type": "default",
+                "team_id": null,
+                "settings": {
+                    "id": 258184,
+                    "present_controls": true,
+                    "present_upsizing": true,
+                    "present_pointer": false,
+                    "present_notes": true,
+                    "default_deck_tag_id": null
+                }
+            },
+            "background_transition": "slide",
+            "transition": "slide",
+            "theme_id": null,
+            "theme_font": "opensans",
+            "theme_color": "white-blue",
+            "auto_slide_interval": 0,
+            "comments_enabled": false,
+            "forking_enabled": true,
+            "rolling_links": false,
+            "center": false,
+            "shuffle": false,
+            "should_loop": false,
+            "share_notes": false,
+            "slide_number": false,
+            "slide_count": 29,
+            "rtl": false,
+            "version": 2,
+            "collaborative": null,
+            "deck_user_editor_limit": null,
+            "data_updated_at": 1732215256423,
+            "font_typekit": null,
+            "font_google": null,
+            "time_limit": null,
+            "navigation_mode": "default",
+            "upsizing_enabled": true,
+            "language": "fr",
+            "source_deck_id": null
+        },
+        "user": {
+            "id": 419370,
+            "username": "feoche",
+            "name": "François Eoche",
+            "description": "",
+            "thumbnail_url": "https://www.gravatar.com/avatar/f4d3b715809bd27990843b59cb71300b?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png",
+            "account_type": "default",
+            "team_id": null,
+            "settings": {
+                "id": 258184,
+                "present_controls": true,
+                "present_upsizing": true,
+                "present_pointer": false,
+                "present_notes": true,
+                "default_deck_tag_id": null
+            }
+        }
+    };
+</script>
+<script src="//assets-v2.slid.es/assets/deck-consumption-ef6d5b577b0a56267dde0b602943e0c17cc1b1252c318544b2ec1cba9967a3e9.js"
+        defer="defer"></script>
+<script src="//assets-v2.slid.es/assets/deck-e9578901e3a036eb38108604e1b21b951b082a95ca0781c7dada7b0df1a2184a.js"
+        defer="defer"></script>
+
+
+</body>
+</html>

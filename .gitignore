@@ -1,0 +1,28 @@
+# Generated files (Pandoc output — regenerate with `npm run build`)
+# Uncomment if you don't want to track built HTML:
+# */index.html
+
+# ── slides.com source snapshots (large, reference only) ──────────────────
+# Uncomment to exclude original HTML snapshots from version control:
+# */_source.html
+
+# ── Node.js ──────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+
+# ── OS ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Editor ───────────────────────────────────────────────────────────────
+.idea
+.vscode/
+*.swp
+*.swo
+
+# ── Probe / temp scripts (generated during development) ──────────────────
+scripts/_probe*.mjs
+scripts/_probe*.js
+scripts/_deck_*.html
+scripts/_feoche_profile.html
+

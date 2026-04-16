@@ -1,0 +1,60 @@
+# ─── Title slide color palette ───────────────────────────────────────────────
+# Use as: <!-- .slide: data-background-color="<hex>" -->
+#
+# All colors use white text except peach / peach-deep (marked light: true).
+# ★ = reserved for deck title, speaker intro, and final/merci slides.
+
+teal:
+  - token: teal-main
+    hex:   "#00574a"
+    star:  true          # deck title · speaker intro · final slide
+    note:  Main brand color
+  - token: teal-deep
+    hex:   "#003D34"
+    note:  Darker accent, dramatic section openers
+  - token: teal-mid
+    hex:   "#006B57"
+    note:  Lighter teal, secondary sections
+  - token: teal-cool
+    hex:   "#004E6E"
+    note:  Teal-to-blue bridge, technical sections
+  - token: teal-muted
+    hex:   "#2D5C55"
+    note:  Muted chapter headings
+
+purple-blue:
+  - token: purple
+    hex:   "#784587"
+    note:  First section after intro
+  - token: purple-deep
+    hex:   "#52306B"
+    note:  Darker purple, sub-chapters
+  - token: indigo
+    hex:   "#5254E1"
+    note:  Second major section
+  - token: indigo-deep
+    hex:   "#3537A8"
+    note:  Darker indigo, technical deep-dives
+  - token: navy
+    hex:   "#2D3F8A"
+    note:  Navy blue, calm informational slides
+
+red-warm:
+  - token: rose
+    hex:   "#86414B"
+    note:  Third major section
+  - token: terracotta
+    hex:   "#AA4D38"
+    note:  Closing / "what's next" slides
+  - token: brick
+    hex:   "#7A3427"
+    note:  Darker warm, strong statements
+  - token: peach
+    hex:   "#FEB69C"
+    light: true          # use dark text on this background
+    note:  Light background — soft ending slides
+  - token: peach-deep
+    hex:   "#FFCBA4"
+    light: true          # use dark text on this background
+    note:  Light background — very soft, gentle close
+

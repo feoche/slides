@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$">
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
+$endif$
+$if(description-meta)$
+  <meta name="description" content="$description-meta$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <!-- ─── Reveal.js core ─────────────────────────────────────────────── -->
+  <!-- revealjs-url can be overridden per-deck in YAML front matter       -->
+  <link rel="stylesheet" href="$revealjs-url$/dist/reset.css">
+  <link rel="stylesheet" href="$revealjs-url$/dist/reveal.css">
+
+  <!-- ─── Theme ──────────────────────────────────────────────────────── -->
+$if(theme)$
+  <link rel="stylesheet" href="$revealjs-url$/dist/theme/$theme$.css" id="theme">
+$else$
+  <link rel="stylesheet" href="$revealjs-url$/dist/theme/black.css" id="theme">
+$endif$
+
+  <!-- ─── Syntax highlighting ─────────────────────────────────────────  -->
+$if(highlightjs)$
+  <link rel="stylesheet" href="$revealjs-url$/plugin/highlight/$highlightjs$.css">
+$else$
+  <link rel="stylesheet" href="$revealjs-url$/plugin/highlight/monokai.css">
+$if(highlighting-css)$
+  <style>
+$highlighting-css$
+  </style>
+$endif$
+$endif$
+
+  <!-- ─── Global styles (always loaded from _templates/) ───────────────── -->
+  <!-- Design tokens, reveal.js variable overrides, layout helpers, utils -->
+  <link rel="stylesheet" href="../../_templates/custom.css">
+
+  <!-- ─── Per-deck extra stylesheets ──────────────────────────────────── -->
+  <!-- Set in YAML front matter:  css: ["assets/my-deck.css"]             -->
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+
+  <!-- ─── Header includes (raw HTML injected before </head>) ─────────── -->
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ─── Slides loaded at runtime from slides.md ───────────────── -->
+      <!-- Separators mirror the index.html shells used in every deck.   -->
+      <section
+        data-markdown="slides.md"
+        data-separator="^\n---\n"
+        data-separator-vertical="^\n--\n"
+        data-separator-notes="^Notes:"
+        data-charset="utf-8">
+      </section>
+
+    </div><!-- /.slides -->
+  </div><!-- /.reveal -->
+
+  <!-- ─── Reveal.js + plugins ─────────────────────────────────────────── -->
+  <script src="$revealjs-url$/dist/reveal.js"></script>
+  <script src="$revealjs-url$/plugin/markdown/markdown.js"></script>
+  <script src="$revealjs-url$/plugin/highlight/highlight.js"></script>
+  <script src="$revealjs-url$/plugin/notes/notes.js"></script>
+  <script src="$revealjs-url$/plugin/search/search.js"></script>
+  <script src="$revealjs-url$/plugin/zoom/zoom.js"></script>
+$if(math)$
+  <script src="$revealjs-url$/plugin/math/math.js"></script>
+$endif$
+$for(extra-plugins-js)$
+  <script src="$extra-plugins-js$"></script>
+$endfor$
+
+$if(mathjax)$
+  <!-- MathJax -->
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+$endif$
+
+  <script>
+    // ─── Full Reveal.js configuration ────────────────────────────────────
+    // All values come from YAML front matter (per-deck) or default-meta.yaml.
+    // Pandoc replaces $variable$ tokens; missing variables fall back to the
+    // defaults shown in comments.  See: https://revealjs.com/config/
+    Reveal.initialize({
+
+      // ── Presentation size ──────────────────────────────────────────────
+$if(width)$      width:        $width$,          // default: 960
+$endif$
+$if(height)$      height:       $height$,         // default: 700
+$endif$
+$if(margin)$      margin:       $margin$,         // default: 0.04
+$endif$
+$if(minScale)$    minScale:     $minScale$,       // default: 0.2
+$endif$
+$if(maxScale)$    maxScale:     $maxScale$,       // default: 2.0
+$endif$
+
+      // ── Navigation ────────────────────────────────────────────────────
+      hash:            $if(hash)$$hash$$else$true$endif$,
+      history:         $if(history)$$history$$else$false$endif$,
+      keyboard:        $if(keyboard)$$keyboard$$else$true$endif$,
+      overview:        $if(overview)$$overview$$else$true$endif$,
+      center:          $if(center)$$center$$else$true$endif$,
+      touch:           $if(touch)$$touch$$else$true$endif$,
+      loop:            $if(loop)$$loop$$else$false$endif$,
+      rtl:             $if(rtl)$$rtl$$else$false$endif$,
+      navigationMode:  "$if(navigationMode)$$navigationMode$$else$default$endif$",
+      shuffle:         $if(shuffle)$$shuffle$$else$false$endif$,
+      fragments:       $if(fragments)$$fragments$$else$true$endif$,
+      fragmentInURL:   $if(fragmentInURL)$$fragmentInURL$$else$true$endif$,
+      embedded:        $if(embedded)$$embedded$$else$false$endif$,
+      help:            $if(help)$$help$$else$true$endif$,
+      pause:           $if(pause)$$pause$$else$true$endif$,
+
+      // ── UI elements ───────────────────────────────────────────────────
+      controls:          $if(controls)$$controls$$else$true$endif$,
+      controlsTutorial:  $if(controlsTutorial)$$controlsTutorial$$else$true$endif$,
+      controlsLayout:    "$if(controlsLayout)$$controlsLayout$$else$bottom-right$endif$",
+      controlsBackArrows:"$if(controlsBackArrows)$$controlsBackArrows$$else$faded$endif$",
+      progress:          $if(progress)$$progress$$else$true$endif$,
+      slideNumber:       $if(slideNumber)$$slideNumber$$else$false$endif$,
+      showSlideNumber:   "$if(showSlideNumber)$$showSlideNumber$$else$all$endif$",
+      showNotes:         $if(showNotes)$$showNotes$$else$false$endif$,
+
+      // ── Transitions ──────────────────────────────────────────────────
+      transition:           "$if(transition)$$transition$$else$slide$endif$",
+      transitionSpeed:      "$if(transitionSpeed)$$transitionSpeed$$else$default$endif$",
+      backgroundTransition: "$if(backgroundTransition)$$backgroundTransition$$else$fade$endif$",
+
+      // ── Auto-slide ──────────────────────────────────────────────────
+      autoSlide:            $if(autoSlide)$$autoSlide$$else$0$endif$,
+      autoSlideStoppable:   $if(autoSlideStoppable)$$autoSlideStoppable$$else$true$endif$,
+      defaultTiming:        $if(defaultTiming)$$defaultTiming$$else$null$endif$,
+
+      // ── PDF export ──────────────────────────────────────────────────
+      pdfSeparateFragments: $if(pdfSeparateFragments)$$pdfSeparateFragments$$else$true$endif$,
+      pdfMaxPagesPerSlide:  $if(pdfMaxPagesPerSlide)$$pdfMaxPagesPerSlide$$else$1$endif$,
+
+      // ── Miscellaneous ───────────────────────────────────────────────
+      mouseWheel:         $if(mouseWheel)$$mouseWheel$$else$false$endif$,
+      previewLinks:       $if(previewLinks)$$previewLinks$$else$false$endif$,
+      hideInactiveCursor: $if(hideInactiveCursor)$$hideInactiveCursor$$else$true$endif$,
+      hideCursorTime:     $if(hideCursorTime)$$hideCursorTime$$else$5000$endif$,
+      disableLayout:      $if(disableLayout)$$disableLayout$$else$false$endif$,
+
+$if(revealjs-plugins-config)$
+      // ── Extra plugin configuration ──────────────────────────────────
+      $revealjs-plugins-config$,
+$endif$
+
+      // ── Plugin list ─────────────────────────────────────────────────
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealNotes,
+        RevealSearch,
+        RevealZoom,
+$if(math)$
+        RevealMath,
+$endif$
+$for(revealjs-plugins)$
+        $revealjs-plugins$,
+$endfor$
+      ]
+    });
+  </script>
+
+$for(include-after)$
+$include-after$
+$endfor$
+</body>
+</html>
+
+
+
+
+
