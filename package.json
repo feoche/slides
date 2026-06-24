@@ -1,13 +1,32 @@
 {
-  "name": "slides",
+  "name": "slides-templates",
   "version": "1.0.0",
-  "description": "",
+  "description": "Slidev presentation templates",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
   },
-  "private": true,
+  "dependencies": {
+    "@slidev/cli": "^52.16.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/types": "^52.16.0",
+    "codemirror-theme-vars": "^0.1.2",
+    "prism-theme-vars": "^0.2.5",
+    "slidev-addon-qrcode": "^1.0.2",
+    "vue": "^3.5.33"
+  },
+  "keywords": [
+    "slidev",
+    "presentation",
+    "templates"
+  ],
+  "author": "Francois Eoche",
+  "license": "MIT",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "playwright-chromium": "^1.61.0",
+    "prettier": "^3.8.4",
+    "prettier-plugin-slidev": "^1.0.5"
   }
 }

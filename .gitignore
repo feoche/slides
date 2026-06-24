@@ -1,28 +1,29 @@
-# Generated files (Pandoc output — regenerate with `npm run build`)
-# Uncomment if you don't want to track built HTML:
-# */index.html
+# Dependencies
+/node_modules
+/.pnpm-store
 
-# ── slides.com source snapshots (large, reference only) ──────────────────
-# Uncomment to exclude original HTML snapshots from version control:
-# */_source.html
+# Build artifacts
+/dist
+/.vuepress/dist
 
-# ── Node.js ──────────────────────────────────────────────────────────────
-node_modules/
-npm-debug.log*
+# Logs
+*.log
 
-# ── OS ───────────────────────────────────────────────────────────────────
-.DS_Store
-Thumbs.db
+# Environment variables
+.env
+.env.local
+.env.*.local
 
-# ── Editor ───────────────────────────────────────────────────────────────
-.idea
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
 
-# ── Probe / temp scripts (generated during development) ──────────────────
-scripts/_probe*.mjs
-scripts/_probe*.js
-scripts/_deck_*.html
-scripts/_feoche_profile.html
+# OS
+.DS_Store
+Thumbs.db
 
+# Slidev specific
+*.tmp
+*.cache

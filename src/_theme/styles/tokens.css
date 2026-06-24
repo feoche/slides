@@ -1,0 +1,51 @@
+:root {
+
+  --primary-color: #00574a;
+  --primary-hover: #003D34;
+  --text-primary: #001f1b;
+  --text-secondary: #002b25;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8faf9;
+  --bg-alt: #f0f5f3;
+  --border-color: #d5e0dc;
+  --on-primary: #ffffff;
+  --switch-off: #b0c4bf;
+  --switch-on: #00574a;
+  --switch-knob: #ffffff;
+
+  --color-green: #00574a;
+  --color-deep-green: #003D34;
+  --color-cream: #f8faf9;
+  --color-baby-blue: #3ab9d5;
+
+  /* default theme color */
+  --theme-primary: var(--color-green);
+  --theme-secondary: var(--color-deep-green);
+  --theme-tertiary: var(--color-cream);
+  --theme-link: var(--color-baby-blue);
+
+  /* Custom colors*/
+  --slidev-theme-feoche-background-color: var(--theme-tertiary);
+  --slidev-theme-feoche-title-color: var(--theme-primary);
+  --slidev-theme-feoche-text-color: var(--theme-secondary);
+  --slidev-theme-feoche-link-color: var(--theme-link);
+  --slidev-theme-feoche-text-shadow: transparent;
+
+  /* Highlight colors*/
+  --slidev-theme-feoche-highlight-background-color: var(--theme-primary);
+  --slidev-theme-feoche-highlight-title-color: var(--theme-tertiary);
+  --slidev-theme-feoche-highlight-text-color: var(--theme-tertiary);
+  --slidev-theme-feoche-highlight-text-shadow: var(--color-deep-green);
+}
+
+/* Dark theme */
+.dark {
+  --theme-primary: var(--color-cream);
+  --theme-secondary: var(--color-cream);
+  --theme-tertiary: var(--color-deep-green);
+
+  --slidev-theme-feoche-highlight-background-color: var(--color-green);
+  --slidev-theme-feoche-highlight-title-color: var(--theme-primary);
+  --slidev-theme-feoche-highlight-text-color: var(--theme-primary);
+  --slidev-theme-feoche-text-shadow: #666;
+}

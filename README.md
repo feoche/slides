@@ -1,207 +1,138 @@
-# Slides Repository
+# Slidev Templates
 
-Presentation slides by **François Eoche**, grouped by talk.  
-Each talk lives in its own folder and is rendered as a [reveal.js](https://revealjs.com) presentation.  
-Slides are authored in **Markdown** using reveal.js native markdown support (`data-markdown`).  
-A [Pandoc](https://pandoc.org) build pipeline is also available for static/self-contained exports.
+This repository contains templates for creating presentations using [Slidev](https://sli.dev/), a presentation framework that uses Markdown with Vue components.
 
-## Repository structure
+## Template Files
 
+### `_templates/` Directory
+
+The `_templates/` directory contains all the template files needed for Slidev presentations:
+
+- `index.html` - Simple index template for Slidev presentations
+- `slidev.html` - Slidev-specific HTML template
+- `default-meta.yaml` - Default metadata configuration for presentations
+- `palette.yaml` - Color palette definitions for different themes
+- `custom.css` - Custom styling rules with design tokens and theme variables
+
+## Usage
+
+1. Create a new presentation by copying the `slides/` directory structure
+2. Use one of the template files as your base:
+   - For Slidev presentations, use `slidev.html`
+   - For simple index pages, use `index.html`
+
+## Date Parameter
+
+You can pass a date parameter in your slides.md frontmatter:
+
+```yaml
+---
+date: 2026-06-09
+---
 ```
-slides/
-├── _templates/
-│   ├── revealjs.html        # Pandoc HTML template (reveal.js 5)
-│   ├── shell.html           # Reference template for index.html shells
-│   └── default-meta.yaml    # Shared Pandoc metadata & reveal.js defaults
-├── _templates/
-│   └── custom.css           # GLOBAL STYLES — design tokens, utilities, layout helpers
-├── scripts/
-│   ├── build.js             # Runs Pandoc on every slides.md → index-static.html
-│   └── new-talk.js          # Scaffolds a new talk folder
-├── pro/
-│   └── <talk-slug>/         # Professional talks
-│       ├── slides.md        # ← EDIT THIS — reveal.js markdown content
-│       ├── meta.yaml        # Pandoc metadata (title, author, theme…)
-│       ├── index.html       # reveal.js shell (loads slides.md at runtime)
-│       ├── _source.html     # Original slides.com HTML (reference, do not edit)
-│       └── assets/          # Talk-specific images
-├── misc/
-│   └── <talk-slug>/         # Miscellaneous / hobby talks (same structure)
-└── index.html               # Root listing of all talks
-```
 
-## How slides work
+This date will be accessible in all layouts using `$frontmatter.date` and will automatically be formatted for display.
 
-### Runtime (recommended for presenting)
+### Usage Examples
 
-Each `index.html` is a lightweight **reveal.js shell** that loads `slides.md` at runtime
-via the `RevealMarkdown` plugin. **This requires a web server** (not `file://`):
+In any slide, you can access the date like this:
+- `{{ $frontmatter.date }}` - Raw date value
+- `{{ new Date($frontmatter.date).toLocaleDateString() }}` - Formatted date
+- `{{ formatDate($frontmatter.date) }}` - Using helper function (if available)
+
+The date parameter is automatically used in the cover layout and can be used anywhere in your slides.
+
+## Features
+
+- **Theme Support**: Multiple color themes defined in `palette.yaml`
+- **Custom Styling**: Extensive CSS customization through `custom.css`
+- **Responsive Design**: Adapts to different screen sizes
+- **Code Highlighting**: Syntax highlighting for code blocks
+- **Slide Navigation**: Arrow key and touch support
+- **Speaker Notes**: Built-in speaker note support
+
+## Customization
+
+### Color Themes
+
+The `palette.yaml` file defines several color themes:
+- Default (blue-based)
+- Teal
+- Purple-blue
+- Red-warm
+- Green
+- Orange
+- Gray
+
+A new custom theme has been added with light and dark palettes:
+
+**Light Palette:**
+- Primary color: `#00574a`
+- Primary hover: `#003D34`
+- Text primary: `#001f1b`
+- Text secondary: `#002b25`
+- Background primary: `#ffffff`
+- Background secondary: `#f8faf9`
+- Background alt: `#f0f5f3`
+- Border color: `#d5e0dc`
+- On primary: `#ffffff`
+- Switch off: `#b0c4bf`
+- Switch on: `#00574a`
+- Switch knob: `#ffffff`
+
+**Dark Palette:**
+- Primary color: `#ffffff`
+- Primary hover: `#ffffff`
+- Text primary: `#ffffff`
+- Text secondary: `#ffffff`
+- Background primary: `#0c1f1b`
+- Background secondary: `#00574a`
+- Background alt: `#003D34`
+- Border color: `#006B57`
+- On primary: `#001f1b`
+- Switch off: `#006B57`
+- Switch on: `#4fd1b8`
+- Switch knob: `#0c1f1b`
+
+### Styling
+
+The `custom.css` file contains:
+- Design tokens for consistent styling
+- Typography fixes
+- Code block styling
+- Blockquote styling
+- Layout helpers (columns, cards, centered content)
+- Utility classes
+- Speaker notes support
+- Markdown rendering improvements
+
+## Requirements
+
+- Node.js 16+ (for Slidev)
+- npm or pnpm for package management
+
+## Installation
 
 ```bash
-npm run serve   # starts live-server at http://localhost:3000
+# Install Slidev globally
+npm install -g @slidev/cli
+
+# Or use pnpm
+pnpm add -g @slidev/cli
 ```
 
-Then open any deck:
-- `http://localhost:3000/pro/bookmarklets/`
-- `http://localhost:3000/misc/speedrun/`
+## Building Presentations
 
-### Markdown syntax for slides
-
-Use `slides.md` to author slide content with these separators:
-
-```markdown
-# Title Slide
-
-Author name
-
----
-
-## Horizontal slide (next section)
-
-Content here.
-
---
-
-## Vertical slide (sub-section)
-
-Nested content.
-
----
-
-## Fragments
-
-- Item 1 <!-- .element: class="fragment" -->
-- Item 2 <!-- .element: class="fragment" -->
-
----
-
-## Slide with background
-
-<!-- .slide: data-background-color="#ff0000" -->
-
-## Red slide!
-
----
-
-## Code with line highlighting
-
-```javascript [1|3-5]
-function hello(name) {
-  // This line is highlighted first
-  console.log(`Hello, ${name}!`);
-  return true;
-}
-```
-
----
-
-## Speaker notes
-
-Notes:
-These appear in the presenter view (press S).
-```
-
-### Static build (optional, requires Pandoc)
+To build a presentation:
 
 ```bash
-# Install Pandoc: winget install --id JohnMacFarlane.Pandoc
-npm run build              # builds all decks → index-static.html
-npm run build -- --deck pro/bookmarklets
+# Start the development server
+slidev
+
+# Build for production
+slidev build
 ```
 
-## Creating a new talk
+## Contributing
 
-```bash
-npm run new -- pro/my-talk "My Talk Title"
-npm run new -- misc/my-hobby-talk "My Hobby Talk"
-```
-
-This scaffolds:
-- `slides.md` — content template ready to edit
-- `meta.yaml` — Pandoc metadata
-- `index.html` — reveal.js shell
-- `assets/` — directory for images
-
-## Global styling
-
-`_templates/custom.css` is automatically loaded by every deck. It provides:
-
-- **Design tokens** (`:root` variables for fonts, colors, spacing)
-- **reveal.js variable overrides** (maps tokens onto reveal.js CSS vars)
-- **Layout helpers** — `.columns`, `.card`, `.centered`
-- **Utility classes** — `.small`, `.large`, `.accent`, `.muted`, `.success`, `.warning`, `.danger`
-- **Table styles** for markdown tables
-- **Image styles** for markdown images
-
-Per-deck overrides go in the deck's own `assets/` folder and are referenced from `index.html`.
-
-## Pandoc template
-
-`_templates/revealjs.html` supports all reveal.js configuration options via YAML front matter
-in `meta.yaml`. See `_templates/default-meta.yaml` for all available options and their defaults.
-
----
-
-## Title slide color palette
-
-Use these background colors on section-title slides via the reveal.js slide attribute comment:
-
-```markdown
-<!-- .slide: data-background-color="#00574a" -->
-
-# My Section Title
-```
-
-The palette is built around **6 base colors** expanded into 15 shades across 3 families.  
-All colors use **white text** except `#FEB69C` and `#FFCBA4` which require **dark text** (⚠️).
-
-### 🟢 Teal family
-
-| # | Token | Hex | Usage |
-|---|---|---|---|
-| 1 | `teal-main` | `#00574a` | ★ Deck title · Speaker intro · Final slide |
-| 2 | `teal-deep` | `#003D34` | Darker accent, dramatic section openers |
-| 3 | `teal-mid`  | `#006B57` | Lighter teal, secondary sections |
-| 4 | `teal-cool` | `#004E6E` | Teal-to-blue bridge, technical sections |
-| 5 | `teal-muted`| `#2D5C55` | Muted, subdued chapter headings |
-
-### 🟣 Purple & Blue family
-
-| # | Token | Hex | Usage |
-|---|---|---|---|
-| 6  | `purple`      | `#784587` | First section after intro |
-| 7  | `purple-deep` | `#52306B` | Darker purple, sub-chapters |
-| 8  | `indigo`      | `#5254E1` | Second major section |
-| 9  | `indigo-deep` | `#3537A8` | Darker indigo, technical deep-dives |
-| 10 | `navy`        | `#2D3F8A` | Navy blue, calm informational slides |
-
-### 🔴 Red & Warm family
-
-| # | Token | Hex | Usage |
-|---|---|---|---|
-| 11 | `rose`         | `#86414B` | Third major section |
-| 12 | `terracotta`   | `#AA4D38` | Closing / "what's next" slides |
-| 13 | `brick`        | `#7A3427` | Darker warm, strong statements |
-| 14 | `peach`        | `#FEB69C` | ⚠️ Light bg — use **dark text** |
-| 15 | `peach-deep`   | `#FFCBA4` | ⚠️ Light bg — use **dark text**, soft endings |
-
-### Recommended deck color flow
-
-A typical 4-section deck would follow this progression:
-
-```
-Slide type          Color
-─────────────────────────────────────
-Deck title          #00574a  teal-main  (★)
-Speaker / about me  #00574a  teal-main  (★)
-─────────────────────────────────────
-Section 1 title     #784587  purple
-Section 2 title     #5254E1  indigo
-Section 3 title     #86414B  rose
-Section 4 title     #AA4D38  terracotta
-─────────────────────────────────────
-Closing / merci     #00574a  teal-main  (★)
-```
-
-For more sections, extend with the `-deep` or `-mid` variants from the same family.
-
+Feel free to contribute by submitting issues or pull requests to improve these templates.
