@@ -16,13 +16,13 @@ const style = computed(() => handleBackground(props.image, false, props.backgrou
 </script>
 
 <template>
-  <div class="slidev-layout image default" :style="style">
+  <div class="slidev-layout image-full default" :style="style">
     <slot/>
   </div>
 </template>
 
 <style>
-.slidev-layout.image {
+.slidev-layout.image-full {
   height: calc(100% - 2.5rem);
 }
 </style>
