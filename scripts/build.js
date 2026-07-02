@@ -18,7 +18,7 @@
  * The static build generates index-static.html (fully self-contained).
  */
 import { execSync }         from 'child_process';
-import { readdirSync, existsSync } from 'fs';
+import { readdirSync, existsSync, readFileSync } from 'fs';
 import { join, dirname, relative }    from 'path';
 import { fileURLToPath }    from 'url';
 
@@ -50,6 +50,16 @@ if (!existsSync(TEMPLATE)) {
 }
 
 // ── Discover decks (recursive, up to 2 levels deep) ─────────────────────
+// A Slidev deck declares a `theme:` in its leading frontmatter block; the
+// Pandoc/Reveal pipeline must not touch those.
+function isSlidevDeck(slidesFile) {
+  const txt = readFileSync(slidesFile, 'utf8');
+  if (!txt.startsWith('---')) return false;
+  const end = txt.indexOf('\n---', 3);
+  const fm = end === -1 ? txt : txt.slice(0, end);
+  return /^\s*theme\s*:/m.test(fm);
+}
+
 function findDecks(dir, depth = 0) {
   if (depth > 1) return [];
   const results = [];
@@ -59,6 +69,7 @@ function findDecks(dir, depth = 0) {
     const fullPath = join(dir, entry.name);
     const slidesFile = join(fullPath, 'slides.md');
     if (existsSync(slidesFile)) {
+      if (isSlidevDeck(slidesFile)) continue;
       results.push(fullPath);
     } else {
       results.push(...findDecks(fullPath, depth + 1));
