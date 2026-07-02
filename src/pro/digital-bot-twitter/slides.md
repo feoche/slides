@@ -45,12 +45,14 @@ seoMeta:
 
 # theme id, package name, or local path
 # Learn more: https://sli.dev/guide/theme-addon.html#use-theme
-theme: "./src/_theme"
+theme: ../../../src/_theme
 hideInToc: true
 addons:
   - slidev-addon-qrcode
 ---
 
+---
+layout: cover
 ---
 
 # {{ $frontmatter.title }}
@@ -127,6 +129,8 @@ hideInToc: true
 <!-- Speaker Notes -->
 
 ---
+layout: section
+---
 
 # Jour 0
 
@@ -138,6 +142,8 @@ hideInToc: true
 
 *(In Peace — Twitter API v2 💀)*
 
+---
+layout: section
 ---
 
 # Jour 1
@@ -161,7 +167,7 @@ const twitterAPI = new Twitter({
 });
 ```
 
---
+---
 
 ## `n-twitter` — Les possibilités
 
@@ -214,6 +220,8 @@ Répondre aux tweets francophones uniquement (`lang_fr`)
 Action `POST` de tweet désormais impossible — **403** 🚫
 
 ---
+layout: section
+---
 
 # Jour 2
 
@@ -228,7 +236,7 @@ Action `POST` de tweet désormais impossible — **403** 🚫
   - Popularité (en followers) du compte
   - Fréquence de tweet avec le mot-clé
 
---
+---
 
 ## Un machine learning de l'extrême…
 
@@ -241,7 +249,7 @@ tweet.lang === `fr` &&
 lngDetector.detect(tweet.text, 1)[0][0] === 'french'
 ```
 
---
+---
 
 ## + un peu de maths…
 
@@ -257,6 +265,8 @@ $$P = \min\left(\max\left(\frac{n}{100 - 8.6\log{f}}, 1\right), 100\right)$$
 
 [twitter.com/ledoigtdigital](https://twitter.com/ledoigtdigital)
 
+---
+layout: section
 ---
 
 # Jour 3
@@ -312,6 +322,8 @@ Se base sur les données **Météo France** via un hook de tweet planifié.
 - Un bot qui répond à des bots?
 
 ---
+layout: section
+---
 
 # Jour 4
 
@@ -326,7 +338,7 @@ Options gratuites retenues :
 - **Heroku** — oblige à relancer la tâche Node toutes les 15 min
 - **OpenShift** — plusieurs comptes avec plusieurs conteneurs Node
 
---
+---
 
 ## PM2, manager de processus Node
 
