@@ -1,9 +1,20 @@
-<!-- .slide: data-background-color="#00574a" -->
+---
+theme: ../../../src/_theme
+colorSchema: auto
+title: "Ionic — The Hybrid Theory"
+author: "François Eoche"
+lang: fr
+---
+
+---
+layout: cover
+---
 
 # Ionic — The Hybrid Theory
 
 ---
-<!-- .slide: data-background-color="#00574a" -->
+layout: intro
+---
 
 ## Qui suis-je ?
 
@@ -14,6 +25,8 @@
 - Full-stack, avec préférence pour le front
 - [@feoche](https://twitter.com/feoche)
 
+---
+layout: default
 ---
 
 ## Projets récents à Niji (2015)
@@ -26,10 +39,13 @@
 | AonAuto | Application mobile | Hybride (en cours) |
 
 ---
-<!-- .slide: data-background-color="#003D34" -->
+layout: section
+---
 
 # Problématique et solutions
 
+---
+layout: default
 ---
 
 ## Prenons un cas concret à Niji…
@@ -43,6 +59,8 @@
 > 3 × 300K ! C'est cher dis donc…
 
 ---
+layout: default
+---
 
 ## Trop cher ? Des solutions ?
 
@@ -51,7 +69,9 @@
 - **React Native** — JavaScript vers natif, bon compromis
 - **Ionic** ← notre choix chez Niji
 
---
+---
+layout: default
+---
 
 ## Autres outils
 
@@ -62,12 +82,15 @@
 | Ionic | HTML5/Angular | Gratuit & open source |
 
 ---
-<!-- .slide: data-background-color="#006B57" -->
+layout: section
+---
 
 # Ionic
 
 ## Advanced HTML5 Hybrid Mobile App Framework
 
+---
+layout: default
 ---
 
 ## Comment ça se passe ?
@@ -83,11 +106,14 @@ Ionic (HTML/CSS/JS)
 Après avoir "build" l'appli avec des tâches Gulp, c'est restitué en tant qu'**Application Web embarquée**.
 
 ---
-<!-- .slide: data-background-color="#004E6E" -->
+layout: section
+---
 
 ## Ionic, ça apporte quoi ?
 
---
+---
+layout: default
+---
 
 ## Des interfaces pré-construites
 
@@ -102,7 +128,9 @@ Après avoir "build" l'appli avec des tâches Gulp, c'est restitué en tant qu'*
 </ul>
 ```
 
---
+---
+layout: default
+---
 
 ## Des directives Angular
 
@@ -117,13 +145,17 @@ Après avoir "build" l'appli avec des tâches Gulp, c'est restitué en tant qu'*
 </ion-slide-box>
 ```
 
---
+---
+layout: default
+---
 
 ## Une gestion fine des devices
 
 Adaptation de l'interface en fonction de l'OS et des versions (iOS vs Android).
 
---
+---
+layout: default
+---
 
 ## Un lien entre natif et Web via Cordova
 
@@ -137,7 +169,9 @@ angular.module('mySuperApp', ['ionic'])
   });
 ```
 
---
+---
+layout: default
+---
 
 ## Un CLI bien fourni
 
@@ -149,9 +183,13 @@ ionic run ios        # Run sur device iOS
 ```
 
 ---
+layout: section
+---
 
 # Retour d'expérience sur les projets hybrides à Niji
 
+---
+layout: default
 ---
 
 ## Pourquoi l'hybride en premier lieu ?
@@ -160,6 +198,8 @@ ionic run ios        # Run sur device iOS
 - Demande explicite des clients
 - Retours positifs après les premiers projets → mis en avant par Niji
 
+---
+layout: default
 ---
 
 ## Épisode 1 — Natixis Rouler Serein
@@ -170,6 +210,8 @@ ionic run ios        # Run sur device iOS
 - Problèmes majeurs d'interface sur Android (WebView) ← **point noir**
 
 ---
+layout: default
+---
 
 ## Épisode 2 — ERDF A mes côtés
 
@@ -178,6 +220,8 @@ ionic run ios        # Run sur device iOS
 - Évolution sur la techno grâce aux experts Angular
 - Gain notable en performance grâce à **CrossWalk** (WebView custom)
 
+---
+layout: default
 ---
 
 ## Épisode 3 — Aon Auto
@@ -190,6 +234,8 @@ ionic run ios        # Run sur device iOS
 > "Rouler serein ? Pas tout le temps."
 
 ---
+layout: default
+---
 
 ## Finalement…
 
@@ -198,6 +244,8 @@ ionic run ios        # Run sur device iOS
 - 🌍 La communauté Cordova/Ionic est très active
 - 👀 Ionic 2 (basé sur Angular 2) à suivre — **3× plus performant**
 
+---
+layout: default
 ---
 
 ## Ionic 2
@@ -209,14 +257,16 @@ ionic run ios        # Run sur device iOS
 **Affaire à suivre !**
 
 ---
-<!-- .slide: data-background-color="#2D5C55" -->
+layout: center
+---
 
 ## Demo time !
 
 ### ERDF — A mes côtés
 
 ---
-<!-- .slide: data-background-color="#00574a" -->
+layout: section
+---
 
 ## Merci !
 
