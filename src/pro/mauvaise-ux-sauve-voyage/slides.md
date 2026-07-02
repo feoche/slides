@@ -1,11 +1,12 @@
 ---
+theme: ../../../src/_theme
+colorSchema: auto
 title: "Comment une mauvaise UX a sauvé mon voyage"
 info: "Ah, les vacances, on se dit que le travail est loin, on laisse ses préoccupations derrière nous...Mais chassez le naturel, il revient au galop ! Tiré d'une histoire vraie d'un 'Ébéniste du Web' en galère ultime, laissez-moi vous narrer comment il ne faut pas prendre à la légère les sujets d'ergonomie des interfaces !"
 duration: 15min
 keywords: ux, user-experience, design, reservation, tokyo, humor
+author: "François Eoche"
 ---
-
-<!-- .slide: data-background-color="#00574a" -->
 
 # Comment une mauvaise UX a sauvé mon voyage
 
@@ -15,11 +16,11 @@ Qui aurait cru qu'un formulaire viendrait entâcher le tableau ?
 
 Tiré d'une histoire vraie d'un "Ébéniste du Web" en galère ultime, laissez-moi vous narrer comment il ne faut pas prendre des sujets d'ergonomie des interfaces à la légère !
 
-
 **François Eoche**
 
 ---
-<!-- .slide: data-background-color="#00574a" -->
+layout: intro
+---
 
 ## Qui suis-je ?
 
@@ -31,78 +32,91 @@ Tiré d'une histoire vraie d'un "Ébéniste du Web" en galère ultime, laissez-m
 - Passionné de UX & accessibilité web
 
 ---
-<!-- .slide: data-background-color="#003D34" -->
+layout: section
+---
 
 ## Je suis au Japon et je veux visiter 🇯🇵
 
 ---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341124/pasted-from-clipboard.png
+---
 
 ## Kyoto → Tokyo, je prépare ma semaine
 
-![Carte Kyoto-Tokyo](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341124/pasted-from-clipboard.png)
-
+---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341040/pasted-from-clipboard.png
 ---
 
 ## Voir la ville de haut ?
 
 # 🗼 Allons à la Tokyo Sky Tree !
 
-![Tokyo Skytree](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341040/pasted-from-clipboard.png)
-
+---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341049/Screenshot_2024-05-16_at_18-49-13_TOKYO_SKYTREE_-_Online_reservation___Purchase_site_LINKTIVITY_Activity_Reservation_System.png
 ---
 
 ## Let's go ! Le formulaire de réservation
 
-![Formulaire étape 1](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341049/Screenshot_2024-05-16_at_18-49-13_TOKYO_SKYTREE_-_Online_reservation___Purchase_site_LINKTIVITY_Activity_Reservation_System.png)
-
+---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341057/pasted-from-clipboard.png
 ---
 
 ## La date et l'heure, OK — On s'inscrit !
 
-![Formulaire étape 2](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341057/pasted-from-clipboard.png)
-
+---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341062/pasted-from-clipboard.png
 ---
 
 ## La date et l'heure, OK — On s'inscrit !
 
-![Formulaire étape 3](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341062/pasted-from-clipboard.png)
-
+---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341062/pasted-from-clipboard.png
 ---
 
 ## La date et l'heure, OK — On s'inscrit ! ×2
 
 *(parce qu'on est deux)*
 
-![Formulaire x2](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341062/pasted-from-clipboard.png)
-
+---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341071/pasted-from-clipboard.png
 ---
 
 ## La date et l'heure, OK — On s'inscrit !
 
-![Formulaire étape 4](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341071/pasted-from-clipboard.png)
-
+---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341080/pasted-from-clipboard.png
 ---
 
 ## ENFIN, on voit la fin !
 
-![Presque fini](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341080/pasted-from-clipboard.png)
-
+---
+layout: image
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341091/pasted-from-clipboard.png
 ---
 
 ## POUR QU'AU FINAL...
 
-![Le twist](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341091/pasted-from-clipboard.png)
-
+---
+layout: image-full
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341102/pasted-from-clipboard.png
 ---
 
-![Résultat](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341102/pasted-from-clipboard.png)
-
+---
+layout: image-full
+image: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341117/tokyo-skytree-clouds.jpg
 ---
 
-![Tokyo Skytree dans les nuages](https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341117/tokyo-skytree-clouds.jpg)
-
 ---
-<!-- .slide: data-background-color="#00574a" -->
+layout: center
+---
 
 ## Merci !
 
