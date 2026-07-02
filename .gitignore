@@ -1,10 +1,13 @@
 # Dependencies
 /node_modules
+**/node_modules/
 /.pnpm-store
 
 # Build artifacts
 /dist
 /.vuepress/dist
+**/.slidev/
+**/dist/
 
 # Logs
 *.log
