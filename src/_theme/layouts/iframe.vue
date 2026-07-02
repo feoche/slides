@@ -10,7 +10,8 @@ const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`)
 </script>
 
 <template>
-  <div class="iframe">
+  <div class="slidev-layout iframe default">
+    <slot/>
     <div class="iframe-container"
          :style="{ width: scaleInvertPercent }">
       <span class="iframe-header">
@@ -44,7 +45,6 @@ const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`)
 .iframe {
   @apply h-full;
   width: calc(100% - 2.5rem);
-  height: calc(100% - 2.5rem);
 }
 
 .iframe-container {
