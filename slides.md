@@ -197,17 +197,6 @@ This layout uses the entire slide area for content.
 <!-- Speaker Notes -->
 
 ---
-layout: fact
----
-
-## Fact Layout
-### A cool subtitle
-
-This layout is designed for presenting facts or statistics.
-
-<!-- Speaker Notes -->
-
----
 layout: center
 ---
 
@@ -215,6 +204,17 @@ layout: center
 ### A cool subtitle
 
 Presentation slides for developers
+
+<!-- Speaker Notes -->
+
+---
+layout: fact
+---
+
+## Fact Layout
+### A cool subtitle
+
+This layout is designed for presenting facts or statistics.
 
 <!-- Speaker Notes -->
 
@@ -230,6 +230,15 @@ layout: quote
 > — Steve Jobs
 
 <!-- Speaker Notes -->
+
+---
+layout: image-full
+image: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
+backgroundSize: contain
+---
+
+<!-- Speaker Notes -->
+
 
 ---
 layout: image
@@ -257,16 +266,16 @@ layout: image-right
 image: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
 ---
 
----
-layout: image-full
-image: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
-backgroundSize: contain
----
-
 ## Image Right
 ### A cool subtitle
 
 This is an image on the right
+
+---
+layout: iframe-full
+url: https://francoiseoche.fr/
+iframeTitle: Website
+---
 
 <!-- Speaker Notes -->
 
@@ -349,7 +358,117 @@ This shows on the right
 
 <!-- Speaker Notes -->
 
+---
+layout: three-cols
+---
 
+::left::
+
+### Left
+
+This shows on the left
+
+::center::
+
+### Center
+
+This shows in the center
+
+::right::
+
+### Right
+
+This shows on the right
+
+::bottom::
+
+#### This spans all three columns
+
+<!-- Speaker Notes -->
+
+---
+layout: three-cols-header
+---
+
+## This spans all columns
+### A cool subtitle
+
+::left::
+
+### Left
+
+This shows on the left
+
+::center::
+
+### Center
+
+This shows in the center
+
+::right::
+
+### Right
+
+This shows on the right
+
+<!-- Speaker Notes -->
+
+---
+layout: three-rows
+---
+
+::top::
+
+### Top
+
+This shows on the top
+
+::center::
+
+### Center
+
+This shows in the center
+
+::bottom::
+
+### Bottom
+
+This shows on the bottom
+
+<!-- Speaker Notes -->
+
+---
+layout: six-cells-header
+---
+
+## This spans all cells
+### A cool subtitle
+
+::top-left::
+
+#### Top left
+
+::top-center::
+
+#### Top center
+
+::top-right::
+
+#### Top right
+
+::bottom-left::
+
+#### Bottom left
+
+::bottom-center::
+
+#### Bottom center
+
+::bottom-right::
+
+#### Bottom right
+
+<!-- Speaker Notes -->
 
 ---
 foo: bar
@@ -406,7 +525,7 @@ Double-click on the draggable elements to edit their positions.
 
 You can create diagrams / graphs from textual descriptions, directly in your Markdown.
 
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
+<div class="grid grid-cols-4 gap-5 -mb-6">
 
 ```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
 sequenceDiagram
