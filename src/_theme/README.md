@@ -31,9 +31,100 @@ Learn more about [how to use a theme](https://sli.dev/guide/theme-addon#use-them
 
 ## Layouts
 
-This theme provides the following layouts:
+### three-cols
 
-> TODO:
+Three columns (`1fr 2fr 1fr`) with an optional spanning bottom row. Add `layoutClass: centered` to vertically/horizontally center each column.
+
+```md
+---
+layout: three-cols
+---
+::left::
+Left
+::center::
+Center
+::right::
+Right
+::bottom::
+Spans all columns
+```
+
+### three-cols-header
+
+Full-width header (default slot) above three equal columns.
+
+```md
+---
+layout: three-cols-header
+---
+# Header
+::left::
+Left
+::center::
+Center
+::right::
+Right
+```
+
+### three-rows
+
+Three stacked, vertically centered rows.
+
+```md
+---
+layout: three-rows
+---
+::top::
+Top
+::center::
+Center
+::bottom::
+Bottom
+```
+
+### six-cells-header
+
+Full-width header above a 2×3 grid of cells.
+
+```md
+---
+layout: six-cells-header
+---
+# Header
+::top-left::
+TL
+::top-center::
+TC
+::top-right::
+TR
+::bottom-left::
+BL
+::bottom-center::
+BC
+::bottom-right::
+BR
+```
+
+### screenshot
+
+A device-framed screenshot flanked by two columns. Set `layoutClass` to `laptop` (default) or `mobile`, and `screenshot` to the image path.
+
+```md
+---
+layout: screenshot
+layoutClass: laptop
+screenshot: /my-shot.png
+---
+::left::
+Context
+::right::
+Notes
+```
+
+### Utility layouts
+
+- `none` — bare slot passthrough with no chrome.
+- `404` / `error` — used internally by Slidev.
 
 ## Components
 
