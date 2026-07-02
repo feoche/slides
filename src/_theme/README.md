@@ -105,22 +105,6 @@ BC
 BR
 ```
 
-### screenshot
-
-A device-framed screenshot flanked by two columns. Set `layoutClass` to `laptop` (default) or `mobile`, and `screenshot` to the image path.
-
-```md
----
-layout: screenshot
-layoutClass: laptop
-screenshot: /my-shot.png
----
-::left::
-Context
-::right::
-Notes
-```
-
 ### Utility layouts
 
 - `none` — bare slot passthrough with no chrome.
