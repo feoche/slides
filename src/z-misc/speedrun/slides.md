@@ -1,13 +1,27 @@
+---
+theme: ../../../src/_theme
+colorSchema: auto
+title: "Le SpeedRun — Présentation"
+author: "François Eoche"
+htmlAttrs:
+  lang: fr
+layout: cover
+---
+
 # Le SpeedRun
 
 ## Introduction
 
+---
+layout: intro
 ---
 
 ## SpeedRennes
 
 Collectif visant à promouvoir les événements autour du **Speedrun** et du **TAS**.
 
+---
+layout: section
 ---
 
 # Le Speedrun — Qu'est-ce que c'est ?
@@ -28,6 +42,8 @@ De la même manière, le but est de **finir un jeu le plus rapidement possible**
 
 Il existe des compétitions, des marathons, des catégories, des classements et des records à battre !
 
+---
+layout: section
 ---
 
 # Le Speedrun — Les débuts
@@ -107,6 +123,8 @@ La référence actuelle pour le speedrun.
 - Le top du top pour être au courant des nouveaux speedruns 🎮
 
 ---
+layout: section
+---
 
 # Le Speedrun — Le lexique
 
@@ -182,6 +200,8 @@ Pour les longs jeux, c'est compliqué de faire parfait en un run !
 - **WR** (*World Record*) : Le record du monde actuel
 
 ---
+layout: section
+---
 
 # Le Tool Assisted Speedrun
 
@@ -204,17 +224,23 @@ Trouver des **limites théoriques** au jeu, avec un "speedrun parfait", grâce �
 - Communauté : [TASVideos.org](https://tasvideos.org)
 
 ---
+layout: center
+---
 
 ## Le TAS — 4 Super Mario
 
 *Démonstration en vidéo*
 
 ---
+layout: center
+---
 
 ## Le TAS — C'est aussi de l'art
 
 Des TAS conçus pour être **divertissants** plutôt que juste rapides.
 
+---
+layout: section
 ---
 
 # Le Speedrun en France
@@ -267,16 +293,21 @@ Le French Restream · Ultime Décathlon · SpeedRennes
 Son Of A Glitch · Off Camera Secrets
 
 ---
+layout: center
+---
 
 ## Merci !
 
 *Questions ? Débat !* 🎮
 
-
+---
+layout: section
 ---
 
 ## Le Speedrun Introduction
 
+---
+layout: intro
 ---
 
 ## SpeedRennes
@@ -299,6 +330,8 @@ Aller vite... La compétition dans différents domaines (notamment dans le sport
 
 ...mais dans les jeux vidéo De la même manière, le but est de finir un jeu le plus rapidement possible Aussi, il existe des compétitions, des marathons, des catégories, des classements et des records à battre !
 
+---
+layout: section
 ---
 
 ## Le Speedrun Les débuts
@@ -325,7 +358,7 @@ Aller vite... La compétition dans différents domaines (notamment dans le sport
 
 ## Slide 10
 
-1998 - Speed Demos Archive A la base, recensement des vidéos de speedrun de Quake Mise en place d’événements : Quake done Quick , Quake done quicker ,...puis d'autres comme l'AGDQ/SGDQ Ajout de vidéos via des cartes d'acquision désormais
+1998 - Speed Demos Archive A la base, recensement des vidéos de speedrun de Quake Mise en place d'événements : Quake done Quick , Quake done quicker ,...puis d'autres comme l'AGDQ/SGDQ Ajout de vidéos via des cartes d'acquision désormais
 
 ---
 
@@ -351,6 +384,8 @@ Aller vite... La compétition dans différents domaines (notamment dans le sport
 
 2013 - Speedrun.com La référence actuelle pour le speedrun Des leaderboards fournis sur beaucoup de jeux (avec vidéos !) Le top du top pour être au courant des nouveaux speedruns :)
 
+---
+layout: section
 ---
 
 ## Le Speedrun Le lexique
@@ -398,6 +433,8 @@ Segments Faire des longs jeux de manière parfaite, c'est compliqué ! Single-se
 Pêle-mêle, du bonus ! Frame : Une image du jeu PB (Personal Best) : Meilleur temps du joueur Split : "Morceau" du speedrun (chapitre, niveau, ...) Route/ing : Grandes lignes d'un tracé du speedrun OOB (Out Of Bounds) : Utiliser un bug pour sortir en dehors des limites physiques du jeu Pause buffer : utiliser la pause du jeu pour réussir une technique à la frame près Warp : Méthode pour éviter des niveaux Damage boost : Prendre des dégats pour avoir un boost ...
 
 ---
+layout: section
+---
 
 ## Le Tool Assisted Speedrun
 
@@ -405,20 +442,26 @@ Pêle-mêle, du bonus ! Frame : Une image du jeu PB (Personal Best) : Meilleur t
 
 ## Slide 24
 
-Le TAS Le speedrun, version cyborg Trouver des limites théoriques au jeu, avec un "speedrun parfait", avec comme techniques utilisées : Utilisation/optimisation du speedrun image par image Possibilité de rembobiner au cours de la partie Utilisation totale des touches du contrôleur (par ex. les touches ⬅️ et ➡️ en même temps) Manipulation d’événements aléatoires pour avoir un résultat adéquat Manipulation de l'exécution du jeu (via la mémoire)
+Le TAS Le speedrun, version cyborg Trouver des limites théoriques au jeu, avec un "speedrun parfait", avec comme techniques utilisées : Utilisation/optimisation du speedrun image par image Possibilité de rembobiner au cours de la partie Utilisation totale des touches du contrôleur (par ex. les touches ⬅️ et ➡️ en même temps) Manipulation d'événements aléatoires pour avoir un résultat adéquat Manipulation de l'exécution du jeu (via la mémoire)
 
 ---
 
 ## Le TAS - Les outils
 
 ---
+layout: center
+---
 
 ## Le TAS - 4 Super Mario
 
 ---
+layout: center
+---
 
 ## Le TAS - C'est aussi de l'art
 
+---
+layout: section
 ---
 
 ## Le Speedrun En France
@@ -427,13 +470,13 @@ Le TAS Le speedrun, version cyborg Trouver des limites théoriques au jeu, avec 
 
 ## Slide 29
 
-Speed Them All Association pour la promotion et le partage du speedrun Communauté de speedrunners Organisation d’événements en physique ou sur Twitch Promouvoir le speedrun comme étant une profession Proposer des tutoriels pour s'initier au speedrun
+Speed Them All Association pour la promotion et le partage du speedrun Communauté de speedrunners Organisation d'événements en physique ou sur Twitch Promouvoir le speedrun comme étant une profession Proposer des tutoriels pour s'initier au speedrun
 
 ---
 
 ## Slide 30
 
-Team SuperPlayLive Collectif de speedrunners et de superplayers Elle est présente sur des événements de speedrun (Stunfest,...) Organisation d’événements en physique ou sur Twitch Une communauté sympa :)
+Team SuperPlayLive Collectif de speedrunners et de superplayers Elle est présente sur des événements de speedrun (Stunfest,...) Organisation d'événements en physique ou sur Twitch Une communauté sympa :)
 
 ---
 
@@ -454,6 +497,8 @@ L'Ultime Décathlon Compétition de speedrun sur différents jeux Organisé par 
 Crédits Speed Demos Archive Speedrun.com TASVideos Summoning Salt Games Done Quick SpeedThemAll SuperPlayLive Le French Restream Ultime Décathlon SpeedRennes S on Of A Glitch Off Camera Secrets
 
 ---
+layout: center
+---
 
 ## Slide 34
 
@@ -464,5 +509,3 @@ Merci ! Questions? Débat !
 ## Slide 35
 
 More from François Eoche Comment une mauvaise UX a sauvé mon voyage François Eoche 375 Les bookmarklets, c'est chouette ! François Eoche 450 Very Tech Trip - Design System for techs François Eoche 537 François Eoche François Eoche 119
-
----
