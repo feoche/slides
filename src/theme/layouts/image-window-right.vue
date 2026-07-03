@@ -2,6 +2,7 @@
 defineProps<{
   image: string;
   objectFit?: string;
+  type?: "desktop" | "mobile";
 }>();
 </script>
 
@@ -14,6 +15,7 @@ defineProps<{
       :src="image"
       :object-fit="objectFit"
       :title="$frontmatter.iframeTitle"
+      :type="type"
     />
   </div>
 </template>

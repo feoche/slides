@@ -2,13 +2,19 @@
 defineProps<{
   url: string;
   scale?: number;
+  type?: "desktop" | "mobile";
 }>();
 </script>
 
 <template>
   <div class="slidev-layout iframe default">
     <slot />
-    <Window :src="url" :scale="scale" :title="$frontmatter.iframeTitle" />
+    <Window
+      :src="url"
+      :scale="scale"
+      :title="$frontmatter.iframeTitle"
+      :type="type"
+    />
   </div>
 </template>
 
