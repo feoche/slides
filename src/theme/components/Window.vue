@@ -25,10 +25,10 @@ const resolvedType = computed<"iframe" | "image">(
 
 const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
 
-// Image windows hug the contained image: the window shrinks to the image's
-// displayed size (plus chrome) so no background bars show around it. This
-// needs the image's aspect ratio, which CSS shrink-to-fit can't use, so the
-// box is measured and sized here.
+// Image windows fill the available height via CSS; the image fills that height
+// at its natural aspect ratio. CSS shrink-to-fit can't match the window width
+// to the height-scaled image, so only the width is set here (height stays 100%
+// in CSS) — the chrome hugs the image with no side bars.
 const root = ref<HTMLElement | null>(null);
 const header = ref<HTMLElement | null>(null);
 const subheader = ref<HTMLElement | null>(null);
@@ -40,32 +40,24 @@ function fitImage() {
   if (resolvedType.value !== "image" || !el || !image || !image.naturalWidth)
     return;
 
-  // Fill the available area, then measure it.
+  // Measure the available area, then set the width to the image's displayed
+  // width (capped to the area). Height is left to CSS (100%).
   el.style.width = "100%";
-  el.style.height = "100%";
   const availW = el.clientWidth;
   const chromeH =
     (header.value?.offsetHeight ?? 0) + (subheader.value?.offsetHeight ?? 0);
   const availH = el.clientHeight - chromeH;
   if (availW <= 0 || availH <= 0) return;
 
-  // Fit the image into the area preserving its aspect ratio, then wrap.
   const ratio = image.naturalWidth / image.naturalHeight;
-  let w = availW;
-  let h = w / ratio;
-  if (h > availH) {
-    h = availH;
-    w = h * ratio;
-  }
-  el.style.width = `${Math.round(w)}px`;
-  el.style.height = `${Math.round(h + chromeH)}px`;
+  el.style.width = `${Math.min(availW, Math.round(availH * ratio))}px`;
 }
 
 let observer: ResizeObserver | null = null;
 
 onMounted(() => {
   fitImage();
-  // Observe the parent (the available area); our own size changes must not
+  // Observe the parent (the available area); our own width change must not
   // feed back into the observer.
   if (typeof ResizeObserver !== "undefined" && root.value?.parentElement) {
     observer = new ResizeObserver(() => fitImage());
@@ -170,19 +162,22 @@ watch(
   }
 }
 
-/* Image windows hug the contained image (sized in fitImage) and center in
-   their available area. The image fills the wrapped content box exactly. */
+/* Image windows fill the available height and center in their area; the image
+   fills that height at its natural aspect ratio. The window width is set to the
+   image's displayed width in script (see fitImage) so the chrome hugs the
+   image. Default width is 100% for the no-JS / pre-hydration case. */
 .window--image {
   display: flex;
   flex-direction: column;
-  height: auto;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   margin: auto;
 
   .window-img {
     display: block;
-    flex: 1 1 auto;
+    flex: 1 1 0;
     min-height: 0;
     width: 100%;
   }
