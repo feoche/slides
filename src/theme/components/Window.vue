@@ -45,7 +45,6 @@ const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
     </span>
     <iframe
       v-if="resolvedType === 'iframe'"
-      id="frame"
       :src="src"
       :style="
         scale
