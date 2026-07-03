@@ -10,7 +10,7 @@ defineProps<{
     <div class="slidev-layout default" v-bind="$attrs">
       <slot />
     </div>
-    <Window
+    <DesktopWindow
       :src="image"
       :object-fit="objectFit"
       :title="$frontmatter.iframeTitle"
@@ -23,5 +23,10 @@ defineProps<{
   @apply grid grid-cols-2;
   width: calc(100% - 2.5rem);
   height: calc(100% - 2.5rem);
+
+  .window {
+    height: calc(100% - 2.5rem);
+    margin: 2.5rem auto;
+  }
 }
 </style>

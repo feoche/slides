@@ -8,7 +8,7 @@ defineProps<{
 <template>
   <div class="slidev-layout image-window default">
     <slot />
-    <Window
+    <DesktopWindow
       :src="image"
       :object-fit="objectFit"
       :title="$frontmatter.iframeTitle"
