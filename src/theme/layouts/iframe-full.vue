@@ -7,13 +7,16 @@ defineProps<{
 
 <template>
   <div class="iframe">
-    <Window :src="url" :scale="scale" :title="$frontmatter.iframeTitle" />
+    <DesktopWindow
+      :src="url"
+      :scale="scale"
+      :title="$frontmatter.iframeTitle"
+    />
   </div>
 </template>
 
 <style>
 .iframe {
-  @apply h-full;
   width: calc(100% - 2.5rem);
   height: calc(100% - 2.5rem);
 }

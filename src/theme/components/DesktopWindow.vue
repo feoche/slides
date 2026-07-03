@@ -123,26 +123,27 @@ watch(
 <style>
 .window {
   @apply relative w-full h-full m-4 mb-0 rounded-2 overflow-hidden bg-[--color-green] border-1 border-gray box-sizing-border-box shadow-2xl;
-  height: calc(100% - 1.5rem);
 
   .window-header {
-    @apply flex bg-[--color-deep-green] color-[--color-cream] py-1.5 px-2 rounded-t-md place-content-between place-items-center overflow-hidden;
-  }
+    @apply flex flex-0 bg-[--color-deep-green] color-[--color-cream] py-1.5 px-2 rounded-t-md place-content-between place-items-center overflow-hidden;
+    flex: 0 0 auto;
 
-  .window-title {
-    @apply flex font-bold mx-1 color-[--color-cream];
-  }
+    .window-title {
+      @apply flex font-bold mx-1 color-[--color-cream];
+    }
 
-  .window-controls {
-    @apply flex gap-1;
+    .window-controls {
+      @apply flex gap-1;
 
-    & > span {
-      @apply w-5 h-5 inline-flex items-center justify-center rounded-full bg-gray-200 font-sm opacity-50 color-[--color-deep-green];
+      & > span {
+        @apply w-5 h-5 inline-flex items-center justify-center rounded-full bg-gray-200 font-sm opacity-50 color-[--color-deep-green];
+      }
     }
   }
 
   .window-subheader {
     @apply flex bg-gray-200 color-gray gap-2 p-1;
+    flex: 0 0 auto;
 
     .window-subcontrols {
       @apply flex gap-1 lh-1;
@@ -169,15 +170,13 @@ watch(
 .window--image {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
+  flex: 1 1 auto;
   margin: auto;
 
   .window-img {
     display: block;
-    flex: 1 1 0;
+    flex: 1 1 auto;
+    height: calc(100% - 2.5rem);
     min-height: 0;
     width: 100%;
   }

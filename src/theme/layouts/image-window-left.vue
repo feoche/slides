@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="image-window-left">
-    <Window
+    <DesktopWindow
       :src="image"
       :object-fit="objectFit"
       :title="$frontmatter.iframeTitle"
@@ -22,5 +22,10 @@ defineProps<{
 .image-window-left {
   @apply w-full grid grid-cols-2;
   height: calc(100% - 2.5rem);
+
+  .window {
+    @apply my-[2.5rem] mx-auto;
+    height: calc(100% - 2.5rem);
+  }
 }
 </style>
