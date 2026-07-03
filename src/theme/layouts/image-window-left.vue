@@ -2,6 +2,7 @@
 defineProps<{
   image: string;
   objectFit?: string;
+  type?: "desktop" | "mobile";
 }>();
 </script>
 
@@ -11,6 +12,7 @@ defineProps<{
       :src="image"
       :object-fit="objectFit"
       :title="$frontmatter.iframeTitle"
+      :type="type"
     />
     <div class="slidev-layout default" v-bind="$attrs">
       <slot />

@@ -2,6 +2,7 @@
 defineProps<{
   image: string;
   objectFit?: string;
+  type?: "desktop" | "mobile";
 }>();
 </script>
 
@@ -11,14 +12,16 @@ defineProps<{
       :src="image"
       :object-fit="objectFit"
       :title="$frontmatter.iframeTitle"
+      :type="type"
     />
   </div>
 </template>
 
 <style>
 .image-window-full {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: calc(100% - 2.5rem);
   height: calc(100% - 2.5rem);
 }

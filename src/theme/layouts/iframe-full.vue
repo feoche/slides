@@ -2,12 +2,18 @@
 defineProps<{
   url: string;
   scale?: number;
+  type?: "desktop" | "mobile";
 }>();
 </script>
 
 <template>
   <div class="iframe">
-    <Window :src="url" :scale="scale" :title="$frontmatter.iframeTitle" />
+    <Window
+      :src="url"
+      :scale="scale"
+      :title="$frontmatter.iframeTitle"
+      :type="type"
+    />
   </div>
 </template>
 
