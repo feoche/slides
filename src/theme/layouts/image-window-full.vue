@@ -17,7 +17,8 @@ defineProps<{
 
 <style>
 .image-window-full {
-  @apply h-full;
+  display: grid;
+  place-items: center;
   width: calc(100% - 2.5rem);
   height: calc(100% - 2.5rem);
 }

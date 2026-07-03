@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import {
+  computed,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  watch,
+  nextTick,
+} from "vue";
 
 const props = defineProps<{
   src: string;
@@ -17,22 +24,79 @@ const resolvedType = computed<"iframe" | "image">(
 );
 
 const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
+
+// Image windows hug the contained image: the window shrinks to the image's
+// displayed size (plus chrome) so no background bars show around it. This
+// needs the image's aspect ratio, which CSS shrink-to-fit can't use, so the
+// box is measured and sized here.
+const root = ref<HTMLElement | null>(null);
+const header = ref<HTMLElement | null>(null);
+const subheader = ref<HTMLElement | null>(null);
+const img = ref<HTMLImageElement | null>(null);
+
+function fitImage() {
+  const el = root.value;
+  const image = img.value;
+  if (resolvedType.value !== "image" || !el || !image || !image.naturalWidth)
+    return;
+
+  // Fill the available area, then measure it.
+  el.style.width = "100%";
+  el.style.height = "100%";
+  const availW = el.clientWidth;
+  const chromeH =
+    (header.value?.offsetHeight ?? 0) + (subheader.value?.offsetHeight ?? 0);
+  const availH = el.clientHeight - chromeH;
+  if (availW <= 0 || availH <= 0) return;
+
+  // Fit the image into the area preserving its aspect ratio, then wrap.
+  const ratio = image.naturalWidth / image.naturalHeight;
+  let w = availW;
+  let h = w / ratio;
+  if (h > availH) {
+    h = availH;
+    w = h * ratio;
+  }
+  el.style.width = `${Math.round(w)}px`;
+  el.style.height = `${Math.round(h + chromeH)}px`;
+}
+
+let observer: ResizeObserver | null = null;
+
+onMounted(() => {
+  fitImage();
+  // Observe the parent (the available area); our own size changes must not
+  // feed back into the observer.
+  if (typeof ResizeObserver !== "undefined" && root.value?.parentElement) {
+    observer = new ResizeObserver(() => fitImage());
+    observer.observe(root.value.parentElement);
+  }
+});
+
+onBeforeUnmount(() => observer?.disconnect());
+
+watch(
+  () => [props.src, props.type],
+  () => nextTick(fitImage),
+);
 </script>
 
 <template>
   <div
+    ref="root"
     class="window"
+    :class="{ 'window--image': resolvedType === 'image' }"
     :style="resolvedType === 'iframe' ? { width: scaleInvertPercent } : {}"
   >
-    <span class="window-header">
-      <span class="window-title">{{ title || "Window" }}</span>
+    <span ref="header" class="window-header">
+      <span class="window-title">{{ title }}</span>
       <span class="window-controls">
         <span>−</span>
         <span class="text-sm">⧉</span>
         <span>×</span>
       </span>
     </span>
-    <span class="window-subheader">
+    <span ref="subheader" class="window-subheader">
       <span class="window-subcontrols">
         <span>←</span>
         <span>→</span>
@@ -55,9 +119,11 @@ const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
     />
     <img
       v-else
+      ref="img"
       :src="src"
-      class="w-full h-full object-top"
-      :style="{ objectFit: objectFit || 'cover' }"
+      class="window-img"
+      :style="{ objectFit: objectFit || 'contain' }"
+      @load="fitImage"
     />
   </div>
 </template>
@@ -101,6 +167,24 @@ const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
 
   iframe {
     @apply w-full h-full;
+  }
+}
+
+/* Image windows hug the contained image (sized in fitImage) and center in
+   their available area. The image fills the wrapped content box exactly. */
+.window--image {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+
+  .window-img {
+    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
   }
 }
 </style>
