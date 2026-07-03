@@ -1,16 +1,20 @@
 <script setup lang="ts">
 defineProps<{
-  image: string
-  objectFit?: string
-}>()
+  image: string;
+  objectFit?: string;
+}>();
 </script>
 
 <template>
   <div class="image-window-right">
     <div class="slidev-layout default" v-bind="$attrs">
-      <slot/>
+      <slot />
     </div>
-    <Window :src="image" :object-fit="objectFit" :title="$frontmatter.iframeTitle" />
+    <Window
+      :src="image"
+      :object-fit="objectFit"
+      :title="$frontmatter.iframeTitle"
+    />
   </div>
 </template>
 
