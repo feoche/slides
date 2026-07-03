@@ -110,9 +110,12 @@ watch(
 
 <template>
   <!-- Mobile phone frame -->
-  <div v-if="device === 'mobile'" class="mobile">
+  <div
+    v-if="device === 'mobile'"
+    class="mobile"
+    :style="renderAs === 'iframe' ? { width: scaleInvertPercent } : {}"
+  >
     <div class="mobile-frame">
-      <div class="mobile-notch"></div>
       <div class="mobile-screen">
         <div class="mobile-bar">
           <span class="mobile-bar-icon">🔒</span>
@@ -259,53 +262,54 @@ watch(
 /* Mobile phone frame: fixed aspect ratio, sized purely in CSS. */
 .mobile {
   @apply flex h-full w-full items-center justify-center;
-}
 
-.mobile-frame {
-  @apply relative flex flex-col overflow-hidden bg-[--color-deep-green] shadow-2xl;
-  aspect-ratio: 10 / 20;
-  height: 100%;
-  max-height: 100%;
-  max-width: 100%;
-  padding: 0.55rem;
-  border-radius: 2.25rem;
-  border: 2px solid #0003;
+  .mobile-frame {
+    @apply relative flex flex-col overflow-hidden bg-[--color-deep-green] shadow-2xl box-sizing-border-box;
+    aspect-ratio: 10 / 20;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 0.55rem;
+    border-radius: 2.25rem;
+    border: 2px solid #0003;
 
-  .mobile-notch {
-    @apply absolute top-0 left-1/2 z-10 bg-[--color-deep-green];
-    width: 32%;
-    height: 1.1rem;
-    transform: translateX(-50%);
-    border-bottom-left-radius: 0.7rem;
-    border-bottom-right-radius: 0.7rem;
-  }
-
-  .mobile-screen {
-    @apply relative flex flex-1 flex-col overflow-hidden bg-[--color-cream];
-    border-radius: 1.75rem;
-    min-height: 0;
-  }
-
-  .mobile-bar {
-    @apply flex items-center gap-2 bg-gray-200 color-[--color-deep-green];
-    padding: 1.4rem 0.9rem 0.4rem;
-
-    .mobile-bar-icon {
-      @apply flex-none text-xs opacity-60;
+    &::before {
+      content: "";
+      @apply absolute top-0 left-1/2 z-10 bg-[--color-deep-green];
+      width: 32%;
+      height: 1.1rem;
+      transform: translateX(-50%);
+      border-bottom-left-radius: 0.7rem;
+      border-bottom-right-radius: 0.7rem;
     }
 
-    .mobile-url {
-      @apply flex-1 truncate rounded-full bg-[--color-cream] px-3 py-1 text-center text-xs color-[--color-deep-green];
+    .mobile-screen {
+      @apply relative flex flex-1 flex-col overflow-hidden bg-[--color-cream];
+      border-radius: 1.75rem;
+      min-height: 0;
     }
-  }
 
-  .mobile-content {
-    @apply relative flex-1;
-    min-height: 0;
+    .mobile-bar {
+      @apply flex items-center gap-2 bg-gray-200 color-[--color-deep-green];
+      padding: 1.4rem 0.9rem 0.4rem;
 
-    iframe,
-    .mobile-img {
-      @apply h-full w-full;
+      .mobile-bar-icon {
+        @apply flex-none text-xs opacity-60;
+      }
+
+      .mobile-url {
+        @apply flex-1 truncate rounded-full bg-[--color-cream] px-3 py-1 text-center text-xs color-[--color-deep-green];
+      }
+    }
+
+    .mobile-content {
+      @apply relative flex-1;
+      min-height: 0;
+
+      iframe,
+      .mobile-img {
+        @apply h-full w-full;
+      }
     }
   }
 }
