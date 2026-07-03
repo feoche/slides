@@ -1,0 +1,22 @@
+<script setup lang="ts">
+defineProps<{
+  image: string
+  objectFit?: string
+}>()
+</script>
+
+<template>
+  <div class="image-window-left">
+    <Window :src="image" :object-fit="objectFit" :title="$frontmatter.iframeTitle" />
+    <div class="slidev-layout default" v-bind="$attrs">
+      <slot/>
+    </div>
+  </div>
+</template>
+
+<style>
+.image-window-left {
+  @apply w-full grid grid-cols-2;
+  height: calc(100% - 2.5rem);
+}
+</style>
