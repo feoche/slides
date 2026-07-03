@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="image-window-left">
-    <DesktopWindow
+    <Window
       :src="image"
       :object-fit="objectFit"
       :title="$frontmatter.iframeTitle"

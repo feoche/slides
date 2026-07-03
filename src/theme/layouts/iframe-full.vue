@@ -7,11 +7,7 @@ defineProps<{
 
 <template>
   <div class="iframe">
-    <DesktopWindow
-      :src="url"
-      :scale="scale"
-      :title="$frontmatter.iframeTitle"
-    />
+    <Window :src="url" :scale="scale" :title="$frontmatter.iframeTitle" />
   </div>
 </template>
 
