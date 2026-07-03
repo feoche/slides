@@ -7,6 +7,7 @@ const props = defineProps<{
   type?: "iframe" | "image";
   scale?: number;
   objectFit?: string;
+  url?: string;
 }>();
 
 const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif)(\?.*)?$/i;
@@ -24,7 +25,7 @@ const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
     :style="resolvedType === 'iframe' ? { width: scaleInvertPercent } : {}"
   >
     <span class="window-header">
-      <span class="window-title">{{ title }}</span>
+      <span class="window-title">{{ title || "Window" }}</span>
       <span class="window-controls">
         <span>−</span>
         <span class="text-sm">⧉</span>
@@ -40,7 +41,7 @@ const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
       <input
         type="search"
         class="window-url"
-        :value="resolvedType === 'iframe' ? src : undefined"
+        :value="resolvedType === 'iframe' ? (url ?? src) : undefined"
       />
     </span>
     <iframe

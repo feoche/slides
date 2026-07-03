@@ -1,0 +1,50 @@
+.slidev-layout {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Outfit', sans-serif;
+    }
+
+    h1 {
+        @apply text-7xl fw-700;
+    }
+
+    h2 {
+        @apply text-5xl fw-600;
+    }
+
+    h3, h4, h5, h6 {
+        @apply fw-500;
+    }
+
+    h3 {
+        @apply text-4xl;
+    }
+
+    h4, h5, h6 {
+        @apply text-3xl;
+    }
+
+    a, p, li, ul, ol {
+        @apply text-3xl fw-400;
+    }
+
+    p {
+        @apply m-0;
+    }
+
+    ul, ol {
+        @apply flex flex-col gap-4 my-4;
+    }
+
+    ul {
+        @apply list-disc my-0;
+    }
+
+    a {
+        @apply fw-600 border-solid border-b-width-3;
+    }
+
+    .overflowingContentWidgets * {
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
