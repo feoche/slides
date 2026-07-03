@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from "vue";
 
 const props = defineProps<{
-  src: string
-  title?: string
-  type?: 'iframe' | 'image'
-  scale?: number
-  objectFit?: string
-}>()
+  src: string;
+  title?: string;
+  type?: "iframe" | "image";
+  scale?: number;
+  objectFit?: string;
+}>();
 
-const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif)(\?.*)?$/i
+const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif)(\?.*)?$/i;
 
-const resolvedType = computed<'iframe' | 'image'>(() =>
-  props.type ?? (IMAGE_EXT.test(props.src) ? 'image' : 'iframe'),
-)
+const resolvedType = computed<"iframe" | "image">(
+  () => props.type ?? (IMAGE_EXT.test(props.src) ? "image" : "iframe"),
+);
 
-const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`)
+const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
 </script>
 
 <template>
@@ -41,13 +41,17 @@ const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`)
         type="search"
         class="window-url"
         :value="resolvedType === 'iframe' ? src : undefined"
-      >
+      />
     </span>
     <iframe
       v-if="resolvedType === 'iframe'"
       id="frame"
       :src="src"
-      :style="scale ? { transform: `scale(${scale})`, transformOrigin: 'top left' } : {}"
+      :style="
+        scale
+          ? { transform: `scale(${scale})`, transformOrigin: 'top left' }
+          : {}
+      "
     />
     <img
       v-else

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 defineProps<{
-  url: string
-  scale?: number
-}>()
+  url: string;
+  scale?: number;
+}>();
 </script>
 
 <template>

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 defineProps<{
-  url: string
-  scale?: number
-}>()
+  url: string;
+  scale?: number;
+}>();
 </script>
 
 <template>
   <div class="iframe-right">
     <div class="slidev-layout default" v-bind="$attrs">
-      <slot/>
+      <slot />
     </div>
     <Window :src="url" :scale="scale" :title="$frontmatter.iframeTitle" />
   </div>
