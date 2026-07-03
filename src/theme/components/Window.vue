@@ -22,11 +22,30 @@ const props = defineProps<{
 
 const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif)(\?.*)?$/i;
 
-const device = computed(() => props.type ?? "desktop");
-
 const renderAs = computed<"iframe" | "image">(
   () => props.content ?? (IMAGE_EXT.test(props.src) ? "image" : "iframe"),
 );
+
+// Device auto-detected from the image aspect ratio (portrait -> mobile,
+// landscape -> desktop); iframes have no measurable ratio so default to
+// desktop. The `type` prop always overrides.
+const detected = ref<"desktop" | "mobile" | null>(null);
+
+const device = computed(() => props.type ?? detected.value ?? "desktop");
+
+function detectDevice() {
+  if (renderAs.value !== "image" || typeof Image === "undefined") {
+    detected.value = null;
+    return;
+  }
+  const probe = new Image();
+  probe.onload = () => {
+    detected.value =
+      probe.naturalHeight > probe.naturalWidth ? "mobile" : "desktop";
+    nextTick(fitImage);
+  };
+  probe.src = props.src;
+}
 
 const scaleInvertPercent = computed(() => `${(1 / (props.scale || 1)) * 100}%`);
 
@@ -68,6 +87,7 @@ function fitImage() {
 let observer: ResizeObserver | null = null;
 
 onMounted(() => {
+  detectDevice();
   fitImage();
   // Observe the parent (the available area); our own width change must not
   // feed back into the observer.
@@ -80,8 +100,11 @@ onMounted(() => {
 onBeforeUnmount(() => observer?.disconnect());
 
 watch(
-  () => [props.src, props.type, props.content],
-  () => nextTick(fitImage),
+  () => [props.src, props.content],
+  () => {
+    detectDevice();
+    nextTick(fitImage);
+  },
 );
 </script>
 
@@ -249,7 +272,7 @@ watch(
   border: 2px solid #0003;
 
   .mobile-notch {
-    @apply absolute top-0 left-1/2 z-10 bg-black;
+    @apply absolute top-0 left-1/2 z-10 bg-[--color-deep-green];
     width: 32%;
     height: 1.1rem;
     transform: translateX(-50%);
