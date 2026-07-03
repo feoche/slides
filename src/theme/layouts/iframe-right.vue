@@ -10,11 +10,7 @@ defineProps<{
     <div class="slidev-layout default" v-bind="$attrs">
       <slot />
     </div>
-    <DesktopWindow
-      :src="url"
-      :scale="scale"
-      :title="$frontmatter.iframeTitle"
-    />
+    <Window :src="url" :scale="scale" :title="$frontmatter.iframeTitle" />
   </div>
 </template>
 

@@ -10,7 +10,7 @@ defineProps<{
     <div class="slidev-layout default" v-bind="$attrs">
       <slot />
     </div>
-    <DesktopWindow
+    <Window
       :src="image"
       :object-fit="objectFit"
       :title="$frontmatter.iframeTitle"
