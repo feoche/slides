@@ -232,29 +232,28 @@ layout: quote
 <!-- Speaker Notes -->
 
 ---
-layout: image-full
-image: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
+layout: media-full
+src: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
 backgroundSize: contain
 ---
 
 <!-- Speaker Notes -->
 
-
 ---
-layout: image
-image: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
+layout: media
+src: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
 ---
 
-## Image
+## Media
 
 <!-- Speaker Notes -->
 
 ---
-layout: image-left
-image: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
+layout: media-left
+src: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
 ---
 
-## Image Left
+## Media Left
 ### A cool subtitle
 
 This is an image on the left
@@ -262,40 +261,43 @@ This is an image on the left
 <!-- Speaker Notes -->
 
 ---
-layout: image-right
-image: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
+layout: media-right
+src: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
 ---
 
-## Image Right
+## Media Right
 ### A cool subtitle
 
 This is an image on the right
 
 ---
-layout: iframe-full
-url: https://francoiseoche.fr/
-iframeTitle: Website
+layout: media-full
+window: true
+src: https://francoiseoche.fr/
+windowTitle: Website
 ---
 
 <!-- Speaker Notes -->
 
 ---
-layout: iframe
-url: https://francoiseoche.fr/
-iframeTitle: Website
+layout: media
+window: true
+src: https://francoiseoche.fr/
+windowTitle: Website
 ---
 
-## Iframe
+## Media Window
 
 <!-- Speaker Notes -->
 
 ---
-layout: iframe-left
-url: https://francoiseoche.fr/
-iframeTitle: Website
+layout: media-left
+window: true
+src: https://francoiseoche.fr/
+windowTitle: Website
 ---
 
-## Iframe Left
+## Media Window Left
 ### A cool subtitle
 
 This is an iframe on the left
@@ -303,15 +305,26 @@ This is an iframe on the left
 <!-- Speaker Notes -->
 
 ---
-layout: iframe-right
-url: https://francoiseoche.fr/
-iframeTitle: Website
+layout: media-right
+window: true
+src: https://francoiseoche.fr/
+windowTitle: Website
 ---
 
-## Iframe Right
+## Media Window Right
 ### A cool subtitle
 
 This is an iframe on the right
+
+<!-- Speaker Notes -->
+
+---
+layout: media
+window: true
+src: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
+---
+
+## Media Window (portrait → mobile frame)
 
 <!-- Speaker Notes -->
 
