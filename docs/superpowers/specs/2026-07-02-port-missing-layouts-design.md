@@ -6,7 +6,7 @@
 ## Goal
 
 Add the layouts that `slidev-theme-csscade` (`C:/dev/slidev-theme-csscade`) provides
-but the local `slidev-theme-feoche` theme (`src/_theme/`) lacks — ported to feoche's
+but the local `slidev-theme-feoche` theme (`src/theme/`) lacks — ported to feoche's
 own conventions rather than copied verbatim — plus targeted improvements.
 
 ## Context
@@ -24,15 +24,14 @@ own conventions rather than copied verbatim — plus targeted improvements.
 
 ## Scope
 
-### Layouts to add (8 new `.vue` files in `src/_theme/layouts/`)
+### Layouts to add (8 new `.vue` files in `src/theme/layouts/`)
 
 1. **three-cols** — grid `1fr 2fr 1fr`; named slots `left` / `center` / `right`
    plus optional `bottom` (aligned to grid end). Support a `.centered` layoutClass
    modifier that centers each column's content.
 2. **three-cols-header** — default slot = full-width header row; then three equal
    columns (`left` / `center` / `right`).
-3. **three-rows** — stacked `top` / `center` / `bottom` rows. **Minimal port:**
-   drop csscade's `arrow-circle` decoration and its `arrow.png` asset dependency.
+3. **three-rows** — stacked `top` / `center` / `bottom` rows.
    Clean grid consistent with feoche's other layouts.
 4. **six-cells-header** — default slot = full-width header; then a 2×3 grid with
    slots `top-left` / `top-center` / `top-right` / `bottom-left` / `bottom-center`
@@ -41,21 +40,14 @@ own conventions rather than copied verbatim — plus targeted improvements.
    selectors are `.cells-top-left` (never matching `.col-top-left`); the port uses
    consistent, matching class names.
 5. **screenshot** — device-framed image via a `screenshot` prop and a `layoutClass`
-   of `laptop` (default) or `mobile`; slots `left` / `right` flank the frame.
-   Copy `macbook-air-frame.png` and `iphone-15-pro-max-frame.png` from
-   csscade's `public/` into `src/_theme/public/`. Recolor any chrome to feoche tokens.
+   of `laptop` (default) or `mobile`; slots `left` / `right` flank the frame. Recolor any chrome to feoche tokens.
 6. **404** — utility layout; recolor teal → `--primary-color`.
 7. **error** — utility layout; keep red error styling.
 8. **none** — bare passthrough (`<slot/>` with no chrome).
 
-### Assets
-
-- Copy 2 PNGs into `src/_theme/public/`:
-  `macbook-air-frame.png`, `iphone-15-pro-max-frame.png`.
-
 ### Documentation
 
-- Add a short usage snippet per new layout to `src/_theme/README.md`.
+- Add a short usage snippet per new layout to `src/theme/README.md`.
 
 ## Conventions (apply to every ported layout)
 

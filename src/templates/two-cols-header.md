@@ -1,17 +1,24 @@
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
-## Left
-### A cool subtitle
+## Two Cols Header Layout
+### This spans both
+
+::left::
+
+### Left
 
 This shows on the left
 
 ::right::
 
-## Right
-### A cool subtitle
+### Right
 
 This shows on the right
+
+::bottom::
+
+### Footer - This spans both
 
 <!-- Speaker Notes -->

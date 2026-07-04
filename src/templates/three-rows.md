@@ -1,26 +1,23 @@
 ---
-layout: three-cols-header
+layout: three-rows
 ---
 
-## This spans all columns
-### A cool subtitle
+::top::
 
-::left::
+### Three
 
-### Left
-
-This shows on the left
+This shows on the top
 
 ::center::
 
-### Center
+### Rows
 
 This shows in the center
 
-::right::
+::bottom::
 
-### Right
+### Layout
 
-This shows on the right
+This shows on the bottom
 
 <!-- Speaker Notes -->

@@ -1,10 +1,17 @@
 ---
-layout: center
+layout: two-cols
 ---
 
-## Center Layout
+## Two Columns
 ### A cool subtitle
 
-Presentation slides for developers
+This shows on the left
+
+::right::
+
+## Layout
+### A cool subtitle
+
+This shows on the right
 
 <!-- Speaker Notes -->

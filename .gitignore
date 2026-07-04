@@ -3,6 +3,10 @@
 **/node_modules/
 /.pnpm-store
 
+# AI
+.superpowers
+.claude
+
 # Build artifacts
 /dist
 /.vuepress/dist

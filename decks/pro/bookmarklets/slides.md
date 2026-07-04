@@ -19,7 +19,7 @@ date: 2024-06-21
 keywords: bookmarklets, javascript, web development
 
 # force color schema for the slides, can be 'auto', 'light', or 'dark'
-colorSchema: light
+colorSchema: auto
 
 # duration of the presentation
 duration: 20min
@@ -45,7 +45,7 @@ seoMeta:
 
 # theme id, package name, or local path
 # Learn more: https://sli.dev/guide/theme-addon.html#use-theme
-theme: "../../../src/_theme"
+theme: "../../../src/theme"
 hideInToc: true
 addons:
   - slidev-addon-qrcode
@@ -69,34 +69,17 @@ color="transparent"
 <!-- Speaker Notes -->
 
 ---
-layout: intro
-image: https://francoiseoche.fr/assets/avatar.webp
+src: ../../_common/intro.md
 ---
-
-## {{ $slidev.configs.author }}
-
-### Web cabinetmaker
-
-* Product Owner chez OVHcloud - Design System
-* Référent accessibilité numérique
-* Développeur "front-of-the-front-end" (web & hybride)
-* Passionné d'ergonomie des interfaces
-
-<a href="https://francoiseoche.fr/" target="_blank" aria-label="Site web de {{ $slidev.configs.author }} - Ouvre dans un nouvel onglet">
-  francoiseoche.fr
-</a>
-
-<!-- Speaker Notes -->
-
+=== INTRODUCTION ===
 ---
-hideInToc: true
+src: ../../_common/disclaimer.md
 ---
-
-## Sommaire
-
-<Toc maxDepth="1"></Toc>
-
-<!-- Speaker Notes -->
+=== DISCLAIMER ===
+---
+src: ../../_common/toc.md
+---
+=== TOC ===
 
 ---
 layout: section
@@ -105,22 +88,38 @@ layout: section
 # Les bookmarklets, kézako ?
 
 ---
+layout: quote
+---
 
 ## Les bookmarklets, kézako ?
 
-Un **bookmarklet** (fr : *signapplet*, *applisignet*, *marque-page scripté*) est un petit programme JavaScript stocké :
+<style>
+p,li {
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+ul {
+    gap: 0.5rem;
+    margin: 0.3rem 0 0.7rem;
+}
+</style>
 
-- en tant qu'**URL** dans un signet (marque-page / favori)
-- en tant qu'**hyperlien** dans une page web
-
-Lors de la sélection du signet, le navigateur exécute le code JavaScript pour :
-
-- modifier le rendu graphique d'une page
-- récupérer des informations
-- interroger un moteur de recherche
-- soumettre la page à un service tiers
-
-L'URL commence par **`javascript:`** et est suivie du code à exécuter.
+> <small>_(de Wikipedia)_</small>
+> 
+> Un **bookmarklet** (fr : *signapplet*, *applisignet*, *marque-page scripté*) est un petit programme JavaScript
+> stocké :
+>
+> - en tant qu'**URL** dans un signet (marque-page / favori)
+> - en tant qu'**hyperlien** dans une page web
+>
+> Lors de la sélection du signet, le navigateur exécute le code JavaScript pour :
+>
+> - modifier le rendu graphique d'une page
+> - récupérer des informations
+> - interroger un moteur de recherche
+> - soumettre la page à un service tiers
+>
+> L'URL commence par **`javascript:`** et est suivie du code à exécuter.
 
 ---
 
@@ -131,33 +130,53 @@ L'URL commence par **`javascript:`** et est suivie du code à exécuter.
 - Qui se lance en un clic
 - Et qui fait des trucs.
 
-*(Et c'est trop bien. Oui c'est vieux — de **2001** O\_O — mais c'est bien)*
+*Et c'est trop bien.*
+
+*Oui c'est vieux — de **2001** O\_O — mais c'est bien.*
 
 ---
 layout: two-cols
 ---
 
+<style>
+ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    place-content: space-between;
+    margin: 2rem 0;
+}
+li {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
 ::left::
+
 ## Les +
-✅ Fait pour des petits scripts
 
-✅ Très léger en performance
+* ✅ Fait pour des petits scripts
 
-✅ Super facile à installer/utiliser
+* ✅ Très léger en performance
 
-✅ Pas de permissions nécessaires
+* ✅ Facile à installer/utiliser
+
+* ✅ Pas de permissions
 
 ::right::
+
 ## Les -
-⛔ Pas très connu
 
-⛔ Remplacés par les extensions
+* ⛔ Pas très connu
 
-⛔ Difficile à maintenir à jour
+* ⛔ Remplacés par extensions
 
-⛔ Problèmes de compatibilité
+* ⛔ Difficile à maintenir à jour
 
-⛔ Certains scripts bloqués
+* ⛔ Compatibilité
+
+* ⛔ Certains scripts bloqués
 
 ---
 layout: section
@@ -176,8 +195,8 @@ layout: section
 - Du bonus ! 🐒
 
 ---
-layout: image-right 
-image: /html-codesniffer.jpg
+layout: media-right
+src: /html-codesniffer.jpg
 backgroundSize: contain
 ---
 
@@ -187,8 +206,8 @@ backgroundSize: contain
 - Check des standards WCAG 2.1 d'accessibilité
 
 ---
-layout: image-right
-image: /color-contrast-checker.jpg
+layout: media-right
+src: /color-contrast-checker.jpg
 backgroundSize: contain
 ---
 
@@ -197,8 +216,8 @@ backgroundSize: contain
 - Vérifier la compatibilité de deux couleurs et leur accessibilité
 
 ---
-layout: image-right 
-image: /css-layout-debugger.jpg
+layout: media-right
+src: /css-layout-debugger.jpg
 backgroundSize: contain
 ---
 
@@ -208,8 +227,8 @@ backgroundSize: contain
 - Un code golf de **108 bytes** (!)
 
 ---
-layout: image-right
-image: /nojs-side-by-side.jpg
+layout: media-right
+src: /nojs-side-by-side.jpg
 backgroundSize: contain
 ---
 
@@ -218,8 +237,8 @@ backgroundSize: contain
 - Test de page avec/sans JS
 
 ---
-layout: image-right
-image: /fount.jpg
+layout: media-right
+src: /fount.jpg
 backgroundSize: contain
 ---
 
@@ -229,8 +248,8 @@ backgroundSize: contain
 - *WhatFont* existe aussi et est devenu une extension navigateur
 
 ---
-layout: image-right
-image: /web-font-picker.jpg
+layout: media-right
+src: /web-font-picker.jpg
 backgroundSize: contain
 ---
 
@@ -239,8 +258,8 @@ backgroundSize: contain
 - Permet de tester une liste de web-fonts sur un sélecteur CSS donné
 
 ---
-layout: image-right
-image: /perf-map.jpg
+layout: media-right
+src: /perf-map.jpg
 backgroundSize: contain
 ---
 
@@ -249,8 +268,8 @@ backgroundSize: contain
 - Une heatmap visuelle du chargement des assets de la page
 
 ---
-layout: image-right
-image: /performance-bookmarklet.jpg
+layout: media-right
+src: /performance-bookmarklet.jpg
 backgroundSize: contain
 ---
 
@@ -259,8 +278,8 @@ backgroundSize: contain
 - Résultat visuel et en détail des calculs et requêtes de la page
 
 ---
-layout: image-right
-image: /oui-seo.jpg
+layout: media-right
+src: /oui-seo.jpg
 backgroundSize: contain
 ---
 
@@ -269,8 +288,8 @@ backgroundSize: contain
 - Montre les metatags utilisés sur la page pour le SEO
 
 ---
-layout: image-right
-image: /ovhcloud.jpg
+layout: media-right
+src: /ovhcloud.jpg
 backgroundSize: contain
 ---
 
@@ -281,14 +300,14 @@ backgroundSize: contain
 - Couverture des composants
 
 ---
-layout: section 
+layout: section
 ---
 
 # Bonus !
 
 ---
-layout: image-right
-image: /stats-js.jpg
+layout: media-right
+src: /stats-js.jpg
 backgroundSize: contain
 ---
 
@@ -297,22 +316,22 @@ backgroundSize: contain
 - Moniteur de FPS, ms pour rendre une frame, mémoires utilisée en temps réel
 
 ---
-layout: image-right
-image: /bookmarklets-for-developers.jpg
+layout: media-right
+src: /bookmarklets-for-developers.jpg
 backgroundSize: contain
 ---
 
 ## [Bookmarklets for developers](https://bookmarklets.app.quest/)
 
-Des bookmarklets de fonctions JS "clés en main" :
+Des bookmarklets de fonctions JS "clés en main":
 
 - CleanStorage
 - Debugger
 - ...
 
 ---
-layout: image-right
-image: /gremlins-js.jpg
+layout: media-right
+src: /gremlins-js.jpg
 backgroundSize: contain
 ---
 
@@ -327,8 +346,8 @@ Monkey testing de BÂTARD 🙊
 - le tout en même temps
 
 ---
-layout: image-right
-image: /revenge-css.jpg
+layout: media-right
+src: /revenge-css.jpg
 backgroundSize: contain
 ---
 
@@ -338,8 +357,8 @@ backgroundSize: contain
 - Les erreurs sont notées sur l'élément concerné, en **Comic Sans MS** sur fond rouge 😂
 
 ---
-layout: image-right
-image: /content-editable.jpg
+layout: media-right
+src: /content-editable.jpg
 backgroundSize: contain
 ---
 
@@ -349,8 +368,8 @@ backgroundSize: contain
 - Pratique pour faire des **PRANKS** à ses collègues 😏
 
 ---
-layout: image
-image: /bookmarkleter.jpg
+layout: media
+src: /bookmarkleter.jpg
 backgroundSize: cover
 ---
 
@@ -365,56 +384,5 @@ layout: center
 ### *\#2015*
 
 ---
-layout: end
-image: https://francoiseoche.fr/assets/avatar.webp
-hideInToc: true
+src: ../../_common/end.md 
 ---
-
-::main::
-<ul>
-    <li>
-        <h5 class="inline">Website :</h5>&nbsp;
-        <a href="https://francoiseoche.fr/"
-           target="_blank"
-           aria-label="Site web de {{ $slidev.configs.author }} - Ouvre dans un nouvel onglet">
-            francoiseoche.fr
-        </a>
-    </li>
-    <li>
-        <h5 class="inline">LinkedIn :</h5>&nbsp;
-        <a href="https://www.linkedin.com/in/feoche/"
-           target="_blank"
-           aria-label="Profil LinkedIn - Ouvre dans un nouvel onglet">
-            in/feoche
-        </a>
-    </li>
-    <li>
-        <h5 class="inline">X :</h5>&nbsp;
-        <a href="https://x.com/francoiseoche"
-           target="_blank"
-           aria-label="Profil X - Ouvre dans un nouvel onglet">
-            @francoiseoche
-        </a>
-    </li>
-</ul>
-
-::feedback::
-<span class="flex place-items-center h-full">
-<small class="mx-auto text-6xl fw-600">Merci !</small>
-</span>
-
-::qr-code::
-##### Feedback :
-
-<QRCode
-class="qr-code mx-auto"
-:width="250"
-:height="250"
-type="svg"
-data="https://francoiseoche.fr"
-:margin="0"
-color="transparent"
-:dotsOptions="{ color: 'white' }"
-/>
-
-<!-- Speaker Notes -->
