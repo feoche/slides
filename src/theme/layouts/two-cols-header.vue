@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {computed} from "vue";
 
 const props = defineProps({
   class: {
@@ -22,7 +21,7 @@ const props = defineProps({
     <div class="two-cols-header__col-right" :class="props.class">
       <slot name="right" />
     </div>
-    <div class="two-cols-header__col-bottom" :class="props.class">
+    <div class="two-cols-header__col-footer" :class="props.class">
       <slot name="bottom" />
     </div>
   </div>
@@ -44,7 +43,7 @@ const props = defineProps({
     @apply flex flex-col gap-4;
     grid-area: 2 / 2 / 3 / 3;
   }
-  .two-cols-header__col-bottom {
+  .two-cols-header__col-footer {
     align-self: end;
     grid-area: 3 / 1 / 3 / 3;
   }

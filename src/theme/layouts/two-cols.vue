@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const props = defineProps({
   class: {
     type: String,
@@ -10,27 +11,41 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="slidev-layout two-columns" :class="props.layoutClass">
-    <div class="two-columns__col-left" :class="props.class">
-      <slot/>
-      <slot name="left"/>
+  <div class="slidev-layout two-cols-header" :class="layoutClass">
+    <div class="two-cols-header__col-header">
+      <slot />
     </div>
-    <div class="two-columns__col-left" :class="props.class">
-      <slot name="right"/>
+    <div class="two-cols-header__col-left" :class="props.class">
+      <slot name="left" />
+    </div>
+    <div class="two-cols-header__col-right" :class="props.class">
+      <slot name="right" />
+    </div>
+    <div class="two-cols-header__col-footer" :class="props.class">
+      <slot name="bottom" />
     </div>
   </div>
 </template>
 
 <style>
-.slidev-layout.two-columns {
-  @apply w-full h-full grid grid-cols-2 gap-8;
+.two-cols-header {
+  @apply grid grid-cols-2 grid-rows-[auto_1fr_auto] w-full h-full gap-4;
 
-  .two-columns__col-left {
+  .two-cols-header__col-header {
     @apply flex flex-col gap-4;
+    grid-area: 1 / 1 / 2 / 3;
   }
-
-  .two-columns__col-right {
+  .two-cols-header__col-left {
     @apply flex flex-col gap-4;
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .two-cols-header__col-right {
+    @apply flex flex-col gap-4;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .two-cols-header__col-footer {
+    align-self: end;
+    grid-area: 3 / 1 / 3 / 3;
   }
 }
 </style>
