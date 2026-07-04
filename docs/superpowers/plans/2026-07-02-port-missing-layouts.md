@@ -2,20 +2,20 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add 8 layouts from `slidev-theme-csscade` into the local `slidev-theme-feoche` theme (`src/_theme/`), rewritten in feoche's own conventions, plus two bug/asset fixes and README docs.
+**Goal:** Add 8 layouts from `slidev-theme-csscade` into the local `slidev-theme-feoche` theme (`src/theme/`), rewritten in feoche's own conventions, plus two bug/asset fixes and README docs.
 
-**Architecture:** Each layout is a Vue 3 SFC in `src/_theme/layouts/` using a `<div class="slidev-layout NAME">` wrapper, Tailwind/UnoCSS `@apply` for layout, BEM class names, and `class`/`layoutClass` props — mirroring the existing `two-cols-header.vue`. No per-slide number badge (the global footer already renders one). Verification is by building a scratch demo deck with the Slidev CLI, since the repo has no unit-test harness.
+**Architecture:** Each layout is a Vue 3 SFC in `src/theme/layouts/` using a `<div class="slidev-layout NAME">` wrapper, Tailwind/UnoCSS `@apply` for layout, BEM class names, and `class`/`layoutClass` props — mirroring the existing `two-cols-header.vue`. No per-slide number badge (the global footer already renders one). Verification is by building a scratch demo deck with the Slidev CLI, since the repo has no unit-test harness.
 
 **Tech Stack:** Slidev (`@slidev/cli`), Vue 3, UnoCSS/Tailwind `@apply`, pnpm.
 
 ## Global Constraints
 
 - Wrapper element: `<div class="slidev-layout NAME" :class="layoutClass">` — never `<section>`.
-- Props signature on every layout: `const props = defineProps({ class: { type: String }, layoutClass: { type: String } })`; apply `layoutClass` to the wrapper and `props.class` to inner cells. (Exactly as `src/_theme/layouts/two-cols-header.vue`.)
+- Props signature on every layout: `const props = defineProps({ class: { type: String }, layoutClass: { type: String } })`; apply `layoutClass` to the wrapper and `props.class` to inner cells. (Exactly as `src/theme/layouts/two-cols-header.vue`.)
 - Never import or render `slides-current-number`, `big-concept`, or any csscade component.
-- Never reference csscade CSS vars `--font-primary` / `--font-secondary`. Headings are already styled globally by `src/_theme/styles/fonts.css`.
+- Never reference csscade CSS vars `--font-primary` / `--font-secondary`. Headings are already styled globally by `src/theme/styles/fonts.css`.
 - BEM class names scoped by layout, e.g. `three-cols__col-left`.
-- Theme lives at `src/_theme/`; decks reference it via `theme: ./src/_theme`.
+- Theme lives at `src/theme/`; decks reference it via `theme: ./src/theme`.
 - Verification build command (run from repo root `C:/dev/slides`):
   `pnpm exec slidev build "<deck>" --out "<outdir>"`
 
@@ -32,7 +32,7 @@ This deck is a verification artifact only — it is NOT committed. Each later ta
 
 ```markdown
 ---
-theme: ./src/_theme
+theme: ./src/theme
 title: Layouts Demo
 ---
 
@@ -53,7 +53,7 @@ Expected: build completes with `build complete` / `dist` output and no errors. (
 ## Task 1: three-cols layout
 
 **Files:**
-- Create: `src/_theme/layouts/three-cols.vue`
+- Create: `src/theme/layouts/three-cols.vue`
 - Verify: scratchpad `layouts-demo.md`
 
 **Interfaces:**
@@ -61,7 +61,7 @@ Expected: build completes with `build complete` / `dist` output and no errors. (
 
 - [ ] **Step 1: Write the layout file**
 
-`src/_theme/layouts/three-cols.vue`:
+`src/theme/layouts/three-cols.vue`:
 
 ```vue
 <!--
@@ -168,7 +168,7 @@ Expected: build succeeds, no Vue/SFC errors.
 - [ ] **Step 4: Commit**
 
 ```bash
-git add src/_theme/layouts/three-cols.vue
+git add src/theme/layouts/three-cols.vue
 git commit -m "feat(theme): add three-cols layout"
 ```
 
@@ -177,7 +177,7 @@ git commit -m "feat(theme): add three-cols layout"
 ## Task 2: three-cols-header layout
 
 **Files:**
-- Create: `src/_theme/layouts/three-cols-header.vue`
+- Create: `src/theme/layouts/three-cols-header.vue`
 - Verify: scratchpad `layouts-demo.md`
 
 **Interfaces:**
@@ -185,7 +185,7 @@ git commit -m "feat(theme): add three-cols layout"
 
 - [ ] **Step 1: Write the layout file**
 
-`src/_theme/layouts/three-cols-header.vue`:
+`src/theme/layouts/three-cols-header.vue`:
 
 ```vue
 <!--
@@ -280,7 +280,7 @@ Expected: build succeeds, no errors.
 - [ ] **Step 4: Commit**
 
 ```bash
-git add src/_theme/layouts/three-cols-header.vue
+git add src/theme/layouts/three-cols-header.vue
 git commit -m "feat(theme): add three-cols-header layout"
 ```
 
@@ -289,7 +289,7 @@ git commit -m "feat(theme): add three-cols-header layout"
 ## Task 3: three-rows layout (minimal)
 
 **Files:**
-- Create: `src/_theme/layouts/three-rows.vue`
+- Create: `src/theme/layouts/three-rows.vue`
 - Verify: scratchpad `layouts-demo.md`
 
 **Interfaces:**
@@ -297,7 +297,7 @@ git commit -m "feat(theme): add three-cols-header layout"
 
 - [ ] **Step 1: Write the layout file**
 
-`src/_theme/layouts/three-rows.vue`:
+`src/theme/layouts/three-rows.vue`:
 
 ```vue
 <!--
@@ -373,7 +373,7 @@ Expected: build succeeds, no errors.
 - [ ] **Step 4: Commit**
 
 ```bash
-git add src/_theme/layouts/three-rows.vue
+git add src/theme/layouts/three-rows.vue
 git commit -m "feat(theme): add minimal three-rows layout"
 ```
 
@@ -382,7 +382,7 @@ git commit -m "feat(theme): add minimal three-rows layout"
 ## Task 4: six-cells-header layout (grid-area bug fixed)
 
 **Files:**
-- Create: `src/_theme/layouts/six-cells-header.vue`
+- Create: `src/theme/layouts/six-cells-header.vue`
 - Verify: scratchpad `layouts-demo.md`
 
 **Interfaces:**
@@ -390,7 +390,7 @@ git commit -m "feat(theme): add minimal three-rows layout"
 
 - [ ] **Step 1: Write the layout file**
 
-`src/_theme/layouts/six-cells-header.vue`:
+`src/theme/layouts/six-cells-header.vue`:
 
 ```vue
 <!--
@@ -526,8 +526,8 @@ Expected: build succeeds; visually, the six cells occupy six distinct grid areas
 - [ ] **Step 4: Commit**
 
 ```bash
-git add src/_theme/layouts/six-cells-header.vue
-git commit -m "feat(theme): add six-cells-header layout with fixed grid areas"
+git add src/theme/layouts/six-cells.vue
+git commit -m "feat(theme): add six-cells layout with fixed grid areas"
 ```
 
 ---
@@ -535,9 +535,9 @@ git commit -m "feat(theme): add six-cells-header layout with fixed grid areas"
 ## Task 5: screenshot layout + device frame assets
 
 **Files:**
-- Create: `src/_theme/public/macbook-air-frame.png` (copied)
-- Create: `src/_theme/public/iphone-15-pro-max-frame.png` (copied)
-- Create: `src/_theme/layouts/screenshot.vue`
+- Create: `src/theme/public/macbook-air-frame.png` (copied)
+- Create: `src/theme/public/iphone-15-pro-max-frame.png` (copied)
+- Create: `src/theme/layouts/screenshot.vue`
 - Verify: scratchpad `layouts-demo.md`
 
 **Interfaces:**
@@ -547,14 +547,14 @@ git commit -m "feat(theme): add six-cells-header layout with fixed grid areas"
 
 Run (from `C:/dev/slides`):
 ```bash
-cp "C:/dev/slidev-theme-csscade/public/macbook-air-frame.png" "src/_theme/public/macbook-air-frame.png"
-cp "C:/dev/slidev-theme-csscade/public/iphone-15-pro-max-frame.png" "src/_theme/public/iphone-15-pro-max-frame.png"
+cp "C:/dev/slidev-theme-csscade/public/macbook-air-frame.png" "src/theme/public/macbook-air-frame.png"
+cp "C:/dev/slidev-theme-csscade/public/iphone-15-pro-max-frame.png" "src/theme/public/iphone-15-pro-max-frame.png"
 ```
-Expected: both files exist under `src/_theme/public/`.
+Expected: both files exist under `src/theme/public/`.
 
 - [ ] **Step 2: Write the layout file**
 
-`src/_theme/layouts/screenshot.vue`:
+`src/theme/layouts/screenshot.vue`:
 
 ```vue
 <!--
@@ -694,7 +694,7 @@ Expected: build succeeds; the framed image renders inside the device chrome for 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add src/_theme/layouts/screenshot.vue src/_theme/public/macbook-air-frame.png src/_theme/public/iphone-15-pro-max-frame.png
+git add src/theme/layouts/screenshot.vue src/theme/public/macbook-air-frame.png src/theme/public/iphone-15-pro-max-frame.png
 git commit -m "feat(theme): add screenshot layout with device frame assets"
 ```
 
@@ -703,9 +703,9 @@ git commit -m "feat(theme): add screenshot layout with device frame assets"
 ## Task 6: utility layouts (404, error, none)
 
 **Files:**
-- Create: `src/_theme/layouts/404.vue`
-- Create: `src/_theme/layouts/error.vue`
-- Create: `src/_theme/layouts/none.vue`
+- Create: `src/theme/layouts/404.vue`
+- Create: `src/theme/layouts/error.vue`
+- Create: `src/theme/layouts/none.vue`
 - Verify: scratchpad `layouts-demo.md`
 
 **Interfaces:**
@@ -756,7 +756,7 @@ Expected: build succeeds, no errors.
 - [ ] **Step 6: Commit**
 
 ```bash
-git add src/_theme/layouts/404.vue src/_theme/layouts/error.vue src/_theme/layouts/none.vue
+git add src/theme/layouts/404.vue src/theme/layouts/error.vue src/theme/layouts/none.vue
 git commit -m "feat(theme): add 404, error, and none utility layouts"
 ```
 
@@ -765,11 +765,11 @@ git commit -m "feat(theme): add 404, error, and none utility layouts"
 ## Task 7: Document new layouts in the theme README
 
 **Files:**
-- Modify: `src/_theme/README.md`
+- Modify: `src/theme/README.md`
 
 - [ ] **Step 1: Read the current README** to match its heading style and section placement.
 
-Run: open `src/_theme/README.md`.
+Run: open `src/theme/README.md`.
 
 - [ ] **Step 2: Append a "New layouts" section** documenting each added layout with a usage snippet. Add this block (adjust surrounding heading level to match the file):
 
@@ -877,7 +877,7 @@ Note: in the actual README, replace each `​```` (zero-width-joined) fence with
 - [ ] **Step 3: Commit**
 
 ```bash
-git add src/_theme/README.md
+git add src/theme/README.md
 git commit -m "docs(theme): document new layouts"
 ```
 
@@ -901,7 +901,7 @@ Expected: build succeeds.
 - [ ] **Step 3: Confirm git status is clean** except intended files
 
 Run: `git status`
-Expected: no uncommitted changes under `src/_theme/`; the scratchpad demo deck and `demo-dist` are outside the repo and untracked/ignored.
+Expected: no uncommitted changes under `src/theme/`; the scratchpad demo deck and `demo-dist` are outside the repo and untracked/ignored.
 
 ---
 

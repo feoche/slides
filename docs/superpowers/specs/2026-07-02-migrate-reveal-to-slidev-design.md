@@ -27,10 +27,10 @@ Already Slidev, not in scope: `src/pro/bookmarklets`, root `slides.md`.
 **Frontmatter header:** replace/prepend a Slidev frontmatter block built from the
 deck's `meta.yaml` (title, info→info, author, keywords, lang→htmlAttrs.lang) plus:
 ```yaml
-theme: ../../../src/_theme
+theme: ../../../src/theme
 colorSchema: auto
 ```
-(`../../../src/_theme` resolves from `src/pro/<deck>` and `src/z-misc/<deck>` alike.)
+(`../../../src/theme` resolves from `src/pro/<deck>` and `src/z-misc/<deck>` alike.)
 
 **Slide mapping (fit to content):**
 - First/title slide → `layout: cover`.

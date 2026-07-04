@@ -1,24 +1,27 @@
 ---
-layout: two-cols
+layout: three-cols
 ---
-
-## This spans both
-### A cool subtitle
 
 ::left::
 
-### Left
+### Three
 
 This shows on the left
 
+::center::
+
+### Cols
+
+This shows in the center
+
 ::right::
 
-### Right
+### Layout
 
 This shows on the right
 
 ::bottom::
 
-#### This spans both - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+#### Footer - This spans all three columns
 
 <!-- Speaker Notes -->

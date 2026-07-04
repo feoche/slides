@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Slidev presentation templates",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
+    "dev": "node scripts/serve-boards.js",
+    "export": "slidev export",
+    "build:boards": "node scripts/build-boards.js"
   },
   "dependencies": {
     "@slidev/cli": "^52.16.0",

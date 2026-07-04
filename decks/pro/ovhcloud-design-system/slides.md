@@ -2,153 +2,153 @@
 title: "Very Tech Trip — Design System for techs"
 author: "François Eoche"
 lang: en
-theme: ../../../src/_theme
+theme: ../../../src/theme
 colorSchema: auto
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_001.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_001.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_002.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_002.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_003.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_003.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_004.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_004.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_005.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_005.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_006.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_006.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_007.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_007.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_008.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_008.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_009.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_009.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_010.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_010.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_011.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_011.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_012.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_012.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_013.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_013.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_014.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_014.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_015.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_015.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_016.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_016.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_017.jpg
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_017.jpg
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_018.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_018.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_019.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_019.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_020.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_020.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_021.jpg
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_021.jpg
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_022.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_022.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_023.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_023.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_024.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_024.png
 backgroundSize: contain
 ---
 
 ---
-layout: image-full
-image: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_025.png
+layout: media-full
+src: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_025.png
 backgroundSize: contain
 ---

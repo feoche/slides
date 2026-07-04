@@ -2,8 +2,8 @@
 layout: three-cols-header
 ---
 
-## This spans all columns
-### A cool subtitle
+## Three Cols Header Layout
+### This spans all columns
 
 ::left::
 

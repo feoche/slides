@@ -24,6 +24,7 @@ import { fileURLToPath }    from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT      = join(__dirname, '..');
+const DECKS     = join(ROOT, 'decks');
 
 const args    = process.argv.slice(2);
 const VERBOSE = args.includes('--verbose');
@@ -78,10 +79,10 @@ function findDecks(dir, depth = 0) {
   return results;
 }
 
-let deckPaths = findDecks(ROOT);
+let deckPaths = existsSync(DECKS) ? findDecks(DECKS) : [];
 
 if (SINGLE) {
-  const target = join(ROOT, SINGLE);
+  const target = join(DECKS, SINGLE);
   deckPaths = deckPaths.filter(p => p === target || p.endsWith(SINGLE));
   if (deckPaths.length === 0) {
     console.log(`\n  ⚠️  No slides.md found in "${SINGLE}/".`);
