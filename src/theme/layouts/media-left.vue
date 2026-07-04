@@ -47,7 +47,8 @@ const style = computed(() =>
 .media-left:not(.media-left--window) {
   @apply auto-rows-fr;
 }
-.media-left--window .window {
+.media-left--window .window,
+.media-left--window .mobile {
   @apply my-[2.5rem] mx-auto;
   height: calc(100% - 2.5rem);
 }
