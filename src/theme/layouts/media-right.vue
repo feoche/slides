@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 
 const props = defineProps<{
-  src?: string;
+  media?: string;
   window?: boolean;
   type?: "desktop" | "mobile";
   scale?: number;
@@ -14,7 +14,7 @@ const props = defineProps<{
 }>();
 
 const style = computed(() =>
-  handleBackground(props.src, false, props.backgroundSize ?? "cover"),
+  handleBackground(props.media, false, props.backgroundSize ?? "contain"),
 );
 </script>
 
@@ -23,36 +23,40 @@ const style = computed(() =>
     <div class="slidev-layout default" :class="props.class">
       <slot />
     </div>
-    <Window
-      v-if="window"
-      :src="src"
-      :scale="scale"
-      :object-fit="objectFit"
-      :type="type"
-      :title="windowTitle"
-    />
-    <div v-else class="media-right__image" :style="style" />
+    <div class="media-right__media-container">
+      <Window
+        v-if="window"
+        :src="media"
+        :scale="scale"
+        :object-fit="objectFit"
+        :type="type"
+        :title="windowTitle"
+      />
+      <div v-else class="media-right__image" :style="style" />
+    </div>
   </div>
 </template>
 
 <style>
 .media-right {
-  @apply w-full grid grid-cols-2;
-  height: calc(100% - 2.5rem);
+  @apply w-full flex;
+  height: calc(100% - var(--footer-height));
 
   &__image {
     @apply w-full h-full;
   }
-}
-.media-right:not(.media-right--window) {
-  @apply auto-rows-fr;
-}
-.media-right--window {
-  width: calc(100% - 2.5rem);
-}
-.media-right--window .window,
-.media-right--window .mobile {
-  height: calc(100% - 2.5rem);
-  margin: 2.5rem auto;
+
+  &__media-container {
+    padding: var(--media-frame-inset) 3rem 0 1rem;
+    min-width: 375px;
+  }
+
+  .slidev-layout {
+    @apply flex-1;
+  }
+
+  .mobile--image {
+    @apply ml-auto;
+  }
 }
 </style>

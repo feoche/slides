@@ -85,103 +85,164 @@ src: ../../_common/toc.md
 layout: section
 ---
 
-# Je suis au Japon et je veux visiter 🇯🇵
+# Je suis au Japon et je veux visiter
 
 ---
 layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341124/pasted-from-clipboard.png
+media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341124/pasted-from-clipboard.png
 ---
 
-## Kyoto → Tokyo, je prépare ma semaine
+## Je prépare ma semaine de voyage
+### Dans le train de Kyoto à Tokyo
 
 ---
 layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341040/pasted-from-clipboard.png
+media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341040/pasted-from-clipboard.png
 ---
 
 ## Voir la ville de haut ?
-
-### 🗼 Allons à la Tokyo Sky Tree !
+### Allons à la Tokyo Sky Tree !
 
 ---
 layout: media-right
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341049/Screenshot_2024-05-16_at_18-49-13_TOKYO_SKYTREE_-_Online_reservation___Purchase_site_LINKTIVITY_Activity_Reservation_System.png
+media: /7-eleven.png
+---
+
+## Trois manières d'y accéder
+
+* Sur place (avec de l'attente)
+* En avance (10/15% moins cher mais créneaux obligatoires)
+  * Guichets de superette <br>(7-eleven)
+  * **Site officiel**
+  * Sites de revente de billets 
+
+---
+layout: media-right
+media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341049/Screenshot_2024-05-16_at_18-49-13_TOKYO_SKYTREE_-_Online_reservation___Purchase_site_LINKTIVITY_Activity_Reservation_System.png
 window: true
 ---
 
 # Let's go ! 
 ### Le formulaire de réservation
+
+* On choisit la date avec un calendrier
+* L'heure avec une liste de créneaux ouverts
+
 ---
-layout: media-left
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341049/Screenshot_2024-05-16_at_18-49-13_TOKYO_SKYTREE_-_Online_reservation___Purchase_site_LINKTIVITY_Activity_Reservation_System.png
-objectFit: cover
+layout: media-right
+media: /step-1.png
+window: true
+class: place-content-center
+---
+
+## La date et l’heure, OK — On s’inscrit !
+### Le nom / prénom...
+
+---
+layout: media-right
+media: /step-2.png
+window: true
+class: place-content-center
+---
+
+## AH !<br><br>Alors...
+
+---
+layout: media-right
+media: /step-3.png
 window: true
 ---
 
-# Let's go ! 
-### Le formulaire de réservation
+## Écriture japonaise 101
+### On essaye de simplifier tout ça
+
+Types d'écriture :
+* Kanas
+  * Katakana&emsp;<small>(カタカナ)</small> 👌
+  * Hiragana&emsp;<small>(ひらがな)</small> 👍
+* Kanji&emsp;&emsp;&emsp;&emsp;&nbsp;<small>(漢字)</small> 👺
+<br><br>
+### →&nbsp;&nbsp;**振り仮名** 🤔
 
 ---
-layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341057/pasted-from-clipboard.png
+layout: media-right
+media: /step-3.png
 window: true
 ---
 
-## La date et l'heure, OK — On s'inscrit !
+## Écriture japonaise 101
+### On essaye de simplifier tout ça
+
+Types d'écriture :
+* Kanas
+  * Katakana&emsp;<small>(カタカナ)</small> 👌
+  * Hiragana&emsp;<small>(ひらがな)</small> 👍
+  * <strong>Furigana</strong>&emsp;<small>(振り仮名)</small> 🤯<br>Yomigana&emsp;<small>(読み仮名)</small>
+* Kanji&emsp;&emsp;&emsp;&emsp;&nbsp;<small>(漢字)</small> 👺
+
+<!-- x2, parce qu'il fallait faire la même chose pour ma femme -->
 
 ---
-layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341062/pasted-from-clipboard.png
+layout: media-right
+media: /step-4.png
+window: true
 ---
 
-## La date et l'heure, OK — On s'inscrit !
+## Allez, toujours plus...
+
+* Adresse (complète) japonaise
+* Code postal en deux parties
+* 47 préfectures (~ départements)
 
 ---
-layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341062/pasted-from-clipboard.png
+layout: media-right
+media: /step-5.png
+window: true
 ---
 
-## La date et l'heure, OK — On s'inscrit ! ×2
+## ENFIN, un dernier effort !
 
-*(parce qu'on est deux)*
+* Trois champs `<input>` pour le téléphone
+* Vérification instantanée du format attendu
+* Allez, on envoie !
 
----
-layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341071/pasted-from-clipboard.png
----
-
-## La date et l'heure, OK — On s'inscrit !
 
 ---
-layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341080/pasted-from-clipboard.png
+layout: section
 ---
 
-## ENFIN, on voit la fin !
-
----
-layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341091/pasted-from-clipboard.png
----
-
-## POUR QU'AU FINAL...
+# Envoi du formulaire en cours...
 
 ---
 layout: media-full
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341102/pasted-from-clipboard.png
+media: /step-6.png
+window: true
 ---
 
 ---
 layout: media-full
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341117/tokyo-skytree-clouds.jpg
+media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341102/pasted-from-clipboard.png
 ---
 
 ---
-layout: center
+layout: section
 ---
 
-## Merci !
+# Plot twist !
+---
+layout: media-full
+media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341117/tokyo-skytree-clouds.jpg
+---
 
-**François Eoche**
+---
 
-[**francoiseoche.fr**](https://slides.com/feoche)
+## Conclusion
+
+* Le contexte de vos utilisateurs est clé, <br>surtout pour un site touristique
+* Un biais culturel japonais ?
+* Plusieurs refontes du site ont permis un accueil plus "international" du lieu
+* Attention à l'accessibilité !
+
+---
+src: ../../_common/end.md
+---

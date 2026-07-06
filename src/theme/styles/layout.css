@@ -23,11 +23,15 @@
 
     h2 + h3,
     h1 + h3 {
-        @apply text-2xl mt-[-.5rem] mb[-.5rem];
+        @apply text-2xl mt-[-.5rem];
     }
 
     p, div, span, li, ul, ol {
         color: var(--slidev-theme-feoche-text-color);
+    }
+
+    ul ul {
+        @apply my-2;
     }
 
     a {

@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 
 const props = defineProps<{
-  src?: string;
+  media?: string;
   window?: boolean;
   type?: "desktop" | "mobile";
   scale?: number;
@@ -14,21 +14,23 @@ const props = defineProps<{
 }>();
 
 const style = computed(() =>
-  handleBackground(props.src, false, props.backgroundSize ?? "cover"),
+  handleBackground(props.media, false, props.backgroundSize ?? "cover"),
 );
 </script>
 
 <template>
   <div class="media-left" :class="{ 'media-left--window': window }">
-    <Window
-      v-if="window"
-      :src="src"
-      :scale="scale"
-      :object-fit="objectFit"
-      :type="type"
-      :title="windowTitle"
-    />
-    <div v-else class="media-left__image" :style="style" />
+    <div class="media-left__media-container">
+      <Window
+        v-if="window"
+        :src="media"
+        :scale="scale"
+        :object-fit="objectFit"
+        :type="type"
+        :title="windowTitle"
+      />
+      <div v-else class="media-left__image" :style="style" />
+    </div>
     <div class="slidev-layout default" :class="props.class">
       <slot />
     </div>
@@ -37,19 +39,20 @@ const style = computed(() =>
 
 <style>
 .media-left {
-  @apply w-full grid grid-cols-2;
-  height: calc(100% - 2.5rem);
+  @apply w-full flex;
+  height: calc(100% - var(--footer-height));
 
   &__image {
     @apply w-full h-full;
   }
-}
-.media-left:not(.media-left--window) {
-  @apply auto-rows-fr;
-}
-.media-left--window .window,
-.media-left--window .mobile {
-  @apply my-[2.5rem] mx-auto;
-  height: calc(100% - 2.5rem);
+
+  &__media-container {
+    padding: var(--media-frame-inset) 1rem 0 3rem;
+    min-width: 375px;
+  }
+
+  .slidev-layout {
+    @apply flex-1;
+  }
 }
 </style>

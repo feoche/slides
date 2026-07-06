@@ -128,7 +128,7 @@ src: ./src/templates/quotes.md
 
 ---
 layout: media-full
-src: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
+media: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
 backgroundSize: contain
 ---
 
@@ -136,7 +136,7 @@ backgroundSize: contain
 
 ---
 layout: media
-src: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
+media: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
 ---
 
 ## Media
@@ -145,7 +145,7 @@ src: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b0
 
 ---
 layout: media-left
-src: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
+media: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
 ---
 
 ## Media Left
@@ -157,7 +157,7 @@ This is an image on the left
 
 ---
 layout: media-right
-src: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
+media: "https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60"
 ---
 
 ## Media Right
@@ -168,7 +168,7 @@ This is an image on the right
 ---
 layout: media-full
 window: true
-src: https://francoiseoche.fr/
+media: https://francoiseoche.fr/
 windowTitle: Website
 ---
 
@@ -177,7 +177,7 @@ windowTitle: Website
 ---
 layout: media
 window: true
-src: https://francoiseoche.fr/
+media: https://francoiseoche.fr/
 windowTitle: Website
 ---
 
@@ -188,7 +188,7 @@ windowTitle: Website
 ---
 layout: media-left
 window: true
-src: https://francoiseoche.fr/
+media: https://francoiseoche.fr/
 windowTitle: Website
 ---
 
@@ -202,7 +202,7 @@ This is an iframe on the left
 ---
 layout: media-right
 window: true
-src: https://francoiseoche.fr/
+media: https://francoiseoche.fr/
 windowTitle: Website
 ---
 
@@ -216,7 +216,7 @@ This is an iframe on the right
 ---
 layout: media
 window: true
-src: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
+media: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
 ---
 
 ## Media Window (portrait → mobile frame)

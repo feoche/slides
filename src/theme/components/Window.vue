@@ -42,7 +42,7 @@ function detectDevice() {
   probe.onload = () => {
     detected.value =
       probe.naturalHeight > probe.naturalWidth ? "mobile" : "desktop";
-    nextTick(fitImage);
+    nextTick(fit);
   };
   probe.src = props.src;
 }
@@ -58,6 +58,49 @@ const root = ref<HTMLElement | null>(null);
 const header = ref<HTMLElement | null>(null);
 const subheader = ref<HTMLElement | null>(null);
 const img = ref<HTMLImageElement | null>(null);
+
+// Mobile frame refs (mirror of the desktop ones for the phone chrome).
+const mobileRoot = ref<HTMLElement | null>(null);
+const mobileBar = ref<HTMLElement | null>(null);
+const mobileImg = ref<HTMLImageElement | null>(null);
+
+const MOBILE_MIN_WIDTH = 200;
+
+// Mobile image frames fill 100% of the available height; the frame width is
+// derived from the image's aspect ratio so the phone chrome hugs the image with
+// no bars beside it (floored at MOBILE_MIN_WIDTH). Iframes keep their CSS
+// sizing.
+function fitMobile() {
+  const el = mobileRoot.value;
+  const image = mobileImg.value;
+  if (
+    device.value !== "mobile" ||
+    renderAs.value !== "image" ||
+    !el ||
+    !image ||
+    !image.naturalWidth
+  )
+    return;
+
+  el.style.height = "100%";
+  const frameH = el.clientHeight;
+  if (frameH <= 0) return;
+
+  const styles = getComputedStyle(el);
+  const padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+  const padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+  const barH = mobileBar.value?.offsetHeight ?? 0;
+  const contentH = frameH - padY - barH;
+  if (contentH <= 0) return;
+
+  const ratio = image.naturalWidth / image.naturalHeight;
+  el.style.width = `${Math.max(MOBILE_MIN_WIDTH, Math.round(contentH * ratio + padX))}px`;
+}
+
+function fit() {
+  fitImage();
+  fitMobile();
+}
 
 function fitImage() {
   const el = root.value;
@@ -88,12 +131,13 @@ let observer: ResizeObserver | null = null;
 
 onMounted(() => {
   detectDevice();
-  fitImage();
+  fit();
   // Observe the parent (the available area); our own width change must not
   // feed back into the observer.
-  if (typeof ResizeObserver !== "undefined" && root.value?.parentElement) {
-    observer = new ResizeObserver(() => fitImage());
-    observer.observe(root.value.parentElement);
+  const parent = (root.value ?? mobileRoot.value)?.parentElement;
+  if (typeof ResizeObserver !== "undefined" && parent) {
+    observer = new ResizeObserver(() => fit());
+    observer.observe(parent);
   }
 });
 
@@ -103,7 +147,7 @@ watch(
   () => [props.src, props.content],
   () => {
     detectDevice();
-    nextTick(fitImage);
+    nextTick(fit);
   },
 );
 </script>
@@ -112,23 +156,24 @@ watch(
   <!-- Mobile phone frame -->
   <div
     v-if="device === 'mobile'"
+    ref="mobileRoot"
     class="mobile"
+    :class="{ 'mobile--image': renderAs === 'image' }"
     :style="renderAs === 'iframe' ? { width: scaleInvertPercent } : {}"
   >
-    <div class="mobile-frame">
-      <div class="mobile-screen">
-        <div class="mobile-bar">
-          <span class="mobile-bar-icon">🔒</span>
-          <span class="mobile-url">{{
+    <div class="mobile-screen">
+      <div ref="mobileBar" class="mobile-bar">
+        <span class="mobile-bar-icon">⌂</span>
+        <span class="mobile-url">{{
             renderAs === "iframe" ? (url ?? src) : title
           }}</span>
-          <span class="mobile-bar-icon">⋯</span>
-        </div>
-        <div
+        <span class="mobile-bar-icon">☰</span>
+      </div>
+      <div
           class="mobile-content"
           :style="renderAs === 'iframe' ? { width: scaleInvertPercent } : {}"
-        >
-          <iframe
+      >
+        <iframe
             v-if="renderAs === 'iframe'"
             :src="src"
             :style="
@@ -136,14 +181,15 @@ watch(
                 ? { transform: `scale(${scale})`, transformOrigin: 'top left' }
                 : {}
             "
-          />
-          <img
+        />
+        <img
             v-else
+            ref="mobileImg"
             :src="src"
             class="mobile-img"
-            :style="{ objectFit: objectFit || 'cover' }"
-          />
-        </div>
+            :style="{ objectFit: objectFit || 'contain' }"
+            @load="fitMobile"
+        />
       </div>
     </div>
   </div>
@@ -199,7 +245,7 @@ watch(
 <style>
 .window {
   @apply relative w-full h-full m-4 mb-0 rounded-2 overflow-hidden bg-[--color-green] border-1 border-gray box-sizing-border-box shadow-2xl;
-  height: calc(100% - 1.5rem);
+  height: calc(100% - var(--media-frame-inset));
 
   .window-header {
     @apply flex bg-[--color-deep-green] color-[--color-cream] py-1.5 px-2 rounded-t-md place-content-between place-items-center overflow-hidden;
@@ -221,15 +267,15 @@ watch(
     @apply flex bg-gray-200 color-gray gap-2 p-1;
 
     .window-subcontrols {
-      @apply flex gap-1 lh-1;
+      @apply flex gap-1;
 
       & > span {
-        @apply w-6 h-6 inline-flex items-center justify-center font-lg color-[--color-deep-green];
+        @apply w-6 h-6 inline-flex items-baseline justify-center lh-5 font-lg color-[--color-deep-green];
       }
     }
 
-    input {
-      @apply flex-1 px-2 rounded-sm border-gray border-solid border-1 text-xs lh-1 bg-[--color-cream] color-[--color-deep-green];
+    .window-url {
+      @apply box-border w-full flex-1 px-2 rounded-sm border-gray border-solid border-1 text-xs lh-1 bg-[--color-cream] color-[--color-deep-green];
     }
   }
 
@@ -261,56 +307,58 @@ watch(
 
 /* Mobile phone frame: fixed aspect ratio, sized purely in CSS. */
 .mobile {
-  @apply flex h-full w-full items-center justify-center;
+  @apply relative flex flex-col overflow-hidden bg-[--color-deep-green] shadow-2xl box-sizing-border-box;
+  padding: 0.55rem;
+  border-radius: 2.25rem;
 
-  .mobile-frame {
-    @apply relative flex flex-col overflow-hidden bg-[--color-deep-green] shadow-2xl box-sizing-border-box;
-    aspect-ratio: 10 / 20;
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-    padding: 0.55rem;
-    border-radius: 2.25rem;
-    border: 2px solid #0003;
+  &::before {
+    content: "";
+    @apply absolute top-[0.125rem] left-1/2 z-10 bg-[--color-deep-green];
+    width: 32%;
+    height: 1.1rem;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+  }
 
-    &::before {
-      content: "";
-      @apply absolute top-0 left-1/2 z-10 bg-[--color-deep-green];
-      width: 32%;
-      height: 1.1rem;
-      transform: translateX(-50%);
-      border-bottom-left-radius: 0.7rem;
-      border-bottom-right-radius: 0.7rem;
+  .mobile-screen {
+    @apply relative flex flex-1 flex-col overflow-hidden bg-[--color-cream];
+    border-radius: 1.75rem;
+    min-height: 0;
+  }
+
+  .mobile-bar {
+    @apply flex items-center pt-4 pb-1 px-3 gap-2 bg-gray-200 color-[--color-deep-green];
+
+    .mobile-bar-icon {
+      @apply flex-none text-black text-lg color-[--color-deep-green];
     }
 
-    .mobile-screen {
-      @apply relative flex flex-1 flex-col overflow-hidden bg-[--color-cream];
-      border-radius: 1.75rem;
-      min-height: 0;
-    }
-
-    .mobile-bar {
-      @apply flex items-center gap-2 bg-gray-200 color-[--color-deep-green];
-      padding: 1.4rem 0.9rem 0.4rem;
-
-      .mobile-bar-icon {
-        @apply flex-none text-xs opacity-60;
-      }
-
-      .mobile-url {
-        @apply flex-1 truncate rounded-full bg-[--color-cream] px-3 py-1 text-center text-xs color-[--color-deep-green];
-      }
-    }
-
-    .mobile-content {
-      @apply relative flex-1;
-      min-height: 0;
-
-      iframe,
-      .mobile-img {
-        @apply h-full w-full;
-      }
+    .mobile-url {
+      @apply flex-1 h-6 px-2 mx-1 rounded-sm border-gray border-solid border-1 text-xs lh-1 bg-[--color-cream] color-[--color-deep-green];
     }
   }
+
+  .mobile-content {
+    @apply flex flex-1 flex-col;
+    min-height: 0;
+
+    iframe {
+      @apply h-full w-full;
+    }
+
+    .mobile-img {
+      @apply h-full w-auto;
+      min-height: 0;
+    }
+  }
+}
+
+/* Mobile image frames fill 100% height; the frame width is set in script
+   (see fitMobile) from the image ratio so the whole image shows with no side
+   bars. Default width is auto for the no-JS / pre-hydration case. */
+.mobile--image {
+  height: 100%;
+  width: auto;
 }
 </style>
