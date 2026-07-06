@@ -18,6 +18,11 @@
   --color-cream: #f8faf9;
   --color-baby-blue: #3ab9d5;
 
+  /* Layout dimensions */
+  --footer-height: 2.5rem;       /* space reserved for the footer */
+  --media-frame-inset: 1.5rem;   /* vertical inset around framed media */
+  --media-frame-min-width: 200px;
+
   /* default theme color */
   --theme-primary: var(--color-green);
   --theme-secondary: var(--color-deep-green);
@@ -29,7 +34,7 @@
   --slidev-theme-feoche-title-color: var(--theme-primary);
   --slidev-theme-feoche-text-color: var(--theme-secondary);
   --slidev-theme-feoche-link-color: var(--theme-link);
-  --slidev-theme-feoche-text-shadow: transparent;
+  --slidev-theme-feoche-text-shadow: var(--color-deep-green);
 
   /* Highlight colors*/
   --slidev-theme-feoche-highlight-background-color: var(--theme-primary);

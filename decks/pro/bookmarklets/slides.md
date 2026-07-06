@@ -196,7 +196,7 @@ layout: section
 
 ---
 layout: media-right
-src: /html-codesniffer.jpg
+media: /html-codesniffer.jpg
 backgroundSize: contain
 ---
 
@@ -207,7 +207,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /color-contrast-checker.jpg
+media: /color-contrast-checker.jpg
 backgroundSize: contain
 ---
 
@@ -217,7 +217,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /css-layout-debugger.jpg
+media: /css-layout-debugger.jpg
 backgroundSize: contain
 ---
 
@@ -228,7 +228,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /nojs-side-by-side.jpg
+media: /nojs-side-by-side.jpg
 backgroundSize: contain
 ---
 
@@ -238,7 +238,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /fount.jpg
+media: /fount.jpg
 backgroundSize: contain
 ---
 
@@ -249,7 +249,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /web-font-picker.jpg
+media: /web-font-picker.jpg
 backgroundSize: contain
 ---
 
@@ -259,7 +259,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /perf-map.jpg
+media: /perf-map.jpg
 backgroundSize: contain
 ---
 
@@ -269,7 +269,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /performance-bookmarklet.jpg
+media: /performance-bookmarklet.jpg
 backgroundSize: contain
 ---
 
@@ -279,7 +279,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /oui-seo.jpg
+media: /oui-seo.jpg
 backgroundSize: contain
 ---
 
@@ -289,7 +289,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /ovhcloud.jpg
+media: /ovhcloud.jpg
 backgroundSize: contain
 ---
 
@@ -307,7 +307,7 @@ layout: section
 
 ---
 layout: media-right
-src: /stats-js.jpg
+media: /stats-js.jpg
 backgroundSize: contain
 ---
 
@@ -317,7 +317,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /bookmarklets-for-developers.jpg
+media: /bookmarklets-for-developers.jpg
 backgroundSize: contain
 ---
 
@@ -331,7 +331,7 @@ Des bookmarklets de fonctions JS "clés en main":
 
 ---
 layout: media-right
-src: /gremlins-js.jpg
+media: /gremlins-js.jpg
 backgroundSize: contain
 ---
 
@@ -347,7 +347,7 @@ Monkey testing de BÂTARD 🙊
 
 ---
 layout: media-right
-src: /revenge-css.jpg
+media: /revenge-css.jpg
 backgroundSize: contain
 ---
 
@@ -358,7 +358,7 @@ backgroundSize: contain
 
 ---
 layout: media-right
-src: /content-editable.jpg
+media: /content-editable.jpg
 backgroundSize: contain
 ---
 
@@ -369,7 +369,7 @@ backgroundSize: contain
 
 ---
 layout: media
-src: /bookmarkleter.jpg
+media: /bookmarkleter.jpg
 backgroundSize: cover
 ---
 

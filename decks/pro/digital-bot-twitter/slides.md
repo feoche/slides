@@ -89,14 +89,14 @@ layout: section
 
 ---
 layout: media
-src: /bots-1.jpg
+media: /bots-1.jpg
 ---
 
 ## J'aime bien les bots
 
 ---
 layout: media-full
-src: /bots-2.png
+media: /bots-2.png
 ---
 
 ---
@@ -121,7 +121,7 @@ img {
 
 ---
 layout: media-full
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/7006866/pasted-from-clipboard.png
+media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/7006866/pasted-from-clipboard.png
 ---
 
 <style>
@@ -225,7 +225,7 @@ EXCEPTIONS : [/(?:(?:dispositif|empreinte|affichage)s?\s|num[ée]rique.*?|num[é
 
 ---
 layout: media-full
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/5559249/Le_Doigt_Digital___ledoigtdigital____Twitter_2018-12-03_13-23-35.png
+media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/5559249/Le_Doigt_Digital___ledoigtdigital____Twitter_2018-12-03_13-23-35.png
 ---
 
 ---
@@ -356,7 +356,7 @@ twitter → twitteur → tweets → retweet → tweet → un tweet
 
 ---
 layout: media-full
-src: /feboche-2.png
+media: /feboche-2.png
 ---
 
 ---
@@ -491,7 +491,7 @@ Au final, la solution était chez moi, avec le fameux : "Raspberry-qui-traîne-e
 
 ---
 layout: media
-src: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/6352234/pasted-from-clipboard.png
+media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/6352234/pasted-from-clipboard.png
 ---
 
 ## PM2, manager de processus Node

@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 
 const props = defineProps<{
-  src?: string;
+  media?: string;
   window?: boolean;
   type?: "desktop" | "mobile";
   scale?: number;
@@ -22,28 +22,36 @@ const style = computed(() =>
     <slot />
     <Window
       v-if="window"
-      :src="src"
+      :src="media"
       :scale="scale"
       :object-fit="objectFit"
       :type="type"
       :title="windowTitle"
     />
-    <img v-else :src="src" :style="style" />
+    <img v-else :src="media" :style="style" />
   </div>
 </template>
 
 <style>
 .slidev-layout.media {
   @apply h-full;
-}
-.slidev-layout.media:not(.media--window) {
-  @apply flex flex-col gap-8;
 
-  img {
-    @apply h-full w-auto object-contain;
+  &:not(.media--window) {
+    @apply flex flex-col gap-8;
+
+    img {
+      @apply h-full w-auto object-contain;
+    }
   }
-}
-.slidev-layout.media--window {
-  width: calc(100% - 2.5rem);
+
+  &.media--window {
+    width: calc(100% - var(--footer-height));
+
+    .window,
+    .mobile {
+      @apply mx-auto;
+      min-width: var(--media-frame-min-width);
+    }
+  }
 }
 </style>

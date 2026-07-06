@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 
 const props = defineProps<{
-  src?: string;
+  media?: string;
   window?: boolean;
   type?: "desktop" | "mobile";
   scale?: number;
@@ -13,7 +13,7 @@ const props = defineProps<{
 }>();
 
 const style = computed(() =>
-  handleBackground(props.src, false, props.backgroundSize ?? "contain"),
+  handleBackground(props.media, false, props.backgroundSize ?? "contain"),
 );
 </script>
 
@@ -23,7 +23,7 @@ const style = computed(() =>
     class="slidev-layout media-full media-full--window default"
   >
     <Window
-      :src="src"
+      :src="media"
       :scale="scale"
       :object-fit="objectFit"
       :type="type"
@@ -37,12 +37,19 @@ const style = computed(() =>
 
 <style>
 .slidev-layout.media-full {
-  height: calc(100% - 2.5rem);
-}
-.slidev-layout.media-full--window {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% - 2.5rem);
+  height: calc(100% - var(--footer-height));
+
+  &.media-full--window {
+    @apply flex items-center justify-center;
+    /* wider floor than the default media frame */
+    --media-frame-min-width: 250px;
+    width: 100%;
+    padding: 1rem 2.5rem;
+
+    .window,
+    .mobile {
+      min-width: var(--media-frame-min-width);
+    }
+  }
 }
 </style>
