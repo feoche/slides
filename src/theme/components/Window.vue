@@ -163,11 +163,9 @@ watch(
   >
     <div class="mobile-screen">
       <div ref="mobileBar" class="mobile-bar">
-        <span class="mobile-bar-icon">⌂</span>
-        <span class="mobile-url">{{
-            renderAs === "iframe" ? (url ?? src) : title
-          }}</span>
-        <span class="mobile-bar-icon">☰</span>
+        <mdi-home class="mobile-bar-icon">⌂</mdi-home>
+        <span class="mobile-url">{{ url || "" }}</span>
+        <mdi-menu class="mobile-bar-icon">☰</mdi-menu>
       </div>
       <div
           class="mobile-content"
@@ -335,7 +333,7 @@ watch(
     }
 
     .mobile-url {
-      @apply flex-1 h-6 px-2 mx-1 rounded-sm border-gray border-solid border-1 text-xs lh-1 bg-[--color-cream] color-[--color-deep-green];
+      @apply flex-1 overflow-hidden whitespace-nowrap box-sizing-border-box h-5 px-1 rounded-sm border-gray border-solid border-1 text-xs lh-5 bg-[--color-cream] color-[--color-deep-green];
     }
   }
 

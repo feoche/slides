@@ -89,19 +89,29 @@ layout: section
 
 ---
 layout: media
-media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341124/pasted-from-clipboard.png
+media: /train.png
 ---
 
 ## Je prépare ma semaine de voyage
 ### Dans le train de Kyoto à Tokyo
 
+<Arrow x1="718" y1="450" x2="520" y2="350" width="3" color="white" />
+
+<v-drag pos="720,430,150,_">
+  <strong class="text-3xl">
+    Pas moi
+  </strong>
+</v-drag>
+
 ---
 layout: media
-media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341040/pasted-from-clipboard.png
+media: /skytree.png
 ---
 
 ## Voir la ville de haut ?
 ### Allons à la Tokyo Sky Tree !
+
+<!-- 634m de haut -->
 
 ---
 layout: media-right
@@ -111,15 +121,16 @@ media: /7-eleven.png
 ## Trois manières d'y accéder
 
 * Sur place (avec de l'attente)
-* En avance (10/15% moins cher mais créneaux obligatoires)
+* En avance (~10/15% moins cher, mais créneaux obligatoires)
   * Guichets de superette <br>(7-eleven)
-  * **Site officiel**
   * Sites de revente de billets 
+  * **Site officiel**
 
 ---
 layout: media-right
-media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341049/Screenshot_2024-05-16_at_18-49-13_TOKYO_SKYTREE_-_Online_reservation___Purchase_site_LINKTIVITY_Activity_Reservation_System.png
+media: /step.png
 window: true
+url: https://en.tokyo-skytree.jp/ticket/
 ---
 
 # Let's go ! 
@@ -132,6 +143,7 @@ window: true
 layout: media-right
 media: /step-1.png
 window: true
+url: https://en.tokyo-skytree.jp/ticket/
 class: place-content-center
 ---
 
@@ -142,6 +154,7 @@ class: place-content-center
 layout: media-right
 media: /step-2.png
 window: true
+url: https://en.tokyo-skytree.jp/ticket/
 class: place-content-center
 ---
 
@@ -151,6 +164,7 @@ class: place-content-center
 layout: media-right
 media: /step-3.png
 window: true
+url: https://en.tokyo-skytree.jp/ticket/
 ---
 
 ## Écriture japonaise 101
@@ -168,6 +182,7 @@ Types d'écriture :
 layout: media-right
 media: /step-3.png
 window: true
+url: https://en.tokyo-skytree.jp/ticket/
 ---
 
 ## Écriture japonaise 101
@@ -186,6 +201,7 @@ Types d'écriture :
 layout: media-right
 media: /step-4.png
 window: true
+url: https://en.tokyo-skytree.jp/ticket/
 ---
 
 ## Allez, toujours plus...
@@ -198,6 +214,7 @@ window: true
 layout: media-right
 media: /step-5.png
 window: true
+url: https://en.tokyo-skytree.jp/ticket/
 ---
 
 ## ENFIN, un dernier effort !
@@ -221,8 +238,16 @@ window: true
 
 ---
 layout: media-full
-media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341102/pasted-from-clipboard.png
+media: /sad.png
 ---
+
+<Arrow x1="830" y1="450" x2="670" y2="300" width="3" color="white" />
+
+<v-drag pos="840,430,150,_">
+  <strong class="text-3xl">
+    Pas moi
+  </strong>
+</v-drag>
 
 ---
 layout: section
@@ -231,7 +256,7 @@ layout: section
 # Plot twist !
 ---
 layout: media-full
-media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341117/tokyo-skytree-clouds.jpg
+media: /skytree-clouds.jpg
 ---
 
 ---
@@ -246,3 +271,6 @@ media: https://s3.amazonaws.com/media-p.slid.es/uploads/419370/images/11341117/t
 ---
 src: ../../_common/end.md
 ---
+
+toto
+o

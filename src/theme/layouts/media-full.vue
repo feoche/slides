@@ -10,6 +10,7 @@ const props = defineProps<{
   objectFit?: string;
   backgroundSize?: string;
   windowTitle?: string;
+  url?: string;
 }>();
 
 const style = computed(() =>
@@ -28,6 +29,7 @@ const style = computed(() =>
       :object-fit="objectFit"
       :type="type"
       :title="windowTitle"
+      :url="url"
     />
   </div>
   <div v-else class="slidev-layout media-full default" :style="style">

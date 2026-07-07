@@ -15,6 +15,10 @@
         & h2 + .slidev-toc ol {
             @apply h-full flex flex-col gap-4 place-content-evenly;
         }
+
+        code {
+            @apply fw-400;
+        }
     }
 
     h1, h2, h3, h4, h5, h6 {

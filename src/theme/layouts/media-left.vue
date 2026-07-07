@@ -11,6 +11,7 @@ const props = defineProps<{
   backgroundSize?: string;
   windowTitle?: string;
   class?: string;
+  url?: string;
 }>();
 
 const style = computed(() =>
@@ -28,6 +29,7 @@ const style = computed(() =>
         :object-fit="objectFit"
         :type="type"
         :title="windowTitle"
+        :url="url"
       />
       <div v-else class="media-left__image" :style="style" />
     </div>
