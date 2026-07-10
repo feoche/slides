@@ -8,6 +8,7 @@
     "build": "slidev build",
     "dev": "node scripts/serve-boards.js",
     "export": "slidev export",
+    "export:docs": "node scripts/export-docs.js",
     "build:boards": "node scripts/build-boards.js"
   },
   "dependencies": {
