@@ -13,6 +13,9 @@
 **/.slidev/
 **/dist/
 
+# Pandoc document exports
+decks/**/export/
+
 # Logs
 *.log
 

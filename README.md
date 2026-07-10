@@ -51,6 +51,18 @@ The date parameter is automatically used in the cover layout and can be used any
 - **Slide Navigation**: Arrow key and touch support
 - **Speaker Notes**: Built-in speaker note support
 
+## Document Export (Pandoc)
+
+Export any Slidev deck to reading formats (flat Markdown + HTML handout +
+PDF) via Pandoc:
+
+    npm run export:docs                            # all decks
+    npm run export:docs -- --deck misc/speedrun    # one deck
+
+Outputs land in `<deck>/export/`. PDF requires a LaTeX engine; if none is
+installed, Markdown and HTML are still produced and PDF is skipped.
+Requires Pandoc: https://pandoc.org/installing.html
+
 ## Customization
 
 ### Color Themes
