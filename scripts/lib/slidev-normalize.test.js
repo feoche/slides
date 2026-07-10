@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { normalizeDeck, normalizeSlide } from './slidev-normalize.js';
+import { normalizeDeck, normalizeSlide, resolveBindings } from './slidev-normalize.js';
 
 test('normalizeSlide keeps plain content unchanged', () => {
   const out = normalizeSlide({ frontmatter: {}, content: '## Title\n\nBody text.' });
@@ -61,6 +61,32 @@ test('normalizeSlide promotes section heading to level 1', () => {
 test('normalizeSlide demotes section subheading from h2 to h1', () => {
   const out = normalizeSlide({ frontmatter: { layout: 'section' }, content: '## Le lexique' });
   assert.match(out, /^# Le lexique/m);
+});
+
+test('resolveBindings resolves frontmatter and configs, drops unknown', () => {
+  const cfg = { title: 'My Talk', author: 'François' };
+  assert.equal(resolveBindings('# {{ $frontmatter.title }}', cfg), '# My Talk');
+  assert.equal(resolveBindings('### {{ $slidev.configs.author }}', cfg), '### François');
+  assert.equal(resolveBindings('{{ someExpr() }}', cfg), '');
+});
+
+test('normalizeSlide resolves bindings and strips custom Vue components', () => {
+  const content = '# {{ $frontmatter.title }}\n\n<QRCode\n:data="url"\n/>\n\n<a href="/x">link</a>';
+  const out = normalizeSlide({ frontmatter: { layout: 'cover' }, content }, { title: 'T' });
+  assert.match(out, /# T/);
+  assert.doesNotMatch(out, /QRCode|\{\{/);
+  assert.match(out, /<a href="\/x">link<\/a>/); // lowercase HTML preserved
+});
+
+test('normalizeDeck inlines src: includes', async () => {
+  const raw = [
+    '---', 'theme: ../../../src/theme', 'title: T', '---', '',
+    '# Cover', '', '---', 'src: ../../_common/intro.md', '---',
+  ].join('\n');
+  const out = await normalizeDeck(raw, 'decks/pro/x/slides.md');
+  // intro.md contributes the author heading; the src placeholder must be gone.
+  assert.doesNotMatch(out, /===\s*INTRODUCTION\s*===/);
+  assert.match(out, /Web cabinetmaker/);
 });
 
 test('real speedrun deck normalizes with no Slidev residue', async () => {
