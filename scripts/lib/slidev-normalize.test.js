@@ -1,0 +1,73 @@
+// scripts/lib/slidev-normalize.test.js
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { normalizeDeck, normalizeSlide } from './slidev-normalize.js';
+
+test('normalizeSlide keeps plain content unchanged', () => {
+  const out = normalizeSlide({ frontmatter: {}, content: '## Title\n\nBody text.' });
+  assert.equal(out, '## Title\n\nBody text.');
+});
+
+test('normalizeDeck drops headmatter and joins slides with blank line', async () => {
+  const raw = [
+    '---', 'theme: ../theme', 'title: T', '---', '',
+    '## One', '', '---', '', '## Two',
+  ].join('\n');
+  const out = await normalizeDeck(raw, 'slides.md');
+  assert.match(out, /## One/);
+  assert.match(out, /## Two/);
+  assert.doesNotMatch(out, /theme:/);
+  assert.doesNotMatch(out, /^title: T$/m);
+  assert.ok(out.endsWith('\n'));
+});
+
+test('normalizeSlide removes slot markers but keeps content', () => {
+  const content = '::left::\n\n## A\n\n- x\n\n::right::\n\n## B\n\n- y';
+  const out = normalizeSlide({ frontmatter: { layout: 'two-cols' }, content });
+  assert.match(out, /## A/);
+  assert.match(out, /## B/);
+  assert.doesNotMatch(out, /::left::|::right::/);
+});
+
+test('normalizeSlide strips <style> blocks', () => {
+  const content = '<style>\nul { margin: 0; }\n</style>\n\n## Title';
+  const out = normalizeSlide({ frontmatter: {}, content });
+  assert.doesNotMatch(out, /<style>|margin/);
+  assert.match(out, /## Title/);
+});
+
+test('normalizeSlide unwraps Window and strips v-click', () => {
+  const content = '<Window title="demo">\n\n<div v-click>Hi</div>\n\n</Window>';
+  const out = normalizeSlide({ frontmatter: {}, content });
+  assert.doesNotMatch(out, /<Window|<\/Window>|v-click/);
+  assert.match(out, /Hi/);
+});
+
+test('normalizeSlide promotes media-layout image into body', () => {
+  const out = normalizeSlide({
+    frontmatter: { layout: 'media-right', media: '/html-codesniffer.jpg' },
+    content: '## [HTML CodeSniffer](https://x)\n\n- item',
+  });
+  assert.match(out, /!\[\]\(html-codesniffer\.jpg\)/);
+  assert.match(out, /## \[HTML CodeSniffer\]/);
+});
+
+test('normalizeSlide promotes section heading to level 1', () => {
+  const out = normalizeSlide({ frontmatter: { layout: 'section' }, content: '# Le Speedrun' });
+  assert.match(out, /^# Le Speedrun/m);
+});
+
+test('normalizeSlide demotes section subheading from h2 to h1', () => {
+  const out = normalizeSlide({ frontmatter: { layout: 'section' }, content: '## Le lexique' });
+  assert.match(out, /^# Le lexique/m);
+});
+
+test('real speedrun deck normalizes with no Slidev residue', async () => {
+  const path = 'decks/misc/speedrun/slides.md';
+  const out = await normalizeDeck(readFileSync(path, 'utf8'), path);
+  assert.doesNotMatch(out, /^layout:/m);
+  assert.doesNotMatch(out, /::left::|::right::/);
+  assert.doesNotMatch(out, /<style>/);
+  assert.match(out, /# Le Speedrun/);
+});
