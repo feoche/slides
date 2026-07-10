@@ -29,7 +29,7 @@ if (!slug) {
   process.exit(1);
 }
 
-const dir = join(ROOT, slug);
+const dir = join(ROOT, 'decks', slug);
 
 try {
   await access(dir, constants.F_OK);
@@ -40,155 +40,59 @@ try {
 await mkdir(dir, { recursive: true });
 await mkdir(join(dir, 'assets'), { recursive: true });
 
-// Determine relative path to root assets
-const depth = slug.split('/').length;
-const rootRel = '../'.repeat(depth + 1).slice(0, -1); // e.g. '../..' for pro/slug
+// Relative path from deck to src/theme (decks/<a>/<b> → ../../../src/theme).
+const depth = slug.split('/').length; // e.g. pro/my-talk → 2
+const themePath = '../'.repeat(depth + 1) + 'src/theme';
 
-const cdn = 'https://cdn.jsdelivr.net/npm/reveal.js@5';
+// ── slides.md (Slidev deck) ──────────────────────────────────────────────
+const md = `---
+theme: ${themePath}
+colorSchema: auto
+title: "${title.replace(/"/g, '\\"')}"
+author: "François Eoche"
+htmlAttrs:
+  lang: fr
+layout: cover
+---
 
-// ── slides.md (content-only, reveal.js markdown separators) ─────────────
-const md = `# ${title}
+# ${title}
 
-**François Eoche**
+## Introduction
+
+---
+layout: section
+---
+
+# First Section
 
 ---
 
-## Agenda
+## A content slide
 
-- Topic A <!-- .element: class="fragment" -->
-- Topic B <!-- .element: class="fragment" -->
-- Topic C <!-- .element: class="fragment" -->
-
-Notes:
-Speaker notes for this slide. Press S in the browser to open the notes view.
+- Point one
+- Point two
 
 ---
-
-# Topic A
-
---
-
-## Subtopic
-
-Content here.
-
---
-
-## Code example
-
-\`\`\`javascript
-function hello(name) {
-  console.log(\`Hello, \${name}!\`);
-}
-\`\`\`
-
----
-
-## Two columns
-
-<div class="columns">
-<div class="column">
-
-**Left side**
-
-- Item 1
-- Item 2
-
-</div>
-<div class="column">
-
-**Right side**
-
-- Item A
-- Item B
-
-</div>
-</div>
-
+layout: center
 ---
 
 ## Thank you
 
 *Questions?*
-
-**François Eoche** · [slides.com/feoche](https://slides.com/feoche)
 `;
 
-// ── meta.yaml (Pandoc metadata) ──────────────────────────────────────────
+// ── meta.yaml (Pandoc export metadata) ───────────────────────────────────
 const meta = `title: "${title.replace(/"/g, '\\"')}"
 author: "François Eoche"
 lang: fr
-theme: black
-transition: slide
-# highlightjs: monokai
 `;
-
-// ── index.html (reveal.js shell) ─────────────────────────────────────────
-const html = [
-  '<!DOCTYPE html>',
-  '<html lang="fr">',
-  '<head>',
-  '  <meta charset="utf-8">',
-  '  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">',
-  '  <title>' + title + '</title>',
-  '',
-  '  <link rel="stylesheet" href="' + cdn + '/dist/reset.css">',
-  '  <link rel="stylesheet" href="' + cdn + '/dist/reveal.css">',
-  '  <link rel="stylesheet" href="' + cdn + '/dist/theme/black.css" id="theme">',
-  '  <link rel="stylesheet" href="' + cdn + '/plugin/highlight/monokai.css">',
-  '  <link rel="stylesheet" href="' + rootRel + '/_templates/custom.css">',
-  '</head>',
-  '<body>',
-  '  <div class="reveal">',
-  '    <div class="slides">',
-  '      <section',
-  '        data-markdown="slides.md"',
-  '        data-separator="^\\n---\\n"',
-  '        data-separator-vertical="^\\n--\\n"',
-  '        data-separator-notes="^Notes:"',
-  '        data-charset="utf-8">',
-  '      </section>',
-  '    </div>',
-  '  </div>',
-  '',
-  '  <script src="' + cdn + '/dist/reveal.js"></script>',
-  '  <script src="' + cdn + '/plugin/markdown/markdown.js"></script>',
-  '  <script src="' + cdn + '/plugin/highlight/highlight.js"></script>',
-  '  <script src="' + cdn + '/plugin/notes/notes.js"></script>',
-  '  <script src="' + cdn + '/plugin/search/search.js"></script>',
-  '  <script src="' + cdn + '/plugin/zoom/zoom.js"></script>',
-  '',
-  '  <script>',
-  '    Reveal.initialize({',
-  '      hash: true,',
-  '      controls: true,',
-  '      progress: true,',
-  '      center: true,',
-  '      transition: "slide",',
-  '      backgroundTransition: "fade",',
-  '      plugins: [',
-  '        RevealMarkdown,',
-  '        RevealHighlight,',
-  '        RevealNotes,',
-  '        RevealSearch,',
-  '        RevealZoom',
-  '      ]',
-  '    });',
-  '  </script>',
-  '</body>',
-  '</html>',
-].join('\n');
 
 await writeFile(join(dir, 'slides.md'), md, 'utf8');
 await writeFile(join(dir, 'meta.yaml'), meta, 'utf8');
-await writeFile(join(dir, 'index.html'), html, 'utf8');
 
-console.log(`\n✅  Created new talk: ${slug}/`);
-console.log(`   • ${slug}/slides.md   ← write your content here (reveal.js markdown)`);
-console.log(`   • ${slug}/meta.yaml   ← Pandoc metadata (title, author, theme…)`);
-console.log(`   • ${slug}/index.html  ← reveal.js shell (loads slides.md at runtime)`);
-console.log(`   • ${slug}/assets/     ← images go here`);
-console.log(`\n   To preview (requires a web server):`);
-console.log(`   npm run serve`);
-console.log(`\n   To generate a static build:`);
-console.log(`   npm run build -- --deck ${slug}\n`);
+console.log(`\n✅  Created Slidev deck: decks/${slug}/`);
+console.log(`   • decks/${slug}/slides.md   ← Slidev content`);
+console.log(`   • decks/${slug}/meta.yaml   ← Pandoc export metadata`);
+console.log(`   • decks/${slug}/assets/     ← images`);
+console.log(`\n   Preview:  npm run dev`);
+console.log(`   Export docs:  npm run export:docs -- --deck ${slug}\n`);
