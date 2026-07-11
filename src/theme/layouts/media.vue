@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { handleBackground } from "../layoutHelper";
-
 const props = defineProps<{
   media?: string;
   window?: boolean;
@@ -12,10 +9,6 @@ const props = defineProps<{
   windowTitle?: string;
   url?: string;
 }>();
-
-const style = computed(() =>
-  handleBackground("transparent", false, props.backgroundSize ?? "cover"),
-);
 </script>
 
 <template>
@@ -30,7 +23,7 @@ const style = computed(() =>
       :title="windowTitle"
       :url="url"
     />
-    <img v-else :src="media" :style="style" />
+    <MediaEl v-else :src="media" :object-fit="objectFit" />
   </div>
 </template>
 
@@ -41,7 +34,9 @@ const style = computed(() =>
   &:not(.media--window) {
     @apply flex flex-col gap-8;
 
-    img {
+    img,
+    video,
+    iframe {
       @apply h-full w-auto object-contain;
     }
   }

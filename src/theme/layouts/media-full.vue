@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { handleBackground } from "../layoutHelper";
+import { handleBackground, detectMediaKind } from "../layoutHelper";
 
 const props = defineProps<{
   media?: string;
@@ -16,6 +16,8 @@ const props = defineProps<{
 const style = computed(() =>
   handleBackground(props.media, false, props.backgroundSize ?? "contain"),
 );
+
+const isImage = computed(() => detectMediaKind(props.media) === "image");
 </script>
 
 <template>
@@ -32,8 +34,13 @@ const style = computed(() =>
       :url="url"
     />
   </div>
-  <div v-else class="slidev-layout media-full default" :style="style">
+  <div
+    v-else
+    class="slidev-layout media-full default"
+    :style="isImage ? style : undefined"
+  >
     <slot />
+    <MediaEl v-if="!isImage" :src="media" :object-fit="objectFit" />
   </div>
 </template>
 

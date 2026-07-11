@@ -7,6 +7,12 @@ import {
   watch,
   nextTick,
 } from "vue";
+import {
+  detectMediaKind,
+  toYouTubeEmbed,
+  resolveAssetUrl,
+  type MediaKind,
+} from "../layoutHelper";
 
 const props = defineProps<{
   src: string;
@@ -14,16 +20,14 @@ const props = defineProps<{
   // Chrome style: a desktop browser window (default) or a mobile phone frame.
   type?: "desktop" | "mobile";
   // Content kind; auto-detected from src when omitted.
-  content?: "iframe" | "image";
+  content?: MediaKind;
   scale?: number;
   objectFit?: string;
   url?: string;
 }>();
 
-const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif)(\?.*)?$/i;
-
-const renderAs = computed<"iframe" | "image">(
-  () => props.content ?? (IMAGE_EXT.test(props.src) ? "image" : "iframe"),
+const renderAs = computed<MediaKind>(
+  () => props.content ?? detectMediaKind(props.src),
 );
 
 // Device auto-detected from the image aspect ratio (portrait -> mobile,
@@ -180,10 +184,24 @@ watch(
                 : {}
             "
         />
+        <iframe
+            v-else-if="renderAs === 'youtube'"
+            :src="toYouTubeEmbed(src)"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        />
+        <video
+            v-else-if="renderAs === 'video'"
+            :src="resolveAssetUrl(src)"
+            class="mobile-img"
+            :style="{ objectFit: objectFit || 'contain' }"
+            controls
+            playsinline
+        />
         <img
             v-else
             ref="mobileImg"
-            :src="src"
+            :src="resolveAssetUrl(src)"
             class="mobile-img"
             :style="{ objectFit: objectFit || 'contain' }"
             @load="fitMobile"
@@ -229,10 +247,24 @@ watch(
           : {}
       "
     />
+    <iframe
+      v-else-if="renderAs === 'youtube'"
+      :src="toYouTubeEmbed(src)"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+    <video
+      v-else-if="renderAs === 'video'"
+      :src="resolveAssetUrl(src)"
+      class="window-img"
+      :style="{ objectFit: objectFit || 'contain' }"
+      controls
+      playsinline
+    />
     <img
       v-else
       ref="img"
-      :src="src"
+      :src="resolveAssetUrl(src)"
       class="window-img"
       :style="{ objectFit: objectFit || 'contain' }"
       @load="fitImage"
