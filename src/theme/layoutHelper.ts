@@ -7,6 +7,31 @@ export function resolveAssetUrl(url: string) {
     return url
 }
 
+export type MediaKind = "image" | "video" | "youtube" | "iframe";
+
+export const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif)(\?.*)?$/i;
+const VIDEO_EXT = /\.(mp4|webm|ogg|mov)(\?.*)?$/i;
+const YOUTUBE_RE = /(?:youtube\.com|youtu\.be)/i;
+
+export function detectMediaKind(src?: string): MediaKind {
+    if (!src) return "iframe";
+    if (YOUTUBE_RE.test(src)) return "youtube";
+    if (VIDEO_EXT.test(src)) return "video";
+    if (IMAGE_EXT.test(src)) return "image";
+    return "iframe";
+}
+
+export function toYouTubeEmbed(url: string): string {
+    const idMatch = url.match(
+        /(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/))([\w-]+)/i,
+    );
+    if (!idMatch) return url;
+    const id = idMatch[1];
+    const tsMatch = url.match(/[?&](?:t|start)=(\d+)s?/i);
+    const query = tsMatch ? `?start=${tsMatch[1]}` : "";
+    return `https://www.youtube.com/embed/${id}${query}`;
+}
+
 export function handleBackground(background?: string, dim = false, backgroundSize = 'cover'): CSSProperties {
     const isColor = background && (background[0] === '#' || background.startsWith('rgb'))
 
