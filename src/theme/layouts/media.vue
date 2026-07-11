@@ -23,7 +23,7 @@ const props = defineProps<{
       :title="windowTitle"
       :url="url"
     />
-    <Media v-else :src="media" :object-fit="objectFit" />
+    <MediaEl v-else :src="media" :object-fit="objectFit" />
   </div>
 </template>
 

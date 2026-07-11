@@ -40,7 +40,7 @@ const isImage = computed(() => detectMediaKind(props.media) === "image");
     :style="isImage ? style : undefined"
   >
     <slot />
-    <Media v-if="!isImage" :src="media" :object-fit="objectFit" />
+    <MediaEl v-if="!isImage" :src="media" :object-fit="objectFit" />
   </div>
 </template>
 

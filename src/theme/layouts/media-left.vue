@@ -34,7 +34,7 @@ const isImage = computed(() => detectMediaKind(props.media) === "image");
         :url="url"
       />
       <div v-else-if="isImage" class="media-left__image" :style="style" />
-      <Media v-else :src="media" :object-fit="objectFit" />
+      <MediaEl v-else :src="media" :object-fit="objectFit" />
     </div>
     <div class="slidev-layout default" :class="props.class">
       <slot />
