@@ -574,9 +574,18 @@ git commit -m "feat(theme): support video and youtube inside Window chrome"
 - Consumes: all layouts + `Media` + `Window`.
 - Produces: a manual verification surface. Kept in the repo as a living example of the media layouts.
 
-- [ ] **Step 1: Create the demo deck**
+- [ ] **Step 1: Copy the real video asset into the demo deck**
 
-Create `src/decks/_common/media-demo/slides.md` (replace `<ID>` with a real public YouTube id, e.g. `dQw4w9WgXcQ`, and place any local `demo.mp4` in a sibling `public/` dir or reference an existing deck video such as `/tasnds.mp4`):
+The verification video is the existing `tasnds.mp4` from the speedrun deck. Copy it into the demo deck's `public/` dir so Slidev serves it at `/tasnds.mp4`:
+
+```bash
+mkdir -p src/decks/_common/media-demo/public
+cp src/decks/misc/speedrun/public/tasnds.mp4 src/decks/_common/media-demo/public/tasnds.mp4
+```
+
+- [ ] **Step 2: Create the demo deck**
+
+Create `src/decks/_common/media-demo/slides.md` (YouTube id `dQw4w9WgXcQ` is a real public video):
 
 ```md
 ---
@@ -603,7 +612,7 @@ windowTitle: YouTube in a window
 
 ---
 layout: media-left
-media: /demo.mp4
+media: /tasnds.mp4
 ---
 
 ## Video, media-left plain
@@ -612,7 +621,7 @@ Click to play, audio kept.
 
 ---
 layout: media-full
-media: /demo.mp4
+media: /tasnds.mp4
 window: true
 type: mobile
 ---
@@ -637,7 +646,7 @@ Expected: succeeds.
 - [ ] **Step 4: Commit**
 
 ```bash
-git add src/decks/_common/media-demo/slides.md
+git add -f src/decks/_common/media-demo/slides.md src/decks/_common/media-demo/public/tasnds.mp4
 git commit -m "test(theme): add media video/youtube verification deck"
 ```
 
