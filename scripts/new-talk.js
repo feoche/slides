@@ -40,7 +40,7 @@ try {
 await mkdir(dir, { recursive: true });
 await mkdir(join(dir, 'assets'), { recursive: true });
 
-// Relative path from deck to src/theme (decks/<a>/<b> → ../../../src/theme).
+// Relative path from deck to src/theme (src/decks/<a>/<b> → ../../../theme).
 const depth = slug.split('/').length; // e.g. pro/my-talk → 2
 const themePath = '../'.repeat(depth + 1) + 'src/theme';
 
@@ -90,9 +90,9 @@ lang: fr
 await writeFile(join(dir, 'slides.md'), md, 'utf8');
 await writeFile(join(dir, 'meta.yaml'), meta, 'utf8');
 
-console.log(`\n✅  Created Slidev deck: decks/${slug}/`);
-console.log(`   • decks/${slug}/slides.md   ← Slidev content`);
-console.log(`   • decks/${slug}/meta.yaml   ← Pandoc export metadata`);
-console.log(`   • decks/${slug}/assets/     ← images`);
+console.log(`\n✅  Created Slidev deck: src/decks/${slug}/`);
+console.log(`   • src/decks/${slug}/slides.md   ← Slidev content`);
+console.log(`   • src/decks/${slug}/meta.yaml   ← Pandoc export metadata`);
+console.log(`   • src/decks/${slug}/assets/     ← images`);
 console.log(`\n   Preview:  npm run dev`);
 console.log(`   Export docs:  npm run export:docs -- --deck ${slug}\n`);

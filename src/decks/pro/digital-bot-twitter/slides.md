@@ -45,7 +45,7 @@ seoMeta:
 
 # theme id, package name, or local path
 # Learn more: https://sli.dev/guide/theme-addon.html#use-theme
-theme: ../../../src/theme
+theme: ../../../theme
 hideInToc: true
 addons:
   - slidev-addon-qrcode

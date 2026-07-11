@@ -1,5 +1,5 @@
 ---
-theme: ../../../src/theme
+theme: ../../../theme
 colorSchema: auto
 title: "Ionic — The Hybrid Theory"
 author: "François Eoche"

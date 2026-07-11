@@ -592,7 +592,7 @@ const dir = join(ROOT, 'decks', slug);
 await mkdir(dir, { recursive: true });
 await mkdir(join(dir, 'assets'), { recursive: true });
 
-// Relative path from deck to src/theme (decks/<a>/<b> → ../../../src/theme).
+// Relative path from deck to src/theme (decks/<a>/<b> → ../../../theme).
 const depth = slug.split('/').length; // e.g. pro/my-talk → 2
 const themePath = '../'.repeat(depth + 1) + 'src/theme';
 
@@ -653,7 +653,7 @@ Remove the now-unused `cdn`, `rootRel`, and `html` variables and the reveal.js `
 - [ ] **Step 2: Dry-run scaffold a throwaway deck**
 
 Run: `node scripts/new-talk.js misc/_scratch "Scratch Talk"`
-Expected: creates `decks/misc/_scratch/slides.md` starting with `theme: ../../../src/theme`.
+Expected: creates `decks/misc/_scratch/slides.md` starting with `theme: ../../../theme`.
 
 - [ ] **Step 3: Verify it is recognized as a Slidev deck and exports**
 

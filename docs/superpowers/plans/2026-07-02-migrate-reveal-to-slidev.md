@@ -9,7 +9,7 @@
 ## Global Constraints
 
 - Conversion conventions are defined in the spec `docs/superpowers/specs/2026-07-02-migrate-reveal-to-slidev-design.md` — every deck task MUST follow the "Conversion conventions" section verbatim.
-- Frontmatter theme path is exactly `theme: ../../../src/theme` for every deck.
+- Frontmatter theme path is exactly `theme: ../../../theme` for every deck.
 - Delete each deck's `index.html`, `_source.html`, `index-static.html`, `meta.yaml` after folding meta into frontmatter.
 - Faithful migration: preserve slide content/order; only restructure for layout fit and flatten vertical (`--`) slides.
 - Per-deck verification: `pnpm exec slidev build "<deck>/slides.md" --out "<scratch>/deck-dist"` must end with `✓ built in …` and no missing-layout errors. Ignore harmless `[INVALID_ANNOTATION]`/`[PLUGIN_TIMINGS]` node_modules warnings.
@@ -54,12 +54,12 @@ Each task follows the SAME procedure; the only variable is the deck path. Do the
 - Task 4: `src/pro/ionic-the-hybrid-theory`
 - Task 5: `src/z-misc/tas`
 - Task 6: `src/z-misc/speedrun`
-- Task 7: `src/pro/digital-bot-twitter` (repair existing partial Slidev migration; fix theme path to `../../../src/theme`, apply conventions, delete Reveal artifacts)
+- Task 7: `src/pro/digital-bot-twitter` (repair existing partial Slidev migration; fix theme path to `../../../theme`, apply conventions, delete Reveal artifacts)
 
 **Procedure per deck (checklist to repeat):**
 
 - [ ] **Step 1:** Read the deck's `slides.md` and `meta.yaml` in full.
-- [ ] **Step 2:** Rewrite `slides.md` as a Slidev deck per the spec's Conversion conventions: build the frontmatter header from `meta.yaml` + `theme: ../../../src/theme`; map each slide to the best-fit layout; flatten vertical slides; strip all `<!-- .slide: … -->` directives and Reveal-only HTML.
+- [ ] **Step 2:** Rewrite `slides.md` as a Slidev deck per the spec's Conversion conventions: build the frontmatter header from `meta.yaml` + `theme: ../../../theme`; map each slide to the best-fit layout; flatten vertical slides; strip all `<!-- .slide: … -->` directives and Reveal-only HTML.
 - [ ] **Step 3:** Delete the deck's `index.html`, `_source.html`, `index-static.html` (if present), `meta.yaml`.
 - [ ] **Step 4:** Build-verify: `pnpm exec slidev build "<deck>/slides.md" --out "<scratch>/deck-dist"`. Fix any missing-layout / frontmatter errors until it ends with `✓ built in …`.
 - [ ] **Step 5:** Commit with message `feat(deck): migrate <deck> to Slidev` + trailer.

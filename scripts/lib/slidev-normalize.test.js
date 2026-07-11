@@ -80,17 +80,17 @@ test('normalizeSlide resolves bindings and strips custom Vue components', () => 
 
 test('normalizeDeck inlines src: includes', async () => {
   const raw = [
-    '---', 'theme: ../../../src/theme', 'title: T', '---', '',
+    '---', 'theme: ../../../theme', 'title: T', '---', '',
     '# Cover', '', '---', 'src: ../../_common/intro.md', '---',
   ].join('\n');
-  const out = await normalizeDeck(raw, 'decks/pro/x/slides.md');
+  const out = await normalizeDeck(raw, 'src/decks/pro/x/slides.md');
   // intro.md contributes the author heading; the src placeholder must be gone.
   assert.doesNotMatch(out, /===\s*INTRODUCTION\s*===/);
   assert.match(out, /Web cabinetmaker/);
 });
 
 test('real speedrun deck normalizes with no Slidev residue', async () => {
-  const path = 'decks/misc/speedrun/slides.md';
+  const path = 'src/decks/misc/speedrun/slides.md';
   const out = await normalizeDeck(readFileSync(path, 'utf8'), path);
   assert.doesNotMatch(out, /^layout:/m);
   assert.doesNotMatch(out, /::left::|::right::/);

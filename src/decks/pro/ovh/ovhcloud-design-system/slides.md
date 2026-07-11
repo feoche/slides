@@ -2,7 +2,7 @@
 title: "Very Tech Trip — Design System for techs"
 author: "François Eoche"
 lang: en
-theme: ../../../src/theme
+theme: ../../../theme
 colorSchema: auto
 layout: media-full
 media: https://s3.amazonaws.com/media-p.slid.es/imports/419370/WtHBH05T/WtHBH05T_001.png

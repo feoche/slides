@@ -69,15 +69,15 @@ addons:
 <!-- Speaker Notes -->
 
 ---
-src: ./decks/_common/intro.md
+src: ./src/decks/_common/intro.md
 ---
 === INTRODUCTION ===
 ---
-src: ./decks/_common/disclaimer.md
+src: ./src/decks/_common/disclaimer.md
 ---
 === DISCLAIMER ===
 ---
-src: ./decks/_common/toc.md
+src: ./src/decks/_common/toc.md
 ---
 === TOC ===
 

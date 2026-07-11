@@ -1,5 +1,5 @@
 ---
-theme: ../../../src/theme
+theme: ../../../theme
 colorSchema: auto
 title: "Le SpeedRun — Présentation"
 author: "François Eoche"
@@ -13,7 +13,8 @@ layout: cover
 ## Introduction
 
 ---
-layout: intro
+layout: media
+media: /speedrennes.png
 ---
 
 ## SpeedRennes
@@ -27,6 +28,9 @@ layout: section
 # Le Speedrun — Qu'est-ce que c'est ?
 
 ---
+layout: media-right
+media: /course.avif
+---
 
 ## Aller vite…
 
@@ -34,6 +38,9 @@ La compétition dans différents domaines invite à aller **"le plus vite/loin/h
 
 On gagne une compétition, un championnat dans différentes catégories, et on effectue (ou pas) des **records**.
 
+---
+layout: media-right
+media: /smb.gif
 ---
 
 ## …mais dans les jeux vidéo
@@ -49,6 +56,9 @@ layout: section
 # Le Speedrun — Les débuts
 
 ---
+layout: media-right
+media: /space-invaders.png
+---
 
 ## 1980 — Space Invaders
 
@@ -59,6 +69,9 @@ L'objectif : faire le meilleur score. Le gagnant avait fait 110 000 pts.
 *La course aux records débute !*
 
 ---
+layout: media
+media: /twin-galaxies.webp
+---
 
 ## 1982 — Twin Galaxies
 
@@ -66,6 +79,9 @@ Walter Day parcourt une centaine de salles d'arcade aux USA pour glaner les meil
 
 Création d'une liste des **records du monde** (intégrée dans le *Guinness Book of World Records* en 1998).
 
+---
+layout: media-right
+media: /doom.jpg
 ---
 
 ## 1994 — DOOM
@@ -77,6 +93,9 @@ Lancement du **LMP Hall of Fame**, classement des meilleurs temps.
 - *Doom done Quick* (100% en 1h30 !)
 
 ---
+layout: media
+media: /sda.png
+---
 
 ## 1998 — Speed Demos Archive
 
@@ -86,6 +105,9 @@ Lancement du **LMP Hall of Fame**, classement des meilleurs temps.
 - Puis d'autres jeux comme l'AGDQ/SGDQ
 - Ajout de vidéos sur d'autres jeux
 
+---
+layout: media-right
+media: /metroid.jpg
 ---
 
 ## 2002 — Metroid
@@ -97,6 +119,9 @@ Beaucoup de techniques trouvées et échangées sur les forums.
 Un **leaderboard** fourni sur la gamme de jeux Metroid.
 
 ---
+layout: media
+media: /tasvideos.png
+---
 
 ## 2003 — TASVideos
 
@@ -104,6 +129,9 @@ Depuis 1997, plusieurs exemples de Tool Assisted Speedruns "maison" (DOOM, Quake
 
 Une communauté se forme autour du TAS, glânant de plus en plus de jeux.
 
+---
+layout: media
+media: /gdq.png
 ---
 
 ## 2010 — Games Done Quick
@@ -113,6 +141,9 @@ Une communauté se forme autour du TAS, glânant de plus en plus de jeux.
 - Retransmis sur **Twitch** en direct
 - Levée de fonds pour des associations caritatives
 
+---
+layout: media
+media: /speedruncom.jpg
 ---
 
 ## 2013 — Speedrun.com
@@ -137,15 +168,21 @@ layout: section
 **Superplay** : Finir le jeu en utilisant des techniques de "démonstration" technique.
 
 ---
+layout: media-right
+media: /mario100.png
+---
 
 ## 100%
 
-Finir un jeu en l'ayant **complété totalement** :
+### Finir un jeu en l'ayant **complété totalement** :
 - Tout débloquer, récupérer certains objets…
 - Tout dépend des règles définies par la communauté
 
 *Sur Super Mario Bros : Finir le jeu en récupérant tous les pouvoirs possibles.*
 
+---
+layout: media-right
+media: /marioany.png
 ---
 
 ## Any%

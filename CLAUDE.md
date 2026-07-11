@@ -16,10 +16,10 @@ pnpm dev              # Start Slidev dev server (auto-opens browser)
 pnpm build            # Build Slidev presentation for production
 pnpm export           # Export slides to PDF (requires playwright-chromium)
 
-# Static builds (Reveal.js decks via Pandoc)
-node scripts/build.js                        # Build all decks
-node scripts/build.js --deck pro/bookmarklets  # Build single deck
-node scripts/build.js --verbose              # Show pandoc commands
+# Export decks to documents (Markdown, HTML, PDF via Pandoc)
+npm run export:docs                        # Export all Slidev decks
+npm run export:docs -- --deck pro/bookmarklets  # Export single deck
+npm run export:docs -- --verbose           # Show pandoc commands
 
 # Scaffold a new talk
 npm run new -- pro/my-talk "My Talk Title"
@@ -33,11 +33,10 @@ pnpm prettier --write "**/*.md"
 
 **Custom Slidev theme** (`src/theme/`): Published as `slidev-theme-feoche`. Contains 19 layouts (cover, section, quote, fact, image variants, iframe variants, two-cols, etc.), design tokens in `styles/tokens.css`, and helper functions in `layoutHelper.ts` (`formatDate`, `handleBackground`).
 
-**Presentation decks**: Slidev decks use root-level `slides*.md` files. Reveal.js decks live in `src/pro/<slug>/` and `src/z-misc/<slug>/`, each containing `slides.md`, `meta.yaml`, `index.html`, and `assets/`.
+**Presentation decks**: Slidev decks live in `src/decks/` (organized as `src/decks/pro/`, `src/decks/misc/`, and `src/decks/_common/`), each containing `slides.md`, `meta.yaml`, and `assets/`.
 
-**Two build pipelines**:
-- Slidev: `@slidev/cli` (Vite-based, used by root `slides.md` files)
-- Reveal.js: `scripts/build.js` runs Pandoc with `_templates/revealjs.html` template and `_templates/default-meta.yaml` defaults, outputs `index-static.html`
+**Build pipeline**:
+- Slidev: `@slidev/cli` (Vite-based) builds and exports to PDF. `scripts/export-docs.js` exports decks to Markdown/HTML/PDF via Pandoc, using templates in `src/_templates/`.
 
 ## Key Conventions
 

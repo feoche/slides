@@ -2,7 +2,7 @@
 /**
  * scripts/serve-boards.js
  *
- * Serve a single Slidev "board" (a deck under `decks/`) for local development.
+ * Serve a single Slidev "board" (a deck under `src/decks/`) for local development.
  *
  * Usage:
  *   node scripts/serve-boards.js pro/bookmarklets  # serve one board (--open)

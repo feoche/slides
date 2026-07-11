@@ -4,15 +4,13 @@ This repository contains templates for creating presentations using [Slidev](htt
 
 ## Template Files
 
-### `_templates/` Directory
+### `src/_templates/` Directory
 
-The `_templates/` directory contains all the template files needed for Slidev presentations:
+The `src/_templates/` directory contains all the template files needed for document export via Pandoc:
 
-- `index.html` - Simple index template for Slidev presentations
-- `slidev.html` - Slidev-specific HTML template
-- `default-meta.yaml` - Default metadata configuration for presentations
-- `palette.yaml` - Color palette definitions for different themes
-- `custom.css` - Custom styling rules with design tokens and theme variables
+- `default-meta.yaml` - Default metadata configuration for Pandoc exports
+- `handout.html` - HTML template for standalone handout documents
+- `handout.css` - Styling for HTML handouts
 
 ## Usage
 

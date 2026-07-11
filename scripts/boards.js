@@ -1,19 +1,19 @@
 /**
  * scripts/boards.js
- *   *                                                                                                  * Shared deck-discovery helpers for the multi-deck (a.k.a. "boards") scripts.                      *                                                                                                  * A "board" is a Slidev deck living under `decks/`: any                                            * `decks/<category>/<slug>/slides.md` (e.g. `decks/pro/bookmarklets/slides.md`).                   * Slidev's dev server and build only handle one entry file at a time, so                           * serve-boards.js / build-boards.js loop over the set discovered here.                             * Only decks inside `decks/` are considered.                                                       */
+ *   *                                                                                                  * Shared deck-discovery helpers for the multi-deck (a.k.a. "boards") scripts.                      *                                                                                                  * A "board" is a Slidev deck living under `src/decks/`: any                                            * `src/decks/<category>/<slug>/slides.md` (e.g. `src/decks/pro/bookmarklets/slides.md`).                   * Slidev's dev server and build only handle one entry file at a time, so                           * serve-boards.js / build-boards.js loop over the set discovered here.                             * Only decks inside `src/decks/` are considered.                                                       */
 import {existsSync, readdirSync} from 'fs';
 import {dirname, join, relative, sep} from 'path';
 import {fileURLToPath} from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const ROOT = join(__dirname, '..');
-export const DECKS = join(ROOT, 'decks');
+export const DECKS = join(ROOT, 'src/decks');
 
-/** decks/pro/bookmarklets → "pro/bookmarklets" (forward slashes on all platforms). */             function slugFor(deckDir) {
+/** src/decks/pro/bookmarklets → "pro/bookmarklets" (forward slashes on all platforms). */             function slugFor(deckDir) {
     return relative(DECKS, deckDir).split(sep).join('/');
 }
 
-/** Recursively find every directory under `decks/` that contains a slides.md. */                  function findDeckDirs(dir) {
+/** Recursively find every directory under `src/decks/` that contains a slides.md. */                  function findDeckDirs(dir) {
     const results = [];
     for (const entry of readdirSync(dir, {withFileTypes: true})) {
         if (!entry.isDirectory()) continue;
@@ -23,7 +23,7 @@ export const DECKS = join(ROOT, 'decks');
     return results;
 }
 
-/** Discover all Slidev boards under `decks/`, sorted by slug. */                                  export function discoverBoards() {
+/** Discover all Slidev boards under `src/decks/`, sorted by slug. */                                  export function discoverBoards() {
     if (!existsSync(DECKS)) return [];
     return findDeckDirs(DECKS).map((deckDir) => {
         const slug = slugFor(deckDir);

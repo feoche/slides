@@ -1,5 +1,5 @@
 ---
-theme: ../../../src/theme
+theme: ../../../theme
 colorSchema: auto
 title: "Le TAS — Présentation"
 author: "François Eoche"
