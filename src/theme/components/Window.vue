@@ -11,7 +11,6 @@ import {
   detectMediaKind,
   toYouTubeEmbed,
   resolveAssetUrl,
-  IMAGE_EXT,
   type MediaKind,
 } from "../layoutHelper";
 
