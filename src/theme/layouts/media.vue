@@ -34,7 +34,9 @@ const props = defineProps<{
   &:not(.media--window) {
     @apply flex flex-col gap-8;
 
-    :where(img, video, iframe) {
+    img,
+    video,
+    iframe {
       @apply h-full w-auto object-contain;
     }
   }

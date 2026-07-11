@@ -35,3 +35,10 @@ media: /tasnds.mp4
 window: true
 type: mobile
 ---
+
+---
+layout: media
+media: /tas4mario.png
+---
+
+## Image, plain (regression check)
