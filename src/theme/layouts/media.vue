@@ -30,7 +30,7 @@ const style = computed(() =>
       :title="windowTitle"
       :url="url"
     />
-    <img v-else :src="media" :style="style" />
+    <Media v-else :src="media" :object-fit="objectFit" />
   </div>
 </template>
 
@@ -41,7 +41,7 @@ const style = computed(() =>
   &:not(.media--window) {
     @apply flex flex-col gap-8;
 
-    img {
+    :where(img, video, iframe) {
       @apply h-full w-auto object-contain;
     }
   }
