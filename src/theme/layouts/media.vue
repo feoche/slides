@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { handleBackground } from "../layoutHelper";
-
 const props = defineProps<{
   media?: string;
   window?: boolean;
@@ -12,10 +9,6 @@ const props = defineProps<{
   windowTitle?: string;
   url?: string;
 }>();
-
-const style = computed(() =>
-  handleBackground("transparent", false, props.backgroundSize ?? "cover"),
-);
 </script>
 
 <template>
