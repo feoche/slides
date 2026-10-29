@@ -2,21 +2,20 @@
 /**
  * scripts/build-boards.js
  *
- * Build the root-level Slidev "boards" into a single static site:
+ * Build every Slidev "board" (deck under `talks/`, plus `src/common/` previews) into a single static site:
  *
  *   dist/
  *     index.html            ← generated landing page linking to each board
- *     home/                 ← slides.md
- *     design-system/        ← slides_design-system.md
- *     slidev/               ← slides_slidev.md
+ *     pro/bookmarklets/     ← talks/pro/bookmarklets/slides.md
+ *     misc/speedrun/        ← talks/misc/speedrun/slides.md
  *     …
  *
  * Each board is built with `--base /<slug>/` so its assets resolve when
  * hosted at that sub-path (Netlify/Vercel friendly).
  *
  * Usage:
- *   node scripts/build-boards.js                 # build every board + index
- *   node scripts/build-boards.js design-system   # build one board only
+ *   node scripts/build-boards.js                    # build every board + index
+ *   node scripts/build-boards.js pro/bookmarklets   # build one board only
  */
 import { execFileSync } from 'child_process';
 import { writeFileSync, mkdirSync } from 'fs';
@@ -27,7 +26,7 @@ const args = process.argv.slice(2);
 const all = discoverBoards();
 
 if (all.length === 0) {
-  console.log('\n  ⚠️  No boards found (looked for slides.md / slides_*.md).\n');
+  console.log('\n  ⚠️  No boards found (looked for talks/**/slides.md).\n');
   process.exit(0);
 }
 

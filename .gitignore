@@ -3,11 +3,6 @@
 **/node_modules/
 /.pnpm-store
 
-# AI
-.superpowers
-.claude
-docs/
-
 # Build artifacts
 /dist
 /.vuepress/dist
@@ -15,7 +10,7 @@ docs/
 **/dist/
 
 # Pandoc document exports
-src/decks/**/export/
+talks/**/export/
 
 # Logs
 *.log

@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "slidev build",
+    "build": "node scripts/build-boards.js",
     "dev": "node scripts/serve-boards.js",
-    "export": "slidev export",
+    "export": "node scripts/export-board.js",
     "export:docs": "node scripts/export-docs.js",
+    "new": "node scripts/new-talk.js",
     "build:boards": "node scripts/build-boards.js"
   },
   "dependencies": {

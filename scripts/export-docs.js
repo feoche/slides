@@ -12,7 +12,7 @@ import { normalizeDeck } from './lib/slidev-normalize.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const DECKS = join(ROOT, 'src', 'decks');
+const DECKS = join(ROOT, 'talks');
 const TEMPLATES = join(ROOT, 'src', '_templates');
 const META = join(TEMPLATES, 'default-meta.yaml');
 const HTML_TEMPLATE = join(TEMPLATES, 'handout.html');
