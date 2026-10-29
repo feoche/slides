@@ -3,7 +3,7 @@
 Here's an example of a code slide with syntax highlighting:
 
 <!-- Code snippet -->
-<<< @/src/theme/layoutHelper.ts [src/theme/layoutHelper.ts] {lineNumbers:true,maxHeight:'100%'} ts
+<<< ../theme/layoutHelper.ts [src/theme/layoutHelper.ts] {lineNumbers:true,maxHeight:'100%'} ts
 
 ```ts {monaco}
 const result = helloWorld();

@@ -1,148 +1,164 @@
-# Slidev Templates
+# Slidev Talks
 
-This repository contains templates for creating presentations using [Slidev](https://sli.dev/), a presentation framework that uses Markdown with Vue components.
-
-## Template Files
-
-### `src/_templates/` Directory
-
-The `src/_templates/` directory contains all the template files needed for document export via Pandoc:
-
-- `default-meta.yaml` - Default metadata configuration for Pandoc exports
-- `handout.html` - HTML template for standalone handout documents
-- `handout.css` - Styling for HTML handouts
-
-## Usage
-
-1. Create a new presentation by copying the `slides/` directory structure
-2. Use one of the template files as your base:
-   - For Slidev presentations, use `slidev.html`
-   - For simple index pages, use `index.html`
-
-## Date Parameter
-
-You can pass a date parameter in your slides.md frontmatter:
-
-```yaml
----
-date: 2026-06-09
----
-```
-
-This date will be accessible in all layouts using `$frontmatter.date` and will automatically be formatted for display.
-
-### Usage Examples
-
-In any slide, you can access the date like this:
-- `{{ $frontmatter.date }}` - Raw date value
-- `{{ new Date($frontmatter.date).toLocaleDateString() }}` - Formatted date
-- `{{ formatDate($frontmatter.date) }}` - Using helper function (if available)
-
-The date parameter is automatically used in the cover layout and can be used anywhere in your slides.
-
-## Features
-
-- **Theme Support**: Multiple color themes defined in `palette.yaml`
-- **Custom Styling**: Extensive CSS customization through `custom.css`
-- **Responsive Design**: Adapts to different screen sizes
-- **Code Highlighting**: Syntax highlighting for code blocks
-- **Slide Navigation**: Arrow key and touch support
-- **Speaker Notes**: Built-in speaker note support
-
-## Document Export (Pandoc)
-
-Export any Slidev deck to reading formats (flat Markdown + HTML handout +
-PDF) via Pandoc:
-
-    npm run export:docs                            # all decks
-    npm run export:docs -- --deck misc/speedrun    # one deck
-
-Outputs land in `<deck>/export/`. PDF requires a LaTeX engine; if none is
-installed, Markdown and HTML are still produced and PDF is skipped.
-Requires Pandoc: https://pandoc.org/installing.html
-
-## Customization
-
-### Color Themes
-
-The `palette.yaml` file defines several color themes:
-- Default (blue-based)
-- Teal
-- Purple-blue
-- Red-warm
-- Green
-- Orange
-- Gray
-
-A new custom theme has been added with light and dark palettes:
-
-**Light Palette:**
-- Primary color: `#00574a`
-- Primary hover: `#003D34`
-- Text primary: `#001f1b`
-- Text secondary: `#002b25`
-- Background primary: `#ffffff`
-- Background secondary: `#f8faf9`
-- Background alt: `#f0f5f3`
-- Border color: `#d5e0dc`
-- On primary: `#ffffff`
-- Switch off: `#b0c4bf`
-- Switch on: `#00574a`
-- Switch knob: `#ffffff`
-
-**Dark Palette:**
-- Primary color: `#ffffff`
-- Primary hover: `#ffffff`
-- Text primary: `#ffffff`
-- Text secondary: `#ffffff`
-- Background primary: `#0c1f1b`
-- Background secondary: `#00574a`
-- Background alt: `#003D34`
-- Border color: `#006B57`
-- On primary: `#001f1b`
-- Switch off: `#006B57`
-- Switch on: `#4fd1b8`
-- Switch knob: `#0c1f1b`
-
-### Styling
-
-The `custom.css` file contains:
-- Design tokens for consistent styling
-- Typography fixes
-- Code block styling
-- Blockquote styling
-- Layout helpers (columns, cards, centered content)
-- Utility classes
-- Speaker notes support
-- Markdown rendering improvements
+François Eoche's talks, written in [Slidev](https://sli.dev/) (Markdown + Vue) with a shared custom theme
+(`slidev-theme-feoche`). Every deck follows the same structure so they look, behave and export the same way.
 
 ## Requirements
 
-- Node.js 16+ (for Slidev)
-- npm or pnpm for package management
+- Node.js 20+ and **pnpm** (`pnpm install` once at the repo root)
+- Optional: [Pandoc](https://pandoc.org/installing.html) (+ a LaTeX engine for PDF) for `export:docs`
+- Optional: `playwright-chromium` (already a devDependency) for `pnpm export`
 
-## Installation
+## Quick start
 
-```bash
-# Install Slidev globally
-npm install -g @slidev/cli
-
-# Or use pnpm
-pnpm add -g @slidev/cli
-```
-
-## Building Presentations
-
-To build a presentation:
+Everything you edit lives in **`talks/`**, sorted into `pro/` (work) and `misc/` (side projects):
 
 ```bash
-# Start the development server
-slidev
-
-# Build for production
-slidev build
+pnpm install
+npm run new -- pro/my-talk "My Talk Title"   # creates talks/pro/my-talk/
+pnpm dev my-talk                             # serve it on http://localhost:3030
 ```
 
-## Contributing
+- `pnpm dev` alone shows a picker of all talks; a talk can be named by its folder (`bookmarklets`) or full path
+  (`pro/bookmarklets`).
+- Edit `talks/<pro|misc>/<slug>/slides.md`; drop images in the talk's `public/` folder.
+- You never need to open `src/` to write a talk.
+- Rules every talk follows (structure, headings, layouts): see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-Feel free to contribute by submitting issues or pull requests to improve these templates.
+## Repository layout
+
+```
+talks/                         ← YOUR TALKS — the only folder you need for content
+├── slides.example.md          ← reference deck copied by `npm run new` (don't edit for a talk)
+├── pro/<slug>/                ← work talks
+└── misc/<slug>/               ← side-project talks
+src/                           ← tooling, rarely touched
+├── common/                    ← slides shared by every talk (intro, disclaimer, toc, end)
+│   ├── showcase/              ← every layout & template in one deck (`pnpm dev showcase`)
+│   └── media-demo/            ← media layouts with video / YouTube (`pnpm dev media-demo`)
+├── theme/                     ← slidev-theme-feoche (layouts, components, styles/tokens.css)
+├── templates/                 ← one snippet per layout, to copy slides from
+└── _templates/                ← Pandoc export templates (default-meta.yaml, handout.html/css)
+scripts/                       ← new-talk, serve-boards, build-boards, export-board, export-docs
+```
+
+## Talk structure
+
+Each talk is a folder `talks/<pro|misc>/<slug>/` containing:
+
+| Path         | Purpose                                                                    |
+|--------------|----------------------------------------------------------------------------|
+| `slides.md`  | The deck. Only files named `slides.md` are picked up by `pnpm dev`.        |
+| `outline.md` | Optional: abstract and chapter list, written before the deck exists.       |
+| `meta.yaml`  | Pandoc metadata (title, author, lang) for `npm run export:docs`.          |
+| `public/`    | Images and videos, referenced from slides as `/file.jpg` (leading `/`).   |
+| `export/`    | Generated by `export:docs` (git-ignored).                                  |
+
+A talk that only has an `outline.md` is an idea: run `npm run new -- <pro|misc>/<slug> "Title"` to add its deck next
+to the outline.
+
+### Slide order
+
+Every deck follows this skeleton (see `talks/slides.example.md`):
+
+1. **Headmatter + cover** — `layout: cover`, title, author, date, QR code to `url`
+2. **`src/common/intro.md`** — speaker presentation
+3. **`src/common/disclaimer.md`** — the "speaker bias" disclaimer
+4. **`src/common/toc.md`** — table of contents (built from `# h1` titles)
+5. **Content** — one `layout: section` slide (`# h1`) per chapter, followed by its content slides (`## h2`)
+6. **Closing** — `layout: center` slide (thanks / questions / teaser)
+7. **`src/common/end.md`** — contacts and feedback QR code
+
+Shared slides are included with a `src:` slide, using a path relative to the deck:
+
+```md
+---
+src: ../../../src/common/intro.md
+---
+```
+
+### Headmatter
+
+The first frontmatter block configures the whole deck:
+
+| Key                  | Use                                                                  |
+|----------------------|----------------------------------------------------------------------|
+| `title`, `info`      | Title and description (also used for SEO and the cover)              |
+| `url`                | Public URL of the talk — rendered as the cover QR code               |
+| `date`               | `YYYY-MM-DD`, displayed on the cover (`$frontmatter.date`)           |
+| `duration`           | Planned talk length, e.g. `20min`                                    |
+| `colorSchema`        | `auto`, `light` or `dark`                                            |
+| `htmlAttrs.lang`     | Deck language (`fr` by default)                                      |
+| `seoMeta`            | Open Graph / Twitter tags                                            |
+| `theme`              | Relative path to `src/theme` (`../../../src/theme` for `<pro\|misc>/<slug>`) |
+| `addons`             | `slidev-addon-qrcode` (needed by the cover and end slides)           |
+
+The author name comes from the theme config (`$slidev.configs.author`).
+
+### Conventions
+
+- **Headings**: `#` only on cover and section slides (they feed the TOC); `##` for slide titles, `###` for subtitles.
+- **One idea per slide**; prefer short bullet points.
+- **Speaker notes** go in a trailing HTML comment: `<!-- ... -->`.
+- **Per-slide styles**: a `<style>` block inside the slide is scoped to that slide.
+- **Assets** live in the deck's `public/`, never in another deck.
+- Run `pnpm prettier --write "talks/**/*.md"` before committing.
+
+## Layouts
+
+Set with `layout:` in a slide's frontmatter. Ready-to-copy snippets are in `src/templates/`.
+
+| Layout              | Use                                   | Slots / props                                                       |
+|---------------------|---------------------------------------|---------------------------------------------------------------------|
+| `cover`             | First slide                           | `::qr-code::`                                                       |
+| `intro`             | Speaker presentation                  | `image`                                                             |
+| `disclaimer`        | Disclaimer                            | —                                                                   |
+| `section`           | Chapter title (`# h1`)                | —                                                                   |
+| `default`           | Regular content                       | —                                                                   |
+| `center`            | Centered content                      | —                                                                   |
+| `fact`              | Big number / statement                | —                                                                   |
+| `quote`             | Blockquote                            | —                                                                   |
+| `full`              | Content using the whole slide         | —                                                                   |
+| `two-cols`          | Two columns                           | default (left), `::right::`                                         |
+| `two-cols-header`   | Header + two columns                  | `::left::`, `::right::`, `::bottom::`                               |
+| `three-cols`        | Three columns (`1fr 2fr 1fr`)         | `::left::`, `::center::`, `::right::`, `::bottom::`                 |
+| `three-cols-header` | Header + three columns                | `::left::`, `::center::`, `::right::`                               |
+| `three-rows`        | Three stacked rows                    | `::top::`, `::center::`, `::bottom::`                               |
+| `six-cells-header`  | Header + 2×3 grid                     | `::top-left::` … `::bottom-right::`                                 |
+| `media`             | Title above a media                   | `media`, `window`, `type`, `windowTitle`, `url`, `scale`, `objectFit` |
+| `media-left` / `media-right` | Media beside the content     | same as `media` + `backgroundSize`                                  |
+| `media-full`        | Media filling the slide               | same as `media`                                                     |
+| `end`               | Last slide                            | `image`, `::main::`, `::feedback::`, `::qr-code::`                  |
+| `none`              | Bare slot, no chrome                  | —                                                                   |
+
+`media` accepts an image, a video (`.mp4`) or a YouTube URL. `window: true` frames it in a browser window
+(`type: mobile` for a phone).
+
+More details on grid layouts: [`src/theme/README.md`](src/theme/README.md).
+
+## Commands
+
+| Command                                       | Description                                         |
+|-----------------------------------------------|-----------------------------------------------------|
+| `npm run new -- <pro\|misc>/<slug> "Title"`    | Create a talk from `talks/slides.example.md`        |
+| `pnpm dev [<slug>]`                           | Serve one talk (picker if no slug)                  |
+| `pnpm build [<slug>]`                         | Build all talks (or one) into `dist/`               |
+| `pnpm export <slug>`                          | Export one talk to PDF in its `export/` folder      |
+| `npm run export:docs [-- --deck <slug>]`      | Export decks to Markdown, HTML handout and PDF      |
+| `pnpm prettier --write "**/*.md"`             | Format Markdown (Slidev parser)                     |
+
+## Document export (Pandoc)
+
+```bash
+npm run export:docs                            # all decks
+npm run export:docs -- --deck misc/speedrun    # one deck
+npm run export:docs -- --verbose               # print pandoc commands
+```
+
+Outputs land in `<deck>/export/`. Defaults come from `src/_templates/default-meta.yaml`, overridden by the deck's
+`meta.yaml`. Without a LaTeX engine, Markdown and HTML are still produced and PDF is skipped.
+
+## Theme
+
+Design tokens (colors, fonts, spacing) live in `src/theme/styles/tokens.css`. Primary color `#00574a`, fonts
+Albert Sans (body), Outfit (headings) and Cascadia Code (code). Light and dark schemes are both supported.
