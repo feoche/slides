@@ -6,14 +6,14 @@ title: PRANK - Il fait un bot Twitter, ça tourne mal
 
 # slides description
 # (use search&replace to update)
-info: Talk description
+info: "J'aime bien les bots. Alors j'ai codé un bot Twitter en NodeJS... et ça a très mal tourné. Récit en trois jours d'une blague qui dérape, réparée à coups de probabilités et de chaînes de Markov."
 
 # URL of the presentation
 # (use search&replace to update)
-url: https://slides.com/feoche/les-bookmarklets-c-est-chouette
+url: https://feoche.github.io/slides/digital-bot-twitter/
 
 # date of the presentation
-date: 2024-06-21
+date: 2017-12-19
 
 # keywords field for exported PDF, comma-delimited
 keywords: twitter, bot, nodejs
@@ -33,11 +33,11 @@ htmlAttrs:
 seoMeta:
   ogTitle: PRANK - Il fait un bot Twitter, ça tourne mal
   twitterTitle: PRANK - Il fait un bot Twitter, ça tourne mal
-  ogDescription: Talk description
-  twitterDescription: Talk description
+  ogDescription: "J'aime bien les bots. Alors j'ai codé un bot Twitter en NodeJS... et ça a très mal tourné. Récit en trois jours d'une blague qui dérape, réparée à coups de probabilités et de chaînes de Markov."
+  twitterDescription: "J'aime bien les bots. Alors j'ai codé un bot Twitter en NodeJS... et ça a très mal tourné. Récit en trois jours d'une blague qui dérape, réparée à coups de probabilités et de chaînes de Markov."
 
   ogImage: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
-  ogUrl: https://slides.com/feoche/les-bookmarklets-c-est-chouette
+  ogUrl: https://feoche.github.io/slides/digital-bot-twitter/
   twitterCard: summary_large_image
   twitterImage: https://pbs.twimg.com/profile_images/1881465971619119105/PdAr46fd_400x400.jpg
   twitterSite: francoiseoche

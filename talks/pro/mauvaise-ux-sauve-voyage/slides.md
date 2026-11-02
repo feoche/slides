@@ -10,10 +10,10 @@ info: Ah, les vacances, on se dit que le travail est loin, on laisse ses préocc
 
 # URL of the presentation
 # (use search&replace to update)
-url: https://slides.com/feoche/les-bookmarklets-c-est-chouette
+url: https://feoche.github.io/slides/mauvaise-ux-sauve-voyage/
 
 # date of the presentation
-date: 2024-06-21
+date: 2024-05-16
 
 # keywords field for exported PDF, comma-delimited
 keywords: ux, user-experience, design, reservation, tokyo, humor
@@ -37,7 +37,7 @@ seoMeta:
   twitterDescription: Ah, les vacances, on se dit que le travail est loin, on laisse ses préoccupations derrière nous...Mais chassez le naturel, il revient au galop ! Tiré d'une histoire vraie d'un 'Ébéniste du Web' en galère ultime, laissez-moi vous narrer comment il ne faut pas prendre à la légère les sujets d'ergonomie des interfaces !
 
   ogImage: https://www.iamfy.co/cdn/shop/files/m_2Fx1000_2F25dccac9-6ec7-490d-9c7d-5b02facba143_fe3c11a6-046f-402a-bdfa-38a1dcdbc0e4.jpg?crop=center&height=1000&v=1761237025&width=750&quality=60
-  ogUrl: https://slides.com/feoche/les-bookmarklets-c-est-chouette
+  ogUrl: https://feoche.github.io/slides/mauvaise-ux-sauve-voyage/
   twitterCard: summary_large_image
   twitterImage: https://pbs.twimg.com/profile_images/1881465971619119105/PdAr46fd_400x400.jpg
   twitterSite: francoiseoche

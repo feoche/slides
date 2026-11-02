@@ -13,7 +13,7 @@ info: Les bookmarklets, ça existe depuis 2005 et ça n'arrête pas de se réinv
 url: https://slides.com/feoche/les-bookmarklets-c-est-chouette
 
 # date of the presentation
-date: 2024-06-21
+date: 2024-01-22
 
 # keywords field for exported PDF, comma-delimited
 keywords: bookmarklets, javascript, web development
