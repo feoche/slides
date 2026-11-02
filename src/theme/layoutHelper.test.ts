@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { detectMediaKind, toYouTubeEmbed } from "./layoutHelper.ts";
+import { detectMediaKind, formatDate, toYouTubeEmbed } from "./layoutHelper.ts";
 
 test("detectMediaKind classifies by extension and host", () => {
   assert.equal(detectMediaKind("/foo.png"), "image");
@@ -28,4 +28,12 @@ test("toYouTubeEmbed preserves timestamp as start=", () => {
 
 test("toYouTubeEmbed returns input unchanged when no id", () => {
   assert.equal(toYouTubeEmbed("https://youtube.com/"), "https://youtube.com/");
+});
+
+test("formatDate renders DD/MM/YYYY with leading zeros", () => {
+  assert.equal(formatDate("2026-11-19"), "19/11/2026");
+  assert.equal(formatDate("2026-03-05"), "05/03/2026");
+  assert.equal(formatDate(new Date(Date.UTC(2024, 5, 1))), "01/06/2024");
+  assert.equal(formatDate("not a date"), "not a date");
+  assert.match(formatDate(), /^\d{2}\/\d{2}\/\d{4}$/);
 });

@@ -61,19 +61,20 @@ export function handleBackground(background?: string, dim = false, backgroundSiz
 }
 
 /**
- * Format date from frontmatter or current date
+ * Format date from frontmatter or current date as DD/MM/YYYY (zero-padded),
+ * whatever the browser locale.
  */
-export function formatDate(dateString?: string): string {
+export function formatDate(dateString?: string | Date): string {
+    const pad = (n: number) => String(n).padStart(2, '0')
     if (dateString) {
-        try {
-            const date = new Date(dateString)
-            return date.toLocaleDateString()
-        } catch (e) {
-            // If date parsing fails, return the original string
-            return dateString
-        }
+        const date = new Date(dateString)
+        // If date parsing fails, return the original string
+        if (Number.isNaN(date.getTime())) return String(dateString)
+        // `date: 2026-11-19` is parsed as UTC midnight: read UTC parts to avoid a timezone shift
+        return `${pad(date.getUTCDate())}/${pad(date.getUTCMonth() + 1)}/${date.getUTCFullYear()}`
     }
-    return new Date().toLocaleDateString()
+    const now = new Date()
+    return `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()}`
 }
 
 const HIGHLIGHT_LAYOUTS = [
