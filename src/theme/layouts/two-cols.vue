@@ -15,7 +15,7 @@ const props = defineProps({
       <slot/>
       <slot name="left"/>
     </div>
-    <div class="two-columns__col-left" :class="props.class">
+    <div class="two-columns__col-right" :class="props.class">
       <slot name="right"/>
     </div>
   </div>

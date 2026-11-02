@@ -234,6 +234,16 @@ src: ../../templates/two-cols-header.md
 === TWO COLS HEADER ===
 
 ---
+src: ../../templates/two-thirds.md
+---
+=== TWO THIRDS ===
+
+---
+src: ../../templates/two-thirds-header.md
+---
+=== TWO THIRDS HEADER ===
+
+---
 src: ../../templates/three-cols.md
 ---
 === THREE COLS ===

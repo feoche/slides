@@ -23,4 +23,8 @@ This shows in the center
 
 This shows on the right
 
+::bottom::
+
+### Footer - This spans all columns
+
 <!-- Speaker Notes -->

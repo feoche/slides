@@ -10,6 +10,8 @@
   Center
   ::right::
   Right
+  ::bottom::
+  Spans all columns, aligned to the bottom
 -->
 
 <script setup lang="ts">
@@ -37,12 +39,15 @@ const props = defineProps({
     <div class="three-cols-header__col-right" :class="props.class">
       <slot name="right" />
     </div>
+    <div class="three-cols-header__col-footer" :class="props.class">
+      <slot name="bottom" />
+    </div>
   </div>
 </template>
 
 <style>
 .slidev-layout.three-cols-header {
-  @apply grid grid-cols-3 grid-rows-[auto_1fr] w-full h-full gap-4;
+  @apply grid grid-cols-3 grid-rows-[auto_1fr_auto] w-full h-full gap-4;
 
   .three-cols-header__col-header {
     @apply flex flex-col gap-4;
@@ -62,6 +67,11 @@ const props = defineProps({
   .three-cols-header__col-right {
     @apply flex flex-col gap-4;
     grid-area: 2 / 3 / 3 / 4;
+  }
+
+  .three-cols-header__col-footer {
+    align-self: end;
+    grid-area: 3 / 1 / 4 / 4;
   }
 }
 </style>
