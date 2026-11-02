@@ -54,6 +54,16 @@ seoMeta:
 # theme id, package name, or local path
 # Learn more: https://sli.dev/guide/theme-addon.html#use-theme
 theme: "../../../src/theme"
+# optional color overrides, all keys are optional (see README "Colors")
+# palette: primary, secondary, light, link
+# roles (prefix with `dark-` for the dark scheme): background, title, text,
+#   text-shadow, highlight-background, highlight-title, highlight-text,
+#   highlight-text-shadow, highlight-link; dark only: dark-link
+# themeConfig:
+#   primary: "#00574a"
+#   secondary: "#003D34"
+#   light: "#f8faf9"
+#   link: "#3ab9d5"
 layout: cover
 hideInToc: true
 addons:

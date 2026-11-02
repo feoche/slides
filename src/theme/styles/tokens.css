@@ -1,4 +1,6 @@
-:root {
+/* Declared on body (not :root) so that `themeConfig` values from a talk's
+   headmatter, which Slidev sets as --slidev-theme-* on body, can override them */
+body {
 
   --primary-color: #00574a;
   --primary-hover: #003D34;
@@ -13,10 +15,12 @@
   --switch-on: #00574a;
   --switch-knob: #ffffff;
 
-  --color-green: #00574a;
-  --color-deep-green: #003D34;
-  --color-cream: #f8faf9;
-  --color-baby-blue: #3ab9d5;
+  /* Palette — overridable per talk with `themeConfig` keys
+     (Slidev exposes each key as --slidev-theme-<key>, see README) */
+  --color-green: var(--slidev-theme-primary, #00574a);
+  --color-deep-green: var(--slidev-theme-secondary, #003D34);
+  --color-cream: var(--slidev-theme-light, #f8faf9);
+  --color-baby-blue: var(--slidev-theme-link, #3ab9d5);
 
   /* Layout dimensions */
   --footer-height: 2.5rem;       /* space reserved for the footer */
@@ -29,28 +33,37 @@
   --theme-tertiary: var(--color-cream);
   --theme-link: var(--color-baby-blue);
 
-  /* Custom colors*/
-  --slidev-theme-feoche-background-color: var(--theme-tertiary);
-  --slidev-theme-feoche-title-color: var(--theme-primary);
-  --slidev-theme-feoche-text-color: var(--theme-secondary);
+  /* Custom colors — each one overridable with its own `themeConfig` key */
+  --slidev-theme-feoche-background-color: var(--slidev-theme-background, var(--theme-tertiary));
+  --slidev-theme-feoche-title-color: var(--slidev-theme-title, var(--theme-primary));
+  --slidev-theme-feoche-text-color: var(--slidev-theme-text, var(--theme-secondary));
   --slidev-theme-feoche-link-color: var(--theme-link);
-  --slidev-theme-feoche-text-shadow: var(--color-deep-green);
+  --slidev-theme-feoche-text-shadow: var(--slidev-theme-text-shadow, var(--color-deep-green));
 
-  /* Highlight colors*/
-  --slidev-theme-feoche-highlight-background-color: var(--theme-primary);
-  --slidev-theme-feoche-highlight-title-color: var(--theme-tertiary);
-  --slidev-theme-feoche-highlight-text-color: var(--theme-tertiary);
-  --slidev-theme-feoche-highlight-text-shadow: var(--color-deep-green);
+  /* Highlight colors (section, quote… layouts) */
+  --slidev-theme-feoche-highlight-background-color: var(--slidev-theme-highlight-background, var(--theme-primary));
+  --slidev-theme-feoche-highlight-title-color: var(--slidev-theme-highlight-title, var(--theme-tertiary));
+  --slidev-theme-feoche-highlight-text-color: var(--slidev-theme-highlight-text, var(--theme-tertiary));
+  --slidev-theme-feoche-highlight-text-shadow: var(--slidev-theme-highlight-text-shadow, var(--color-deep-green));
+  --slidev-theme-feoche-highlight-link-color: var(--slidev-theme-highlight-link, var(--theme-link));
 }
 
-/* Dark theme */
-.dark {
+/* Dark theme — every color is redeclared so that light overrides do not leak,
+   and overridable with the same `themeConfig` keys prefixed by `dark-` */
+.dark body {
   --theme-primary: var(--color-cream);
   --theme-secondary: var(--color-cream);
   --theme-tertiary: var(--color-deep-green);
+  --theme-link: var(--slidev-theme-dark-link, var(--color-baby-blue));
 
-  --slidev-theme-feoche-highlight-background-color: var(--color-green);
-  --slidev-theme-feoche-highlight-title-color: var(--theme-primary);
-  --slidev-theme-feoche-highlight-text-color: var(--theme-primary);
-  --slidev-theme-feoche-text-shadow: #666;
+  --slidev-theme-feoche-background-color: var(--slidev-theme-dark-background, var(--theme-tertiary));
+  --slidev-theme-feoche-title-color: var(--slidev-theme-dark-title, var(--theme-primary));
+  --slidev-theme-feoche-text-color: var(--slidev-theme-dark-text, var(--theme-secondary));
+  --slidev-theme-feoche-text-shadow: var(--slidev-theme-dark-text-shadow, #666);
+
+  --slidev-theme-feoche-highlight-background-color: var(--slidev-theme-dark-highlight-background, var(--color-green));
+  --slidev-theme-feoche-highlight-title-color: var(--slidev-theme-dark-highlight-title, var(--theme-primary));
+  --slidev-theme-feoche-highlight-text-color: var(--slidev-theme-dark-highlight-text, var(--theme-primary));
+  --slidev-theme-feoche-highlight-text-shadow: var(--slidev-theme-dark-highlight-text-shadow, var(--color-deep-green));
+  --slidev-theme-feoche-highlight-link-color: var(--slidev-theme-dark-highlight-link, var(--theme-link));
 }

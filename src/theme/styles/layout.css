@@ -56,6 +56,7 @@
         --slidev-theme-feoche-title-color: var(--slidev-theme-feoche-highlight-title-color);
         --slidev-theme-feoche-text-color: var(--slidev-theme-feoche-highlight-text-color);
         --slidev-theme-feoche-text-shadow: var(--slidev-theme-feoche-highlight-text-shadow);
+        --slidev-theme-feoche-link-color: var(--slidev-theme-feoche-highlight-link-color);
     }
 
     .slidev-toc-item {
