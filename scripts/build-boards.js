@@ -2,28 +2,47 @@
 /**
  * scripts/build-boards.js
  *
- * Build every Slidev "board" (deck under `talks/`, plus `src/common/` previews) into a single static site:
+ * Build every talk (deck under `talks/`) into a single static site:
  *
  *   dist/
- *     index.html            ← generated landing page linking to each board
- *     pro/bookmarklets/     ← talks/pro/bookmarklets/slides.md
- *     misc/speedrun/        ← talks/misc/speedrun/slides.md
+ *     index.html            ← home page: cards to the talks of talks/home.yaml (scripts/lib/home-page.js)
+ *     404.html              ← sends deep links to their deck on static hosts (scripts/lib/spa-fallback.js)
+ *     site.css              ← style of both pages (scripts/lib/site.css)
+ *     bookmarklets/         ← talks/pro/bookmarklets/slides.md
+ *     speedrun/             ← talks/misc/speedrun/slides.md
  *     …
  *
- * Each board is built with `--base /<slug>/` so its assets resolve when
- * hosted at that sub-path (Netlify/Vercel friendly).
+ * A deck is served at its folder name, without `pro/` or `misc/` (folder names are unique), and built with
+ * `--base <base><name>/` so its assets resolve at that sub-path.
  *
  * Usage:
- *   node scripts/build-boards.js                    # build every board + index
- *   node scripts/build-boards.js pro/bookmarklets   # build one board only
+ *   node scripts/build-boards.js                    # build every talk + home page
+ *   node scripts/build-boards.js pro/bookmarklets   # build one board only (a talk or a theme preview)
+ *
+ * Options:
+ *   --base <path>          site base path, e.g. `/slides/` for GitHub Pages (default `/`)
+ *   --router-mode <mode>   passed to `slidev build` (`history` by default; deep links work without `hash`)
  */
 import { execFileSync } from 'child_process';
-import { writeFileSync, mkdirSync } from 'fs';
+import { copyFileSync, readFileSync, rmSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import { ROOT, discoverBoards, resolveBoard } from './boards.js';
+import { ROOT, TALKS, discoverBoards, resolveBoard } from './boards.js';
+import { readDeckMeta, readHomeTalks, renderHome } from './lib/home-page.js';
+import { injectRestoreScript, render404 } from './lib/spa-fallback.js';
 
 const args = process.argv.slice(2);
 const all = discoverBoards();
+
+/** Value of a `--name value` option, removed from `args` so it isn't read as the selector. */
+function takeOption(name) {
+  const i = args.indexOf(name);
+  if (i === -1) return undefined;
+  const [, value] = args.splice(i, 2);
+  return value;
+}
+
+const base = (takeOption('--base') ?? '/').replace(/\/?$/, '/');
+const routerMode = takeOption('--router-mode');
 
 if (all.length === 0) {
   console.log('\n  ⚠️  No boards found (looked for talks/**/slides.md).\n');
@@ -31,9 +50,24 @@ if (all.length === 0) {
 }
 
 const selector = args.find((a) => !a.startsWith('--'));
-const boards = selector ? [resolveBoard(all, selector)] : all;
+/** Folder name of a board: its path on the site. */
+const siteName = (board) => board.slug.split('/').pop();
+
+const talks = all
+  .filter((b) => b.file.startsWith(TALKS))
+  .map((b) => ({ ...b, slug: siteName(b), meta: readDeckMeta(b.file) }));
+const duplicates = talks.filter((t, i) => talks.findIndex((u) => u.slug === t.slug) !== i);
+if (duplicates.length > 0) {
+  console.error(`\n  ❌  Talks sharing a folder name (their URL): ${duplicates.map((t) => t.name).join(', ')}\n`);
+  process.exit(1);
+}
+// read before building: an unknown talk in home.yaml fails the build right away
+const homeTalks = readHomeTalks(join(TALKS, 'home.yaml'), talks);
+const boards = selector ? [resolveBoard(all, selector)] : talks;
 
 const DIST = join(ROOT, 'dist');
+// a full build replaces the whole site: no deck left over from an earlier build
+if (!selector) rmSync(DIST, { recursive: true, force: true });
 const SLIDEV = process.platform === 'win32' ? 'slidev.cmd' : 'slidev';
 
 console.log(`\n  🔨  Building ${boards.length} board(s)…\n`);
@@ -42,14 +76,20 @@ let built = 0;
 let failed = 0;
 
 for (const board of boards) {
-  const outDir = join(DIST, board.slug);
-  process.stdout.write(`  📦  ${board.name} → dist/${board.slug}/ … `);
+  const name = siteName(board);
+  const outDir = join(DIST, name);
+  process.stdout.write(`  📦  ${board.name} → dist/${name}/ … `);
   try {
     execFileSync(
       SLIDEV,
-      ['build', board.file, '--base', `/${board.slug}/`, '--out', outDir],
+      [
+        'build', board.file, '--base', `${base}${name}/`, '--out', outDir,
+        ...(routerMode ? ['--router-mode', routerMode] : []),
+      ],
       { cwd: ROOT, stdio: 'pipe', shell: process.platform === 'win32' },
     );
+    const index = join(outDir, 'index.html');
+    writeFileSync(index, injectRestoreScript(readFileSync(index, 'utf8')));
     console.log('✅');
     built++;
   } catch (err) {
@@ -60,46 +100,20 @@ for (const board of boards) {
   }
 }
 
-// Generate the landing page only for a full build.
+// Generate the home page and the 404 fallback only for a full build.
 if (!selector && built > 0) {
-  mkdirSync(DIST, { recursive: true });
-  writeFileSync(join(DIST, 'index.html'), renderIndex(all));
+  writeHome();
   console.log('\n  📄  dist/index.html generated.');
 }
 
 console.log(`\n  ✨  Built: ${built}  Failed: ${failed}\n`);
 if (failed > 0) process.exit(1);
 
-function renderIndex(boards) {
-  const items = boards
-    .map(
-      (b) =>
-        `      <li><a href="./${b.slug}/">${b.slug}</a> <code>${b.name}</code></li>`,
-    )
-    .join('\n');
-  return `<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Slides — Boards</title>
-  <style>
-    :root { color-scheme: light dark; }
-    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.6; }
-    h1 { color: #00574a; }
-    ul { list-style: none; padding: 0; }
-    li { padding: .5rem 0; border-bottom: 1px solid #8883; }
-    a { font-size: 1.15rem; font-weight: 600; text-decoration: none; color: #00574a; }
-    a:hover { text-decoration: underline; }
-    code { color: #888; font-size: .85rem; margin-left: .5rem; }
-  </style>
-</head>
-<body>
-  <h1>Boards</h1>
-  <ul>
-${items}
-  </ul>
-</body>
-</html>
-`;
+function writeHome() {
+  const { author } = JSON.parse(readFileSync(join(ROOT, 'src/theme/package.json'), 'utf8')).slidev.defaults;
+  copyFileSync(join(ROOT, 'scripts/lib/site.css'), join(DIST, 'site.css'));
+  writeFileSync(join(DIST, 'index.html'), renderHome(homeTalks, { author }));
+  writeFileSync(join(DIST, '404.html'), render404(talks.map((t) => t.slug), base));
+  // serve files as is on GitHub Pages
+  writeFileSync(join(DIST, '.nojekyll'), '');
 }

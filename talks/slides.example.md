@@ -20,13 +20,17 @@ title: My Talk Title
 # (use search&replace to update)
 info: A short description of the talk.
 
+# website card (see README "Website"): one-sentence summary (default: info) and where the talk is given
+# summary: A one-sentence summary of the talk.
+# event: My Meetup
+
 # URL of the presentation (the cover QR code points to it)
 url: https://francoiseoche.fr/
 
 # date of the presentation (shown on the cover)
 date: 2026-01-01
 
-# keywords field for exported PDF, comma-delimited
+# keywords, comma-delimited: exported PDF and website card badges
 keywords: slidev, talk
 
 # force color schema for the slides, can be 'auto', 'light', or 'dark'
@@ -54,6 +58,7 @@ seoMeta:
 # theme id, package name, or local path
 # Learn more: https://sli.dev/guide/theme-addon.html#use-theme
 theme: "../../../src/theme"
+
 # optional color overrides, all keys are optional (see README "Colors")
 # palette: primary, secondary, light, link
 # roles (prefix with `dark-` for the dark scheme): background, title, text,

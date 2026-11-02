@@ -1,0 +1,10 @@
+# Talks on the website's home page (https://feoche.github.io/slides/), in this order: folder names under
+# talks/pro/ or talks/misc/. The ones left out are still online, just not linked from the home page.
+# Each card comes from the deck's headmatter: title, event, date, summary (default: info) and keywords.
+talks:
+  - squad-health-check
+  - mauvaise-ux-sauve-voyage
+  - bookmarklets
+  - ovh-design-system
+  - digital-bot-twitter
+  - ionic-the-hybrid-theory
