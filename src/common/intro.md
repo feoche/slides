@@ -4,7 +4,6 @@ image: https://francoiseoche.fr/assets/avatar.webp
 ---
 
 ## {{ $slidev.configs.author }}
-
 ### Web cabinetmaker
 
 * Product Owner chez OVHcloud - Design System

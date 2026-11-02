@@ -98,7 +98,6 @@ layout: section
 ---
 
 ## Default Layout
-
 ### A cool subtitle
 
 - Point one
@@ -148,7 +147,6 @@ layout: fact
 ---
 
 ## 42
-
 ### A striking number
 
 ---
