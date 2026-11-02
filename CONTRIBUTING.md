@@ -19,7 +19,7 @@ npm run new -- misc/my-talk "My Talk Title"
 # Slidev development (one deck at a time; slug = path under talks/, or just the folder name)
 pnpm dev bookmarklets       # Serve a deck on :3030 (interactive picker without slug)
 pnpm dev showcase           # Preview every theme layout (src/common/showcase)
-pnpm build [bookmarklets]   # Build all decks (or one) into dist/
+pnpm build [bookmarklets]   # Build the website: every talk + home page (or one deck) into dist/
 pnpm export bookmarklets    # Export one deck to PDF in its export/ folder (requires playwright-chromium)
 
 # Export decks to documents (Markdown, HTML, PDF via Pandoc)
@@ -35,29 +35,35 @@ pnpm prettier --write "**/*.md"
 
 - **New deck**: always run `npm run new -- <pro|misc>/<slug> "Title"`. Never write a deck from scratch or copy another
   talk. Categories: `pro` (work) and `misc` (side projects) — nothing else.
-- **Deck folder**: `talks/<pro|misc>/<slug>/` with `slides.md`, `meta.yaml` and `public/` (assets, referenced as
+- **Deck folder**: `talks/<pro|misc>/<slug>/` with `slides.md`, `meta.yaml` and `img/` (assets, referenced as
   `/file.jpg`). Don't create an `assets/` folder, and never put talks under `src/` or at the repo root.
 - **Outlines**: a talk may start as `talks/<pro|misc>/<slug>/outline.md` (abstract + chapters). To turn it into a deck,
   run `npm run new` on the same slug, then fill `info`, `date`, `duration`, `keywords` and one section slide per `#`
   chapter from the outline.
 - **Slide order** (keep it, even when the user only asks for content):
-  1. headmatter + `layout: cover` slide (with the `::qr-code::` block)
+  1. headmatter + `layout: cover` slide (with the `::qr-code::` block: `<MediaEl :src="'qr:' + $frontmatter.url"/>`)
   2. `src: ../../../src/common/intro.md`
   3. `src: ../../../src/common/disclaimer.md`
   4. `src: ../../../src/common/toc.md`
   5. content: per chapter, one `layout: section` slide with a `# h1`, then content slides titled with `## h2`
   6. a `layout: center` closing slide
-  7. `src: ../../../src/common/end.md`
+  7. `src: ../../../src/common/end.md`, with `qrCode: qr:<url>` (or an image) next to it for the feedback QR code
+     (the one QR code set in frontmatter: shared slides can't take content from the talk)
 - **Shared slides** live in `src/common/`; include them with `src:`, never copy their content into a deck.
   Paths are relative to the deck (`../../../` to the repo root for `<pro|misc>/<slug>`, one more `../` per extra
   level; same for `theme: ../../../src/theme`).
 - **Headmatter**: keep every key from `slides.example.md` (`title`, `info`, `url`, `date`, `keywords`, `colorSchema`,
-  `duration`, `htmlAttrs`, `seoMeta`, `theme`, `addons`); fill them in, don't delete them.
-- **Headings**: `#` only on cover and section slides (they build the TOC), `##` slide titles, `###` subtitles.
+  `duration`, `htmlAttrs`, `seoMeta`, `theme`, `addons`); fill them in, don't delete them. `themeConfig` is optional:
+  use it to override theme colors (keys listed in `README.md`, section *Colors*).
+- **Headings**: `#` only on cover and section slides (they build the TOC), `##` slide titles, `###` subtitles
+  (on the line right under the title: a blank line in between makes it a regular heading).
 - **Layouts**: use only theme layouts (list + slots in `README.md`, snippets in `src/templates/`). Prefer an existing
   layout over custom HTML/CSS; a per-slide `<style>` block is the last resort.
-- **Media**: use `media`, `media-left`, `media-right`, `media-full` with the `media:` prop (image, `.mp4` or YouTube
-  URL); `window: true` for a browser frame, `type: mobile` for a phone.
+- **Media**: use `media`, `media-left`, `media-right`, `media-full` with the `media:` prop (image, `.mp4`, YouTube
+  URL or `qr:<data>` for a QR code); `window: true` for a browser frame, `type: mobile` for a phone. In slide content,
+  QR codes and other media are `<MediaEl src="qr:…"/>`.
+- **Images in slide content**: write `<img :src="'/file.jpg'" alt="…">` (bound `src`). Markdown `![](/file.jpg)` and
+  plain `<img src="/file.jpg">` fail the build (Slidev import guard). Frontmatter `media: /file.jpg` is fine.
 - **Speaker notes** go in a trailing `<!-- ... -->` comment on each slide.
 - Default language is French (`htmlAttrs.lang: fr`) unless told otherwise.
 - **Verify** a deck by building it: `pnpm exec slidev build talks/<pro|misc>/<slug>/slides.md --out <tmp dir>`.
@@ -74,7 +80,8 @@ used to preview the theme. `scripts/boards.js` discovers every `talks/**/slides.
 `src/common/**/slides.md` (slug `common/<name>`); `pnpm dev` also accepts a unique folder name.
 
 **Scripts**: `new-talk.js` (scaffold from the example), `serve-boards.js` (`pnpm dev`), `build-boards.js`
-(`pnpm build`), `export-board.js` (`pnpm export`),
+(`pnpm build`, home page, its style and 404 fallback in `scripts/lib/`; talks shown on the home page in
+`talks/home.yaml`), `export-board.js` (`pnpm export`),
 `export-docs.js` (Pandoc export using `src/_templates/` and the deck's `meta.yaml`).
 
 ## Key Conventions
