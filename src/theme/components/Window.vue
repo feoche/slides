@@ -235,7 +235,7 @@ watch(
       <input
         type="search"
         class="window-url"
-        :value="renderAs === 'iframe' ? (url ?? src) : undefined"
+        :value="url ?? (renderAs === 'iframe' ? src : undefined)"
       />
     </span>
     <iframe

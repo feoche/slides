@@ -1,10 +1,15 @@
+const EXTERNAL_URL = /^(?:[a-z][a-z\d+.-]*:|\/\/)/i;
+
 /**
- * Resolve urls from frontmatter and append with the base url
+ * Resolve urls from frontmatter and append with the base url.
+ * A bare file name (`visio.jpg`, `./visio.jpg`) is a file of the deck's `img/` too:
+ * resolved from the base url, not from the current route (`/presenter/19`…)
  */
 export function resolveAssetUrl(url: string) {
-    if (url.startsWith('/'))
-        return import.meta.env.BASE_URL + url.slice(1)
-    return url
+    const base = import.meta.env?.BASE_URL ?? '/'
+    if (EXTERNAL_URL.test(url))
+        return url
+    return base + url.replace(/^\.?\//, '')
 }
 
 export type MediaKind = "image" | "video" | "youtube" | "iframe";

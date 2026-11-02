@@ -1,6 +1,14 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { detectMediaKind, formatDate, toYouTubeEmbed } from "./layoutHelper.ts";
+import { detectMediaKind, formatDate, resolveAssetUrl, toYouTubeEmbed } from "./layoutHelper.ts";
+
+test("resolveAssetUrl serves deck files from the base url, whatever the page route", () => {
+  assert.equal(resolveAssetUrl("/visio.jpg"), "/visio.jpg");
+  assert.equal(resolveAssetUrl("visio.jpg"), "/visio.jpg");
+  assert.equal(resolveAssetUrl("./visio.jpg"), "/visio.jpg");
+  assert.equal(resolveAssetUrl("https://example.com/a.png"), "https://example.com/a.png");
+  assert.equal(resolveAssetUrl("data:image/png;base64,AAAA"), "data:image/png;base64,AAAA");
+});
 
 test("detectMediaKind classifies by extension and host", () => {
   assert.equal(detectMediaKind("/foo.png"), "image");

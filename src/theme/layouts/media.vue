@@ -33,11 +33,14 @@ const props = defineProps<{
 
   &:not(.media--window) {
     @apply flex flex-col gap-8;
+    /* the media stops above the footer */
+    height: calc(100% - var(--footer-height));
 
+    /* min-h-0: shrink to the space left under the title */
     img,
     video,
     iframe {
-      @apply h-full w-auto object-contain;
+      @apply h-full min-h-0 w-auto object-contain;
     }
   }
 
