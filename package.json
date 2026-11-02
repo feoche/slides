@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "@slidev/cli": "^52.16.0",
-    "@slidev/parser": "52.16.0",
+    "@slidev/cli": "^52.20.1",
+    "@slidev/parser": "52.20.1",
     "@slidev/theme-default": "^0.25.0",
-    "@slidev/types": "^52.16.0",
+    "@slidev/types": "^52.20.1",
     "codemirror-theme-vars": "^0.1.2",
     "prism-theme-vars": "^0.2.5",
     "slidev-addon-qrcode": "^1.0.2",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "playwright-chromium": "^1.61.0",
     "prettier": "^3.8.4",
-    "prettier-plugin-slidev": "^1.0.5"
+    "prettier-plugin-slidev": "^1.0.5",
+    "yaml": "2.9.0"
   }
 }
