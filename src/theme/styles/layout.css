@@ -7,9 +7,14 @@
     }
 
     .slidev-layout {
-        & h2 + ul:last-child,
         & h2 + .slidev-toc {
             @apply flex flex-1 flex-col gap-4 my-4 place-content-evenly;
+        }
+
+        /* A list right under the title spreads over the slide,
+           starting right under the title (no empty space above it) */
+        & h2 + ul:last-child {
+            @apply flex flex-1 flex-col gap-4 my-4 place-content-around;
         }
 
         & h2 + .slidev-toc ol {

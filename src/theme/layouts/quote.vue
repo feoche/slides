@@ -13,7 +13,7 @@
     @apply flex flex-col gap-4 my-auto mx-auto;
 
     blockquote {
-      @apply py-4 px-8 bg-gray-200 border-l-4 border-[--color-green] text-[--color-green];
+      @apply py-4 px-8 bg-gray-200 text-[--color-green];
 
       .dark & {
         @apply border-[--color-cream] bg-[--color-green] text-[--color-cream];
