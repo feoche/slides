@@ -2,6 +2,10 @@
 theme: ../../../src/theme
 colorSchema: auto
 title: "Ionic — The Hybrid Theory"
+summary: "Retour d'expérience sur le développement mobile hybride avec Ionic en 2015."
+event: RennesJS
+keywords: front-end, hybride, mobile
+date: 2015-12-05
 author: "François Eoche"
 lang: fr
 ---

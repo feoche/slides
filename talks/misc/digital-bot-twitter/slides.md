@@ -8,6 +8,9 @@ title: PRANK - Il fait un bot Twitter, ça tourne mal
 # (use search&replace to update)
 info: "J'aime bien les bots. Alors j'ai codé un bot Twitter en NodeJS... et ça a très mal tourné. Récit en trois jours d'une blague qui dérape, réparée à coups de probabilités et de chaînes de Markov."
 
+# where the talk is given, on its website card
+event: RennesJS
+
 # URL of the presentation
 # (use search&replace to update)
 url: https://feoche.github.io/slides/digital-bot-twitter/

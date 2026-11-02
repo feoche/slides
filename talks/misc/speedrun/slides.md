@@ -2,6 +2,8 @@
 theme: ../../../src/theme
 colorSchema: auto
 title: "Le SpeedRun — Présentation"
+summary: "Histoire et lexique du speedrun, l'art de finir un jeu vidéo le plus vite possible : de Space Invaders à Games Done Quick."
+keywords: speedrun, jeux vidéo, histoire
 author: "François Eoche"
 htmlAttrs:
   lang: fr

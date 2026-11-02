@@ -1,5 +1,9 @@
 ---
 title: "Very Tech Trip — Design System for techs"
+summary: "Conférence sur la manière de lancer un Design System d'entreprise dans un environnement technique."
+event: Very Tech Trip
+keywords: design system, front-end, ui/ux
+date: 2023-02-02
 author: "François Eoche"
 lang: en
 theme: ../../../src/theme

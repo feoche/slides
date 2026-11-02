@@ -2,6 +2,8 @@
 theme: ../../../src/theme
 colorSchema: auto
 title: "Le TAS — Présentation"
+summary: "Le speedrun version cyborg : finir un jeu image par image, avec rembobinage et outils, de DOOM à TASVideos."
+keywords: tas, speedrun, jeux vidéo
 author: "François Eoche"
 lang: fr
 htmlAttrs:

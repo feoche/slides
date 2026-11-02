@@ -8,6 +8,12 @@ title: Les bookmarklets, c'est chouette !
 # (use search&replace to update)
 info: Les bookmarklets, ça existe depuis 2005 et ça n'arrête pas de se réinventer ! Venez découvrir le best of des meilleurs bookmarklets triés sur le volet.
 
+# short summary of the talk, on its website card (default: info)
+summary: "Conférence sur l'utilisation des bookmarklets pour accélérer le développement front-end."
+
+# where the talk is given, on its website card
+event: RennesJS
+
 # URL of the presentation
 # (use search&replace to update)
 url: https://slides.com/feoche/les-bookmarklets-c-est-chouette
@@ -16,7 +22,7 @@ url: https://slides.com/feoche/les-bookmarklets-c-est-chouette
 date: 2024-01-22
 
 # keywords field for exported PDF, comma-delimited
-keywords: bookmarklets, javascript, web development
+keywords: front-end, javascript
 
 # force color schema for the slides, can be 'auto', 'light', or 'dark'
 colorSchema: auto

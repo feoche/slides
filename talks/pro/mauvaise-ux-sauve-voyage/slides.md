@@ -8,6 +8,12 @@ title: Comment une mauvaise UX a sauvé mon voyage
 # (use search&replace to update)
 info: Ah, les vacances, on se dit que le travail est loin, on laisse ses préoccupations derrière nous...Mais chassez le naturel, il revient au galop ! Tiré d'une histoire vraie d'un 'Ébéniste du Web' en galère ultime, laissez-moi vous narrer comment il ne faut pas prendre à la légère les sujets d'ergonomie des interfaces !
 
+# short summary of the talk, on its website card (default: info)
+summary: "Récit sur l'importance universelle de l'expérience utilisateur des formulaires."
+
+# where the talk is given, on its website card
+event: RennesJS
+
 # URL of the presentation
 # (use search&replace to update)
 url: https://feoche.github.io/slides/mauvaise-ux-sauve-voyage/
@@ -16,7 +22,7 @@ url: https://feoche.github.io/slides/mauvaise-ux-sauve-voyage/
 date: 2024-05-16
 
 # keywords field for exported PDF, comma-delimited
-keywords: ux, user-experience, design, reservation, tokyo, humor
+keywords: ui/ux, formulaires
 
 # force color schema for the slides, can be 'auto', 'light', or 'dark'
 colorSchema: auto
