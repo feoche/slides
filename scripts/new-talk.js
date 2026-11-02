@@ -6,7 +6,7 @@
  * `talks/slides.example.md`:
  *   - slides.md  (copy of the example, with title, date and relative paths filled in)
  *   - meta.yaml  (Pandoc metadata for `npm run export:docs`)
- *   - public/    (put images/videos here, reference them as `/my-image.jpg`)
+ *   - img/       (put images/videos here, reference them as `/my-image.jpg`)
  *
  * The folder may already exist (e.g. holding an `outline.md`); only an existing
  * `slides.md` is refused.
@@ -61,14 +61,14 @@ author: "François Eoche"
 lang: fr
 `;
 
-await mkdir(join(dir, 'public'), { recursive: true });
+await mkdir(join(dir, 'img'), { recursive: true });
 await writeFile(join(dir, 'slides.md'), md, 'utf8');
 await writeFile(join(dir, 'meta.yaml'), meta, 'utf8');
 
 console.log(`\n✅  Created Slidev deck: talks/${slug}/`);
 console.log(`   • talks/${slug}/slides.md   ← Slidev content (from slides.example.md)`);
 console.log(`   • talks/${slug}/meta.yaml   ← Pandoc export metadata`);
-console.log(`   • talks/${slug}/public/     ← images & videos`);
+console.log(`   • talks/${slug}/img/        ← images & videos`);
 // Suggest the short folder name only when it's unique among all boards.
 const short = parts.at(-1);
 const unique = discoverBoards().filter((b) => b.slug.split('/').pop() === short).length === 1;

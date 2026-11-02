@@ -6,7 +6,7 @@
 #   pnpm dev my-talk
 #
 # This creates talks/<category>/<slug>/slides.md from this file.
-# Put images/videos in the talk's `public/` folder and reference
+# Put images/videos in the talk's `img/` folder and reference
 # them as `/my-image.jpg`. Delete the layout showcase slides you
 # don't need.
 # ================================================================
