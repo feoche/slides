@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { detectMediaKind, formatDate, resolveAssetUrl, toYouTubeEmbed } from "./layoutHelper.ts";
+import { detectMediaKind, formatDate, resolveAssetUrl, toQRCodeData, toYouTubeEmbed } from "./layoutHelper.ts";
 
 test("resolveAssetUrl serves deck files from the base url, whatever the page route", () => {
   assert.equal(resolveAssetUrl("/visio.jpg"), "/visio.jpg");
@@ -20,6 +20,17 @@ test("detectMediaKind classifies by extension and host", () => {
   assert.equal(detectMediaKind("https://example.com/app"), "iframe");
   assert.equal(detectMediaKind(undefined), "iframe");
   assert.equal(detectMediaKind(""), "iframe");
+});
+
+test("detectMediaKind classifies qr: prefix before any other kind", () => {
+  assert.equal(detectMediaKind("qr:https://example.com/app"), "qrcode");
+  assert.equal(detectMediaKind("QR:https://youtu.be/abc123"), "qrcode");
+  assert.equal(detectMediaKind("qr:/foo.png"), "qrcode");
+});
+
+test("toQRCodeData strips the qr: prefix only", () => {
+  assert.equal(toQRCodeData("qr:https://example.com/app?qr=1"), "https://example.com/app?qr=1");
+  assert.equal(toQRCodeData("QR:hello"), "hello");
 });
 
 test("toYouTubeEmbed normalizes all URL forms", () => {

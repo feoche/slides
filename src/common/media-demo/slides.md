@@ -42,3 +42,33 @@ media: /tas4mario.png
 ---
 
 ## Image, plain (regression check)
+
+---
+layout: media
+media: qr:https://francoiseoche.fr/
+---
+
+## QR code, plain
+
+---
+layout: media-left
+media: qr:https://francoiseoche.fr/
+---
+
+## QR code, media-left
+
+Scan to open the website.
+
+---
+layout: media-right
+media: qr:https://francoiseoche.fr/
+---
+
+## QR code, media-right
+
+Scan to open the website.
+
+---
+layout: media-full
+media: qr:https://francoiseoche.fr/
+---

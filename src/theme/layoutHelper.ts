@@ -12,18 +12,27 @@ export function resolveAssetUrl(url: string) {
     return base + url.replace(/^\.?\//, '')
 }
 
-export type MediaKind = "image" | "video" | "youtube" | "iframe";
+export type MediaKind = "image" | "video" | "youtube" | "iframe" | "qrcode";
 
 export const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif)(\?.*)?$/i;
 const VIDEO_EXT = /\.(mp4|webm|ogg|mov)(\?.*)?$/i;
 const YOUTUBE_RE = /(?:youtube\.com|youtu\.be)/i;
+const QRCODE_RE = /^qr:/i;
 
 export function detectMediaKind(src?: string): MediaKind {
     if (!src) return "iframe";
+    if (QRCODE_RE.test(src)) return "qrcode";
     if (YOUTUBE_RE.test(src)) return "youtube";
     if (VIDEO_EXT.test(src)) return "video";
     if (IMAGE_EXT.test(src)) return "image";
     return "iframe";
+}
+
+/**
+ * Data encoded by a `qr:<data>` media value
+ */
+export function toQRCodeData(src: string): string {
+    return src.replace(QRCODE_RE, "");
 }
 
 export function toYouTubeEmbed(url: string): string {

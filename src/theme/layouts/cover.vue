@@ -45,5 +45,10 @@ import {formatDate} from '../layoutHelper'
       display: none;
     }
   }
+
+  /* `<MediaEl src="qr:…"/>` (or an image) in the `::qr-code::` slot */
+  .cover__qr-code .media-el {
+    @apply w-50 h-50 flex-none;
+  }
 }
 </style>

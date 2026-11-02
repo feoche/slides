@@ -56,15 +56,7 @@ addons:
 ### {{ $slidev.configs.author }}
 
 ::qr-code::
-<QRCode
-  class="qr-code"
-  :width="200"
-  :height="200"
-  type="svg"
-  :data="$frontmatter.url"
-  color="transparent"
-  :dotsOptions="{ color: 'white' }"
-/>
+<MediaEl :src="'qr:' + $frontmatter.url"/>
 
 <!-- Speaker Notes -->
 
@@ -557,15 +549,6 @@ hideInToc: true
 
 ##### Feedback :
 
-<QRCode
-class="qr-code mx-auto"
-:width="250"
-:height="250"
-type="svg"
-data="https://francoiseoche.fr"
-:margin="0"
-color="transparent"
-:dotsOptions="{ color: 'white' }"
-/>
+<MediaEl src="qr:https://francoiseoche.fr"/>
 
 <!-- Speaker Notes -->

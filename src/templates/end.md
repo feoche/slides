@@ -1,5 +1,7 @@
 ---
 layout: end
+# feedback QR code below (`qr:<url>` or an image), overridable on the `src:` slide
+qrCode: qr:https://francoiseoche.fr
 image: https://francoiseoche.fr/assets/avatar.webp
 hideInToc: true
 ---
@@ -48,15 +50,6 @@ hideInToc: true
 ::qr-code::
 ##### Feedback :
 
-<QRCode
-class="qr-code mx-auto"
-:width="250"
-:height="250"
-type="svg"
-data="https://francoiseoche.fr"
-:margin="0"
-color="transparent"
-:dotsOptions="{ color: 'white' }"
-/>
+<MediaEl :src="$frontmatter.qrCode"/>
 
 <!-- Speaker Notes -->

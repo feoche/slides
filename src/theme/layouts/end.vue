@@ -87,8 +87,9 @@ const style = computed(() => handleBackground(props.image, false, props.backgrou
     grid-column: 4 / span 2;
     grid-row: 2 / span 2;
 
-    img {
-      @apply w-full h-full;
+    /* `<MediaEl src="qr:…"/>` (or an image) fills the space under the label */
+    .media-el {
+      @apply flex-1 min-h-0;
     }
   }
 }

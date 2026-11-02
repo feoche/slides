@@ -42,6 +42,10 @@ const props = defineProps<{
     iframe {
       @apply h-full min-h-0 w-auto object-contain;
     }
+
+    .media-el--qrcode {
+      @apply flex-1;
+    }
   }
 
   &.media--window {

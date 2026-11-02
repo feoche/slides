@@ -20,7 +20,7 @@ title: My Talk Title
 # (use search&replace to update)
 info: A short description of the talk.
 
-# URL of the presentation (used by the cover QR code)
+# URL of the presentation (the cover QR code points to it)
 url: https://francoiseoche.fr/
 
 # date of the presentation (shown on the cover)
@@ -75,15 +75,7 @@ addons:
 ### {{ $slidev.configs.author }}
 
 ::qr-code::
-<QRCode
-class="qr-code"
-:width="200"
-:height="200"
-type="svg"
-:data="$frontmatter.url"
-color="transparent"
-:dotsOptions="{ color: 'white' }"
-/>
+<MediaEl :src="'qr:' + $frontmatter.url"/>
 
 <!-- Speaker Notes -->
 
@@ -180,4 +172,6 @@ _Questions?_
 
 ---
 src: ../../../src/common/end.md
+# feedback QR code on the shared end slide: `qr:<url>` or an image (`/feedback.png`)
+qrCode: qr:https://francoiseoche.fr
 ---

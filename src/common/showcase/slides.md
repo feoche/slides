@@ -56,15 +56,7 @@ addons:
 ### {{ $slidev.configs.author }}
 
 ::qr-code::
-<QRCode
-    class="qr-code"
-    :width="200"
-    :height="200"
-    type="svg"
-    :data="$frontmatter.url"
-    color="transparent"
-    :dotsOptions="{ color: 'white' }"
-/>
+<MediaEl :src="'qr:' + $frontmatter.url"/>
 
 <!-- Speaker Notes -->
 
