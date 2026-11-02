@@ -32,14 +32,6 @@ hideInToc: true
             @feoche
         </a>
     </li>
-    <li>
-        <h5 class="inline">X :</h5>&nbsp;
-        <a href="https://x.com/francoiseoche"
-           target="_blank"
-           aria-label="Profil X - Ouvre dans un nouvel onglet">
-            @francoiseoche
-        </a>
-    </li>
 </ul>
 
 ::feedback::
