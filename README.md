@@ -304,7 +304,7 @@ A full-width header, three equal columns, then a full-width row stuck to the bot
 
 #### `three-rows`
 
-Three equal rows, 2rem apart, each one's content vertically centered.
+Three equal rows, 2rem apart, each one's content at the top of its row (vertically centered in exports).
 
 - `::top::`, `::center::`, `::bottom::`: the rows.
 

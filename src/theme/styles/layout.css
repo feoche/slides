@@ -7,18 +7,20 @@
     }
 
     .slidev-layout {
+        /* On screen, content sticks to the top of the slide: when presenting,
+           the bottom of a projected slide is often hidden (low projector,
+           heads in the audience). Exports spread it instead, see below. */
         & h2 + .slidev-toc {
-            @apply flex flex-1 flex-col gap-4 my-4 place-content-evenly;
+            @apply flex flex-1 flex-col gap-4 my-4 place-content-start;
         }
 
-        /* A list right under the title spreads over the slide,
-           starting right under the title (no empty space above it) */
+        /* A list right under the title starts right under the title */
         & h2 + ul:last-child {
-            @apply flex flex-1 flex-col gap-4 my-4 place-content-around;
+            @apply flex flex-1 flex-col gap-4 my-4 place-content-start;
         }
 
         & h2 + .slidev-toc ol {
-            @apply h-full flex flex-col gap-4 place-content-evenly;
+            @apply h-full flex flex-col gap-4 place-content-start;
         }
 
         code {
@@ -100,6 +102,20 @@ table {
     th,
     td {
         @apply border border-gray-300 p-2;
+    }
+}
+
+/* Exports (PDF, PNG, handout: `slides-export` is set by global-bottom.vue)
+   are read on a screen or on paper, where the whole slide is visible:
+   content spreads over the slide there */
+html.slides-export .slidev-page .slidev-layout {
+    & h2 + .slidev-toc,
+    & h2 + .slidev-toc ol {
+        @apply place-content-evenly;
+    }
+
+    & h2 + ul:last-child {
+        @apply place-content-around;
     }
 }
 

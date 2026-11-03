@@ -43,7 +43,16 @@ const props = defineProps({
   .three-rows__row-top,
   .three-rows__row-center,
   .three-rows__row-bottom {
-    @apply flex flex-col justify-center gap-2;
+    @apply flex flex-col justify-start gap-2;
+  }
+}
+
+/* Exports: each row's content vertically centered (see styles/layout.css) */
+html.slides-export .slidev-layout.three-rows {
+  .three-rows__row-top,
+  .three-rows__row-center,
+  .three-rows__row-bottom {
+    @apply justify-center;
   }
 }
 </style>

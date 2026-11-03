@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import {shouldHighlightLayout} from './layoutHelper';
-import { computed } from 'vue';
+import { computed, watchEffect } from 'vue';
+import { useNav } from '@slidev/client';
 import Progress from './components/Progress.vue';
+
+// Exports (`slidev export` loads every slide with `?print`, the /export page
+// too) get `slides-export` on <html>: layouts spread their content there, but
+// keep it at the top of the slide when presenting (see styles/layout.css)
+const { isPrintMode } = useNav();
+watchEffect(() => document.documentElement.classList.toggle('slides-export', isPrintMode.value));
 
 const background = computed(() => shouldHighlightLayout($slidev.nav.currentLayout)
     ? 'var(--slidev-theme-feoche-highlight-background-color)'
