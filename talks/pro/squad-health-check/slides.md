@@ -204,7 +204,7 @@ layout: two-cols-header
 ---
 
 ## Un round
-
+###
 * Chacun **vote** (face cachée)
 
 ::left::
@@ -268,8 +268,7 @@ media: visio.jpg
 
 ### Rôles :
 * Un **médiateur** <small>(membre de l'équipe ou non)</small>
-* Le reste de l'équipe <small>(sans exception)</small>
-* <small>(**Management** : optionnel, non-recommandé)</small>
+* Le **reste de l'équipe** <small>(sans le management)</small>
 
 ---
 
@@ -316,7 +315,8 @@ De manière **"classique"** ou **customisée** -->
 ## Dans notre équipe <small>(OVHcloud Design System)</small>
 
 * On s'est inspiré de la méthode de **Spotify**
-* Les **exemples** ne nous convenaient pas forcément<br><br>
+* Les **exemples** ne nous convenaient pas forcément<br>
+
 ### Exemple: **Mission claire** <small>(Clear Mission)</small>
 <div class="grid grid-cols-2 gap-8 mt-4 text-xl">
   <div class="border-2 border-red-600 rounded-lg p-4">
@@ -336,7 +336,7 @@ Notre carte « Mission claire » (catégorie 3 sur 10) : avec la description des
 ## Squad Health Check (à notre sauce)
 
 * **Retravailler** les catégories en scindant les sujets<br>→**15 nouvelles catégories** créées, exemple :
-<div class="flex-1 min-h-0 grid grid-cols-3 auto-rows-fr gap-3 mt-2 text-xl">
+<div class="flex-1 min-h-0 grid grid-cols-3 auto-rows-fr gap-3 text-xl">
   <div class="flex items-center border rounded-lg px-4 font-bold">Confiance au déploiement</div>
   <div class="flex items-center border rounded-lg px-4 font-bold">Qualité du code</div>
   <div class="flex items-center border rounded-lg px-4 font-bold">Mission</div>
@@ -349,7 +349,7 @@ Notre carte « Mission claire » (catégorie 3 sur 10) : avec la description des
 </div>
 
 * Conception d'un **mode asynchrone**
-* Ajout d'un système de **vote** avec des **notes**
+* Ajout d'un système de **vote** avec des **notes**<br><br>
 
 ---
 layout: media-full
@@ -420,6 +420,15 @@ layout: section
 * La discussion est **saine** et **utile** pour faire avancer l'équipe
 * On n'oublie pas les **actions** à mettre en place
 * **Que demande le peuple ?**
+
+---
+
+## Remerciements
+
+* **Mathieu Cornic**, **Brendan Seiller** et toute l'équipe Domain
+* **Henrik Kniberg** & **Kristian Lindwall**, qui ont créé le modèle
+* **Codeurs en Seine** pour leur accueil
+* Et vous !
 
 ---
 src: ../../../src/common/end.md
