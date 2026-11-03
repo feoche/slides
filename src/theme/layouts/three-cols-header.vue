@@ -11,7 +11,7 @@
   ::right::
   Right
   ::bottom::
-  Spans all columns, aligned to the bottom
+  Spans all columns, right under them (at the bottom of the slide in exports)
 -->
 
 <script setup lang="ts">
@@ -47,7 +47,7 @@ const props = defineProps({
 
 <style>
 .slidev-layout.three-cols-header {
-  @apply grid grid-cols-3 grid-rows-[auto_1fr_auto] w-full h-full gap-4;
+  @apply grid grid-cols-3 grid-rows-[auto_auto_1fr] w-full h-full gap-4;
 
   .three-cols-header__col-header {
     @apply flex flex-col gap-4;
@@ -70,8 +70,17 @@ const props = defineProps({
   }
 
   .three-cols-header__col-footer {
-    align-self: end;
+    align-self: start;
     grid-area: 3 / 1 / 4 / 4;
+  }
+}
+
+/* Exports: the bottom slot sits at the bottom of the slide (see styles/layout.css) */
+html.slides-export .slidev-layout.three-cols-header {
+  @apply grid-rows-[auto_1fr_auto];
+
+  .three-cols-header__col-footer {
+    align-self: end;
   }
 }
 </style>

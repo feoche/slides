@@ -10,7 +10,7 @@
   ::right::
   Narrow column (one third)
   ::bottom::
-  Spans both columns, aligned to the bottom
+  Spans both columns, right under them (at the bottom of the slide in exports)
 -->
 
 <script setup lang="ts">
@@ -47,7 +47,7 @@ const props = defineProps({
 
 <style>
 .slidev-layout.two-thirds-header {
-  @apply grid grid-rows-[auto_1fr_auto] w-full h-full gap-4;
+  @apply grid grid-rows-[auto_auto_1fr] w-full h-full gap-4;
   grid-template-columns: 2fr 1fr;
 
   &.reverse {
@@ -67,8 +67,17 @@ const props = defineProps({
     grid-area: 2 / 2 / 3 / 3;
   }
   .two-thirds-header__col-footer {
-    align-self: end;
+    align-self: start;
     grid-area: 3 / 1 / 3 / 3;
+  }
+}
+
+/* Exports: the bottom slot sits at the bottom of the slide (see styles/layout.css) */
+html.slides-export .slidev-layout.two-thirds-header {
+  @apply grid-rows-[auto_1fr_auto];
+
+  .two-thirds-header__col-footer {
+    align-self: end;
   }
 }
 </style>

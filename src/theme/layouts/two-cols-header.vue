@@ -29,7 +29,7 @@ const props = defineProps({
 
 <style>
 .two-cols-header {
-  @apply grid grid-cols-2 grid-rows-[auto_1fr_auto] w-full h-full gap-4;
+  @apply grid grid-cols-2 grid-rows-[auto_auto_1fr] w-full h-full gap-4;
 
   .two-cols-header__col-header {
     @apply flex flex-col gap-4;
@@ -44,8 +44,17 @@ const props = defineProps({
     grid-area: 2 / 2 / 3 / 3;
   }
   .two-cols-header__col-footer {
-    align-self: end;
+    align-self: start;
     grid-area: 3 / 1 / 3 / 3;
+  }
+}
+
+/* Exports: the bottom slot sits at the bottom of the slide (see styles/layout.css) */
+html.slides-export .slidev-layout.two-cols-header {
+  @apply grid-rows-[auto_1fr_auto];
+
+  .two-cols-header__col-footer {
+    align-self: end;
   }
 }
 </style>
