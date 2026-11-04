@@ -115,7 +115,7 @@ src: ../../../src/common/disclaimer.md
 ## Et dans l'équipe...
 
 - 6 personnes au stand-up, 6 **« ça va »**
-- Le travail devient **monotone**, l'ambiance très **pesante**, 
+- Le travail devient **monotone**, l'ambiance très **pesante**
 - Les tâches prennent **+ de temps**, le **sprint glisse**
 - On ne se **parle plus** vraiment
 - Un **mal-être** général <small>(des arrêts de travail, qui sait ?)</small>
