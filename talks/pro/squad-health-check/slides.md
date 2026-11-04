@@ -167,7 +167,7 @@ layout: section
   <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Apprentissage</div>
   <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Pions ou joueurs</div>
   <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Santé du code</div>
-  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">️Process</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Process</div>
   <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Fun</div>
   <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Travail d'équipe</div>
 </div>
@@ -175,7 +175,7 @@ layout: section
 ---
 
 ## Dans chaque thème
-### Ex: Valeur délivrée
+### Ex. : Valeur délivrée
 
 <div class="flex-1 grid grid-cols-2 gap-8 my-8 text-2xl">
   <div class="border-2 border-red-600 rounded-lg p-6">
@@ -203,7 +203,7 @@ Le orange est volontairement omis pour permettre la nuance entre le rouge et le 
 |---|---|
 | 🟩 Pas forcément parfait, mais on peut vivre avec | ↗️ S'**améliore** |
 | 🔶 Quelques problèmes à résoudre | ➡️ Est **stable** |
-| 🔴 Ça ne va vraiment pas ! | ↘️ Se **déteriore** |
+| 🔴 Ça ne va vraiment pas ! | ↘️ Se **détériore** |
 
 <br>
 
@@ -273,7 +273,7 @@ media: visio.jpg
 * **À la fin** :
   * Synthétise l'atelier dans un **compte-rendu** concis
   * Regarde **la tendance** avec les sessions précédentes
-  * Partage le résumé avec la **hiérarchie**
+  * Partage le résumé **anonymisé** avec la **hiérarchie**
 
 ---
 layout: media
@@ -296,14 +296,14 @@ De manière **"classique"** ou **customisée** -->
 
 ## Squad Health Check (à notre sauce)
 
-* Les **exemples** des catégories ne nous convenaient pas :<br>
+* Les **exemples** des catégories ne nous convenaient pas :
 
-<div class="grid grid-cols-2 gap-8 mt-4 text-xl">
+<div class="grid grid-cols-2 gap-8 text-xl">
   <div class="border-2 border-red-600 rounded-lg p-4">
-    🔴 Nous ne savons pas pourquoi notre équipe existe <strong>ni où nous allons</strong>.
+    🔴 Nous n'avons aucune idée de pourquoi nous sommes là, <strong>il n'y a ni vision d'ensemble ni cap</strong>.
   </div>
   <div class="border-2 border-green-600 rounded-lg p-4">
-    🟩 Nous savons pourquoi notre équipe existe <strong>et à quoi ressemble la réussite</strong>.
+    🟩 Nous savons exactement pourquoi nous sommes là, et ça nous enthousiasme vraiment.
   </div>
 </div>
 <br><br>
@@ -318,7 +318,7 @@ De manière **"classique"** ou **customisée** -->
 </v-clicks>
 
 <!--
-Notre carte « Mission claire » (catégorie 3 sur 10) : avec la description des deux extrêmes.
+Carte « Mission » de Spotify (traduite) : trop vague, on l'a retravaillée avec les autres dans nos 15 catégories.
 On garde nos catégories à chaque fois
 -->
 
@@ -337,9 +337,7 @@ layout: section
 
 ---
 
-## L'apport de l'atelier
-
-### Les limites
+## Les limites de l'atelier
 
 * Nécessité de la **confiance de l'équipe**
 
@@ -352,13 +350,11 @@ layout: section
 
 ## L'apport de l'atelier
 
-### Les résultats
-
 * Une **preuve factuelle** de ce qui va bien / pas bien
 * Focus sur les **signaux faibles** et les **irritants** de l'équipe
-* L'**évolution** et la **tendance** est analysable
+* L'**évolution** et la **tendance** sont analysables<br><br>
 
-### ...Qui ouvrent la porte à
+...Qui ouvre la porte à :
 * Des **actions concrètes** à mettre en place et à partager
 * Un levier fort pour gagner en **cohésion**, **productivité**
 
@@ -404,7 +400,7 @@ layout: section
 
 * 🌐 **Mathieu Cornic**, **Brendan Seiller** et l'équipe Domain 👋<br><br>
 * 👨‍💻 **Henrik Kniberg** & **Kristian Lindwall** pour le modèle<br><br>
-* 💅 **Codeurs en Seine** pour leur accueil<br><br>
+* 🎤 **Codeurs en Seine** pour leur accueil<br><br>
 * 🥰 Et **vous** !
 
 ---
