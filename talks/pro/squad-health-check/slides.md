@@ -78,8 +78,6 @@ src: ../../../src/common/intro.md
 src: ../../../src/common/disclaimer.md
 ---
 
-[//]: # (src: ../../../src/common/toc.md)
-
 ---
 layout: section
 ---
@@ -90,16 +88,17 @@ layout: section
 
 ## On commence par un exercice 
 
-### Levez la main si... <br> <br>
+### Levez la main si...
 
-🤚 Vous pensez que votre **équipe** va bien <br> <br>
+🤚 Vous pensez que votre **équipe** va bien<br><br>
 
 <v-clicks>
 
-🤚 **Les gens** se sentent bien dans l'équipe <br> <br>
+### Gardez la main levée si...<br>
 
+🤚 **Les gens** se sentent bien dans l'équipe<br><br>
 
-🤚 Vous êtes en capacité de le **prouver**
+🤚 Vous êtes en capacité de le **prouver** et le **mesurer**
 
 </v-clicks>
 
@@ -111,7 +110,7 @@ layout: section
 
 "— Ça va ?"
 
-"— Ça va."
+**"— Ça va."**
 
 ...et on passe à autre chose 🤷
 
@@ -121,11 +120,11 @@ layout: section
 
 ## Et dans l'équipe...
 
-- 6 personnes au stand-up, 6 « ça va »
-- Les tâches prennent plus de temps, le sprint glisse
-- L'ambiance devient pesante, le travail très monotone
-- On ne se parle plus vraiment
-- Un mal-être général, (des arrêts de travail qui sait?)
+- 6 personnes au stand-up, 6 **« ça va »**
+- L'ambiance devient **pesante**, le travail très **monotone**
+- Les tâches prennent plus de temps, le **sprint glisse**
+- On ne se **parle plus** vraiment
+- Un **mal-être** général <small>(des arrêts de travail, qui sait ?)</small>
 
 ---
 layout: center
@@ -147,12 +146,12 @@ layout: center
 ---
 
 ## Squad Health Check, c'est quoi ?
-- Un atelier Agile pour…
+- Un atelier Agile pour :
   * Mesurer l'**état de santé** de l'équipe
   * **Prendre du recul** sur le quotidien
   * L'**améliorer** en continu
 - Lancé chez **Spotify** en **2014**<br>(Henrik Kniberg & Kristian Lindwall)
-- Créé pour des équipes **autonomes** : l'équipe s'auto-évalue
+- Créé pour des équipes **autonomes** : l'équipe **s'auto-évalue**
 
 ---
 layout: section
@@ -165,32 +164,33 @@ layout: section
 ## L'atelier Squad Health Check
 
 * Un ensemble de **thèmes**<br><small>(ici ceux de Spotify)</small>
-<div class="flex-1 min-h-0 grid grid-cols-3 auto-rows-fr gap-3 mt-2 mb-[--footer-height] text-xl">
-  <div class="flex items-center border rounded-lg px-4 font-bold">Rapidité</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Mission</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Support</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Valeur délivrée</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Facilité à livrer</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Apprentissage</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Pions ou joueurs</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Santé du code</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">️Process</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Fun</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Travail d'équipe</div>
+<div class="min-h-0 grid grid-cols-3 auto-rows-fr gap-3 mt-2 mb-[--footer-height] text-xl">
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Rapidité</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Mission</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Support</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Valeur délivrée</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Facilité à livrer</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Apprentissage</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Pions ou joueurs</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Santé du code</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">️Process</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Fun</div>
+  <div class="flex items-center border rounded-lg px-4 py-2 font-bold">Travail d'équipe</div>
 </div>
 
 ---
 
-## Un exemple : Valeur délivrée
+## Dans chaque thème
+### Ex: Valeur délivrée
 
-<div class="grid grid-cols-2 gap-8 mt-8 text-2xl">
-  <div class="border-2 border-green-600 rounded-lg p-6">
-    <div class="font-bold mb-4">🟩 Vert</div>
-    Nous livrons du super travail !<br>Nous en sommes fiers et nos parties prenantes sont très satisfaites.
-  </div>
+<div class="flex-1 grid grid-cols-2 gap-8 my-8 text-2xl">
   <div class="border-2 border-red-600 rounded-lg p-6">
     <div class="font-bold mb-4">🔴 Rouge</div>
-    Nous livrons de la camelote. Nous avons honte de la livrer.<br>Nos parties prenantes nous détestent.
+    Nous livrons de la camelote.<br><br>Nous avons honte de la livrer.<br><br>Nos parties prenantes nous détestent.
+  </div>
+  <div class="border-2 border-green-600 rounded-lg p-6">
+    <div class="font-bold mb-4">🟩 Vert</div>
+    Nous livrons du super travail !<br><br>Nous en sommes fiers et nos parties prenantes sont très satisfaites.
   </div>
 </div>
 
@@ -200,34 +200,21 @@ Le orange est volontairement omis pour permettre la nuance entre le rouge et le 
 -->
 
 ---
-layout: two-cols-header
----
 
-## Un round
+## Pour tous les thèmes
 ###
-* Chacun **vote** (face cachée)
+* On **vote** (face cachée) :
 
-::left::
+| **Couleur** | **Tendance** |
+|---|---|
+| 🟩 Pas forcément parfait, mais on peut vivre avec | ↗️ S'**améliore** |
+| 🔶 Quelques problèmes à résoudre | ➡️ Est **stable** |
+| 🔴 Ça ne va vraiment pas ! | ↘️ Se **déteriore** |
 
-#### Couleur
-🟩 Pas parfait, mais OK
+<br>
 
-🔶 Qques problèmes
-
-🔴 Ça ne va pas
-
-
-::right::
-
-#### Tendance
-↗️ Ça s'améliore
-
-➡️ C'est stable
-
-↘️ Ça se déteriore
-
-::bottom::
-* On **dévoile** les votes de tout le monde, <br>et on en **discute** après
+* On **dévoile** les votes de tout le monde
+* On en **discute**
 
 <!-- Vert ne signifie pas forcément que tout est parfait. Cela signifie simplement que l'équipe est satisfaite et ne voit pas de besoin majeur d'amélioration pour le moment. -->
 <!-- Orange signifie qu'il y a quelques problèmes à résoudre, mais que ce n'est pas catastrophique. -->
@@ -239,6 +226,17 @@ media: visio.jpg
 ---
 
 ## Vote en visio <small>(équipe Domain)</small>
+
+<!---
+### Matériel :
+* **Tableau blanc/écran**
+* **Caméras** (si en ligne)
+* Des **objets de couleur** et nos **mains** 
+
+### Rôles :
+* Un **médiateur** <small>(membre de l'équipe ou non)</small>
+* Le **reste de l'équipe** <small>(sans le management)</small>
+-->
 
 ---
 
@@ -259,38 +257,28 @@ media: visio.jpg
 
 ---
 
-## Organisation
+## Toute l'équipe
+### ...sans exception
 
-### Matériel :
-* **Tableau blanc/écran**
-* **Caméras** (si en ligne)
-* Des **objets de couleur** et nos **mains** 
+* ~10 personnes **max**
+* **Focus** sur l'atelier !
+* Implication et participation **équitable** de tous
+* Discussion **sans jugement**, pas de **débat**
 
-### Rôles :
-* Un **médiateur** <small>(membre de l'équipe ou non)</small>
-* Le **reste de l'équipe** <small>(sans le management)</small>
-
----
-
-## Cadre de l'atelier
-
-* **Implication** de l'équipe, focus sur l'atelier
-* Discussion **sans jugement**, pas de débat
-* Participation **équitable** de tous
-* Les notes doivent être **anonymisées**
+<small>(Management : optionnel, non recommandé)</small>
 
 <!-- Validé par le médiateur et par l'équipe -->
 
 ---
 
-## Rôle de médiateur
+## Le médiateur
 ### Un rôle important
 
 * **"Président de séance"** + timekeeper
-* S'assure des **temps de parole**
-* Idéalement, **à la fin** :
+* S'assure des **temps de parole**<br><br>
+* **À la fin** :
   * Synthétise l'atelier dans un **compte-rendu** concis
-  * Regarde **l'évolution** par rapport aux sessions précédentes
+  * Regarde **l'évolution** des sessions précédentes
   * Si applicable, partage le résumé avec la **hiérarchie**
 
 ---
@@ -312,12 +300,10 @@ De manière **"classique"** ou **customisée** -->
 
 ---
 
-## Dans notre équipe <small>(OVHcloud Design System)</small>
+## Squad Health Check (à la sauce ODS)
 
-* On s'est inspiré de la méthode de **Spotify**
-* Les **exemples** ne nous convenaient pas forcément<br>
+* Les **exemples** des catégories ne nous convenaient pas :<br>
 
-### Exemple: **Mission claire** <small>(Clear Mission)</small>
 <div class="grid grid-cols-2 gap-8 mt-4 text-xl">
   <div class="border-2 border-red-600 rounded-lg p-4">
     🔴 Nous ne savons pas pourquoi notre équipe existe <strong>ni où nous allons</strong>.
@@ -326,30 +312,16 @@ De manière **"classique"** ou **customisée** -->
     🟩 Nous savons pourquoi notre équipe existe <strong>et à quoi ressemble la réussite</strong>.
   </div>
 </div>
+<br><br>
+
+* On a créé **15 nouvelles catégories** en retravaillant les sujets<br>
+* ...Puis un **mode asynchrone** pour se concentrer sur l'échange
+* ...Et un système de vote avec une **échelle de notes (1-9)**
 
 <!--
 Notre carte « Mission claire » (catégorie 3 sur 10) : avec la description des deux extrêmes.
+On garde nos catégories à chaque fois
 -->
-
----
-
-## Squad Health Check (à notre sauce)
-
-* **Retravailler** les catégories en scindant les sujets<br>→**15 nouvelles catégories** créées, exemple :
-<div class="flex-1 min-h-0 grid grid-cols-3 auto-rows-fr gap-3 text-xl">
-  <div class="flex items-center border rounded-lg px-4 font-bold">Confiance au déploiement</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Qualité du code</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Mission</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Valeur</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Autonomie</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Concentration</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Charge</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Collaboration</div>
-  <div class="flex items-center border rounded-lg px-4 font-bold">Sécurité psychologique</div>
-</div>
-
-* Conception d'un **mode asynchrone**
-* Ajout d'un système de **vote** avec des **notes**<br><br>
 
 ---
 layout: media-full
@@ -366,43 +338,50 @@ layout: section
 
 ---
 
-## Quoi en retenir ?
+## L'apport de l'atelier
 
-* Conversation plus **libérée**, plus **franche**
-* **Preuve factuelle** ce qui va bien/pas bien
-* Focus sur les **points/catégories problématiques**
-* L'**évolution et la tendence** au fil des sessions est visible
-* **Actions concrètes** à mettre en place
+### Les limites
 
----
+* Nécessité de la **confiance de l'équipe**
 
-## Les limites
-
-- Nécessité de la **confiance de l'équipe**
-- Une **censure** au sein de l'équipe reste possible
-- Le risque du **"rien à ajouter de plus"**
-- Une **image instantanée**, pas une vérité absolue
-- La **routine** qui s'installe (si trop fréquent)
+  ⮡ Une **censure** au sein de l'équipe reste possible
+* Le risque du **"rien à ajouter"**
+* Une **image instantanée**, pas une vérité absolue
+* La **routine** qui s'installe <small>(si trop fréquent)</small>
 
 ---
 
-## Passer à l'action
+## L'apport de l'atelier
 
-- Se concentrer sur les retours **rouges** ou **en baisse**
-- Choisir **quelques actions concrètes**, avec un responsable
-- Vérifier leur effet au **Squad Health Check suivant**
-- Suivre les **tendances** dans le temps plutôt qu'un seul résultat
+### Les résultats
+
+* Une **preuve factuelle** de ce qui va bien / pas bien
+* Focus sur les **signaux faibles** et les **irritants** de l'équipe
+* L'**évolution et la tendance** est analysable
+
+Par conséquence :
+* Des **actions concrètes** à mettre en place et à partager
+* Un levier fort pour gagner en **cohésion**, **productivité**
+
+<!--
+* Les **irritants** remontés : process, outillage, dette...
+* Une équipe **engagée** livre mieux et plus **sereinement**
+* Un **indicateur** suivi dans le temps, pour **arbitrer** et demander des **moyens**
+-->
 
 ---
 
 ## Retours d'une autre équipe <small>(Domain)</small>
-### Ce que ça leur a apporté
+### Ce que le Squad Health Check leur apporte
 > - Une forme de **thérapie de groupe**, pour comprendre que tout le monde est **différent**
+> - Une équipe qui se sent **écoutée** = une parole qui se **libère**
 > - Reconnaître une **période compliquée**, apaiser des **tensions**
 > - Clarification de la **vision** et la **stratégie produit**
 > - Un **accompagnement** renforcé des **alternants** / **nouveaux**
 
-<!-- Exemples tirés de l'équipe Domain -->
+<!-- 
+Exemples tirés de l'équipe Domain 
+-->
 
 ---
 layout: section
@@ -414,20 +393,18 @@ layout: section
 
 ## Squad Health Check
 
-* Un **atelier** récurrent avec **toute l'équipe**
-* On **vote** pour soi, tout le monde **partage ses opinions**
-* Ça aide à la **cohésion** et la **compréhension** de chacun
-* La discussion est **saine** et **utile** pour faire avancer l'équipe
-* On n'oublie pas les **actions** à mettre en place
+* Un **atelier** récurrent avec **toute l'équipe**<br><br>
+* Ça peut **débloquer** des choses<br><br>
+* **Ça fait du bien** à l'équipe<br><br>
 * **Que demande le peuple ?**
 
 ---
 
 ## Remerciements
 
-* **Mathieu Cornic**, **Brendan Seiller** et toute l'équipe Domain
-* **Henrik Kniberg** & **Kristian Lindwall**, qui ont créé le modèle
-* **Codeurs en Seine** pour leur accueil
+* **Mathieu Cornic**, **Brendan Seiller** et toute l'équipe Domain<br><br>
+* **Henrik Kniberg** & **Kristian Lindwall**, qui ont créé le modèle<br><br>
+* **Codeurs en Seine** pour leur accueil<br><br>
 * Et vous !
 
 ---
