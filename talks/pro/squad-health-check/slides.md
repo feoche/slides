@@ -79,12 +79,6 @@ src: ../../../src/common/disclaimer.md
 ---
 
 ---
-layout: section
----
-
-# Introduction
-
----
 
 ## On commence par un exercice 
 
@@ -121,8 +115,8 @@ layout: section
 ## Et dans l'équipe...
 
 - 6 personnes au stand-up, 6 **« ça va »**
-- L'ambiance devient **pesante**, le travail très **monotone**
-- Les tâches prennent plus de temps, le **sprint glisse**
+- Le travail devient **monotone**, l'ambiance très **pesante**, 
+- Les tâches prennent **+ de temps**, le **sprint glisse**
 - On ne se **parle plus** vraiment
 - Un **mal-être** général <small>(des arrêts de travail, qui sait ?)</small>
 
@@ -130,7 +124,7 @@ layout: section
 layout: center
 ---
 
-## On a une "impression"<br> mais pas de mesure
+## On a une "impression"<br>mais pas de mesure
 
 <!-- Une fois qu'on a dit ça, c'est bien, mais à défendre aux managers ou aux RH...ça n'est pas la même -->
 
@@ -201,9 +195,9 @@ Le orange est volontairement omis pour permettre la nuance entre le rouge et le 
 
 ---
 
-## Pour tous les thèmes
+## Pour <u>tous</u> les thèmes
 ###
-* On **vote** (face cachée) :
+* On **vote** (face cachée) pour la **couleur** et la **tendance** :
 
 | **Couleur** | **Tendance** |
 |---|---|
@@ -260,12 +254,12 @@ media: visio.jpg
 ## Toute l'équipe
 ### ...sans exception
 
-* ~10 personnes **max**
+* 10 personnes **max**
 * **Focus** sur l'atelier !
 * Implication et participation **équitable** de tous
 * Discussion **sans jugement**, pas de **débat**
 
-<small>(Management : optionnel, non recommandé)</small>
+<small>(Management : optionnel, et non recommandé)</small>
 
 <!-- Validé par le médiateur et par l'équipe -->
 
@@ -274,12 +268,12 @@ media: visio.jpg
 ## Le médiateur
 ### Un rôle important
 
-* **"Président de séance"** + timekeeper
+* **"Président de séance"** (et un peu timekeeper)
 * S'assure des **temps de parole**<br><br>
 * **À la fin** :
   * Synthétise l'atelier dans un **compte-rendu** concis
-  * Regarde **l'évolution** des sessions précédentes
-  * Si applicable, partage le résumé avec la **hiérarchie**
+  * Regarde **la tendance** avec les sessions précédentes
+  * Partage le résumé avec la **hiérarchie**
 
 ---
 layout: media
@@ -300,7 +294,7 @@ De manière **"classique"** ou **customisée** -->
 
 ---
 
-## Squad Health Check (à la sauce ODS)
+## Squad Health Check (à notre sauce)
 
 * Les **exemples** des catégories ne nous convenaient pas :<br>
 
@@ -314,9 +308,14 @@ De manière **"classique"** ou **customisée** -->
 </div>
 <br><br>
 
+<v-clicks>
+
 * On a créé **15 nouvelles catégories** en retravaillant les sujets<br>
-* ...Puis un **mode asynchrone** pour se concentrer sur l'échange
-* ...Et un système de vote avec une **échelle de notes (1-9)**
+* Puis un **mode asynchrone** pour se concentrer sur l'échange
+* Et un système de vote avec une **échelle de notes (1-9)**
+* Et...un **outil** <small>(on est fronteux après tout)</small>
+
+</v-clicks>
 
 <!--
 Notre carte « Mission claire » (catégorie 3 sur 10) : avec la description des deux extrêmes.
@@ -357,9 +356,9 @@ layout: section
 
 * Une **preuve factuelle** de ce qui va bien / pas bien
 * Focus sur les **signaux faibles** et les **irritants** de l'équipe
-* L'**évolution et la tendance** est analysable
+* L'**évolution** et la **tendance** est analysable
 
-Par conséquence :
+### ...Qui ouvrent la porte à
 * Des **actions concrètes** à mettre en place et à partager
 * Un levier fort pour gagner en **cohésion**, **productivité**
 
@@ -374,6 +373,7 @@ Par conséquence :
 ## Retours d'une autre équipe <small>(Domain)</small>
 ### Ce que le Squad Health Check leur apporte
 > - Une forme de **thérapie de groupe**, pour comprendre que tout le monde est **différent**
+> - Le **thermomètre** du **bien-être** (ou non) de l'équipe
 > - Une équipe qui se sent **écoutée** = une parole qui se **libère**
 > - Reconnaître une **période compliquée**, apaiser des **tensions**
 > - Clarification de la **vision** et la **stratégie produit**
@@ -393,19 +393,19 @@ layout: section
 
 ## Squad Health Check
 
-* Un **atelier** récurrent avec **toute l'équipe**<br><br>
-* Ça peut **débloquer** des choses<br><br>
-* **Ça fait du bien** à l'équipe<br><br>
-* **Que demande le peuple ?**
+* 👥 Un **atelier** récurrent avec **toute l'équipe**<br><br>
+* 🔓 Ça peut **débloquer** des choses<br><br>
+* 💆 **Ça fait du bien** à l'équipe<br><br>
+* 👏 **Que demande le peuple ?**
 
 ---
 
 ## Remerciements
 
-* **Mathieu Cornic**, **Brendan Seiller** et toute l'équipe Domain<br><br>
-* **Henrik Kniberg** & **Kristian Lindwall**, qui ont créé le modèle<br><br>
-* **Codeurs en Seine** pour leur accueil<br><br>
-* Et vous !
+* 🌐 **Mathieu Cornic**, **Brendan Seiller** et l'équipe Domain 👋<br><br>
+* 👨‍💻 **Henrik Kniberg** & **Kristian Lindwall** pour le modèle<br><br>
+* 💅 **Codeurs en Seine** pour leur accueil<br><br>
+* 🥰 Et **vous** !
 
 ---
 src: ../../../src/common/end.md
