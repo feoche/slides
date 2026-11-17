@@ -144,7 +144,7 @@ layout: center
   * Mesurer l'**état de santé** de l'équipe
   * **Prendre du recul** sur le quotidien
   * L'**améliorer** en continu
-- Lancé chez **Spotify** en **2014**<br>(Henrik Kniberg & Kristian Lindwall)
+- Lancé chez **Spotify** en **2014**<br><small>(Henrik Kniberg & Kristian Lindwall)</small>
 - Créé pour des équipes **autonomes** : l'équipe **s'auto-évalue**
 
 ---
@@ -174,6 +174,31 @@ layout: section
 
 ---
 
+## Un round
+###
+<div class="flex-1 flex flex-col items-center justify-center mb-[--footer-height]">
+
+```mermaid {scale: 1}
+%%{init: {'flowchart': {'curve': 'basis', 'padding': 8, 'rankSpacing': 35}, 'themeVariables': {'fontFamily': 'inherit'}}}%%
+flowchart LR
+  A("<div style='width:175px;height:185px;display:flex;align-items:center;justify-content:center'><div style='line-height:1.3;font-size:26px'><span style='font-size:48px;line-height:1.2'>📋</span><br><b>Présentation</b><br>du thème</div></div>") ==> B("<div style='width:175px;height:185px;display:flex;align-items:center;justify-content:center'><div style='line-height:1.3;font-size:26px'><b>Vote</b><table><tr><td style='padding:0 8px;line-height:1.35;font-size:30px'>🟢<br>🟠<br>🔴</td><td style='padding:0 8px;line-height:1.35;font-size:30px'>➕</td><td style='padding:0 8px;line-height:1.35;font-size:30px'>↗️<br>➡️<br>↘️</td></tr></table></div></div>")
+  B ==> R("<div style='width:175px;height:185px;display:flex;align-items:center;justify-content:center'><div style='line-height:1.3;font-size:26px'><span style='font-size:48px;line-height:1.2'>🃏</span><br><b>Dévoilement</b><br>des votes</div></div>")
+  R ==> C("<div style='width:175px;height:185px;display:flex;align-items:center;justify-content:center'><div style='line-height:1.3;font-size:26px'><span style='font-size:48px;line-height:1.2'>💬</span><br><b>Discussion</b></div></div>")
+  C ==> A
+  classDef default fill:#eef3fb,stroke:#00185E,stroke-width:3px,color:#00185E
+  linkStyle default stroke:#00185E,stroke-width:3px
+```
+
+<div class="text-5xl font-bold mt-2">×10</div>
+
+</div>
+
+<!-- Vert ne signifie pas forcément que tout est parfait. Cela signifie simplement que l'équipe est satisfaite et ne voit pas de besoin majeur d'amélioration pour le moment. -->
+<!-- Orange signifie qu'il y a quelques problèmes à résoudre, mais que ce n'est pas catastrophique. -->
+<!-- Rouge signifie que quelque chose ne va vraiment pas et doit être amélioré. -->
+
+---
+
 ## Dans chaque thème
 ### Ex. : Valeur délivrée
 
@@ -192,27 +217,6 @@ layout: section
 Exemples vert / rouge tirés des cartes Spotify (traduits).
 Le orange est volontairement omis pour permettre la nuance entre le rouge et le vert.
 -->
-
----
-
-## Pour <u>tous</u> les thèmes
-###
-* On **vote** (face cachée) pour la **couleur** et la **tendance** :
-
-| **Couleur** | **Tendance** |
-|---|---|
-| 🟩 Pas forcément parfait, mais on peut vivre avec | ↗️ S'**améliore** |
-| 🔶 Quelques problèmes à résoudre | ➡️ Est **stable** |
-| 🔴 Ça ne va vraiment pas ! | ↘️ Se **détériore** |
-
-<br>
-
-* On **dévoile** les votes de tout le monde
-* On en **discute**
-
-<!-- Vert ne signifie pas forcément que tout est parfait. Cela signifie simplement que l'équipe est satisfaite et ne voit pas de besoin majeur d'amélioration pour le moment. -->
-<!-- Orange signifie qu'il y a quelques problèmes à résoudre, mais que ce n'est pas catastrophique. -->
-<!-- Rouge signifie que quelque chose ne va vraiment pas et doit être amélioré. -->
 
 ---
 layout: media
@@ -270,17 +274,69 @@ media: visio.jpg
 
 * **"Président de séance"** (et un peu timekeeper)
 * S'assure des **temps de parole**<br><br>
-* **À la fin** :
+**À la fin** :
   * Synthétise l'atelier dans un **compte-rendu** concis
   * Regarde **la tendance** avec les sessions précédentes
   * Partage le résumé **anonymisé** avec la **hiérarchie**
 
 ---
-layout: media
-media: spotify-sumup.png
----
 
 ## Résultat chez Spotify
+
+<div class="shc-results">
+
+| | Squad 1 | Squad 2 | Squad 3 | Squad 4 | Squad 5 | Squad 6 | Squad 7 |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Support | <i class="g"></i> | <i class="y"></i> | <i class="g"></i> | <i class="g"></i> | <i class="g"></i> | <i class="y d"></i> | <i class="g"></i> |
+| Travail d'équipe | <i class="g u"></i> | <i class="y u"></i> | <i class="y"></i> | <i class="g"></i> | <i class="g"></i> | <i class="y"></i> | <i class="y u"></i> |
+| Pions ou joueurs | <i class="g d"></i> | <i class="r u"></i> | <i class="y"></i> | <i class="g u"></i> | <i class="g"></i> | <i class="y"></i> | <i class="y u"></i> |
+| Mission | <i class="g"></i> | <i class="r u"></i> | <i class="g"></i> | <i class="g u"></i> | <i class="g"></i> | <i class="g"></i> | <i class="g u"></i> |
+| Santé du code | <i class="r"></i> | <i class="r u"></i> | <i class="g"></i> | <i class="y u"></i> | <i class="y u"></i> | <i class="r"></i> | <i class="r u"></i> |
+| Process | <i class="g"></i> | <i class="r"></i> | <i class="g"></i> | <i class="g u"></i> | <i class="g"></i> | <i class="y u"></i> | <i class="y u"></i> |
+| Valeur délivrée | <i class="n"></i> | <i class="y u"></i> | <i class="g"></i> | <i class="g u"></i> | <i class="g"></i> | <i class="g u"></i> | <i class="y u"></i> |
+| Apprentissage | <i class="g u"></i> | <i class="y u"></i> | <i class="y"></i> | <i class="g u"></i> | <i class="y"></i> | <i class="y"></i> | <i class="g u"></i> |
+| Rapidité | <i class="y u"></i> | <i class="r u"></i> | <i class="y"></i> | <i class="y u"></i> | <i class="y"></i> | <i class="y"></i> | <i class="y u"></i> |
+| Facilité à livrer | <i class="y"></i> | <i class="r"></i> | <i class="y"></i> | <i class="y u"></i> | <i class="y"></i> | <i class="r u"></i> | <i class="y u"></i> |
+| Fun | <i class="g u"></i> | <i class="g u"></i> | <i class="g"></i> | <i class="g u"></i> | <i class="g"></i> | <i class="g"></i> | <i class="g u"></i> |
+
+</div>
+
+<style>
+.shc-results table {
+  @apply w-full text-base;
+}
+.shc-results thead {
+  @apply bg-transparent;
+}
+.shc-results th,
+.shc-results td {
+  @apply border-0 border-b border-dotted border-gray-400 px-3 py-1 whitespace-nowrap;
+}
+.shc-results td:first-child {
+  @apply font-bold text-right;
+}
+/* vote dots, as on Spotify's board: g/y/r colour, n no vote, u/d trend */
+.shc-results i {
+  @apply relative inline-block align-middle w-5 h-5 rounded-full border-2 border-gray-800;
+}
+.shc-results i.g { background: #7ed321; }
+.shc-results i.y { background: #f8e71c; }
+.shc-results i.r { background: #e8463c; }
+.shc-results i.n { background: #fff; }
+.shc-results i.u::after,
+.shc-results i.d::after {
+  content: "";
+  @apply absolute left-1/2 top-1/2 border-x-[0.3rem] border-x-transparent border-b-[0.4rem] border-b-black;
+  /* a triangle pointing up, turned to the diagonal and pushed against the dot's edge */
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-0.8rem);
+}
+.shc-results i.u::after {
+  --angle: 45deg;
+}
+.shc-results i.d::after {
+  --angle: 135deg;
+}
+</style>
 
 ---
 layout: section
