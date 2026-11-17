@@ -36,7 +36,7 @@ const color = computed(() => shouldHighlightLayout($slidev.nav.currentLayout)
     <p class="footer__page-number">
       <slot name="page-number">
         <span class="sr-only">Page </span>
-        <SlideCurrentNo />
+        {{ $slidev.nav.currentPage }}
       </slot>
     </p>
     <Progress position="bottom"/>
