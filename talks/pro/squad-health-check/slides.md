@@ -359,7 +359,7 @@ De manière **"classique"** ou **customisée** -->
     🔴 Nous n'avons aucune idée de pourquoi nous sommes là, <strong>il n'y a ni vision d'ensemble ni cap</strong>.
   </div>
   <div class="border-2 border-green-600 rounded-lg p-4">
-    🟩 Nous savons exactement pourquoi nous sommes là, et ça nous enthousiasme vraiment.
+    🟩 Nous savons exactement pourquoi nous sommes là, <strong>et ça nous enthousiasme vraiment</strong>.
   </div>
 </div>
 <br><br>
@@ -445,17 +445,17 @@ layout: section
 
 ## Squad Health Check
 
-* 👥 Un **atelier** récurrent avec **toute l'équipe**<br><br>
-* 🔓 Ça peut **débloquer** des choses<br><br>
-* 💆 **Ça fait du bien** à l'équipe<br><br>
-* 👏 **Que demande le peuple ?**
+* ### 👥 Un **atelier** récurrent avec **toute l'équipe**<br><br>
+* ### 🔓 Ça peut **débloquer** des choses<br><br>
+* ### 💆 **Ça fait du bien** à l'équipe<br><br>
+* ### 👏 **Que demande le peuple ?**
 
 ---
 
 ## Remerciements
 
 * 🌐 **Mathieu Cornic**, **Brendan Seiller** et l'équipe Domain 👋<br><br>
-* 👨‍💻 **Henrik Kniberg** & **Kristian Lindwall** pour le modèle<br><br>
+* 👨‍💻 Les équipes de **Spotify** pour le modèle<br><br>
 * 🎤 **Codeurs en Seine** pour leur accueil<br><br>
 * 🥰 Et **vous** !
 
