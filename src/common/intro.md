@@ -7,8 +7,8 @@ image: https://francoiseoche.fr/assets/avatar.webp
 ### Web cabinetmaker
 
 * Product Owner - OVHcloud Design System
-* Référent accessibilité numérique - Dev & UI/UX
-* Développeur "front-of-the-front-end" (web & hybride)
+* Référent accessibilité numérique - Dev et UI/UX
+* Développeur "front-of-the-front-end" (web et hybride)
 * Co-organisateur de RennesJS & CSScade
 * Passionné d'ergonomie des interfaces
 
