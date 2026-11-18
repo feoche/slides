@@ -75,10 +75,6 @@ src: ../../../src/common/intro.md
 ---
 
 ---
-src: ../../../src/common/disclaimer.md
----
-
----
 
 ## On commence par un exercice 
 
@@ -98,26 +94,12 @@ src: ../../../src/common/disclaimer.md
 
 ---
 
-## Individuellement
-### À la machine à café, en 1-1...
-<br>
+## La situation, vous la connaissez.
 
-"— Ça va ?"
-
-**"— Ça va."**
-
-...et on passe à autre chose 🤷
-
-<!-- Le réflexe de la machine à café. Tout le monde le fait, tous les jours. -->
-
----
-
-## Et dans l'équipe...
-
-- 6 personnes au stand-up, 6 **« ça va »**
+- "Ça va ?" **"Ça va."**
 - Le travail devient **monotone**, l'ambiance très **pesante**
-- Les tâches prennent **+ de temps**, le **sprint glisse**
 - On ne se **parle plus** vraiment
+- Les tâches prennent **+ de temps**, le **sprint glisse**
 - Un **mal-être** général <small>(des arrêts de travail, qui sait ?)</small>
 
 ---
@@ -140,12 +122,11 @@ layout: center
 ---
 
 ## Squad Health Check, c'est quoi ?
+- Lancé chez **Spotify** en **2014**<br><small>(Henrik Kniberg & Kristian Lindwall)</small>
 - Un atelier Agile pour :
   * Mesurer l'**état de santé** de l'équipe
   * **Prendre du recul** sur le quotidien
   * L'**améliorer** en continu
-- Lancé chez **Spotify** en **2014**<br><small>(Henrik Kniberg & Kristian Lindwall)</small>
-- Créé pour des équipes **autonomes** : l'équipe **s'auto-évalue**
 
 ---
 layout: section
@@ -174,7 +155,7 @@ layout: section
 
 ---
 
-## Un round
+## Un round de Squad Health Check
 ###
 <div class="flex-1 flex flex-col items-center justify-center mb-[--footer-height]">
 
@@ -418,9 +399,6 @@ layout: section
 * Les **irritants** remontés : process, outillage, dette...
 * Une équipe **engagée** livre mieux et plus **sereinement**
 * Un **indicateur** suivi dans le temps, pour **arbitrer** et demander des **moyens**
--->
-
----
 
 ## Retours d'une autre équipe <small>(Domain)</small>
 ### Ce que le Squad Health Check leur apporte
@@ -430,9 +408,6 @@ layout: section
 > - Reconnaître une **période compliquée**, apaiser des **tensions**
 > - Clarification de la **vision** et la **stratégie produit**
 > - Un **accompagnement** renforcé des **alternants** / **nouveaux**
-
-<!-- 
-Exemples tirés de l'équipe Domain 
 -->
 
 ---
