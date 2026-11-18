@@ -441,7 +441,7 @@ qrCode: qr:https://roti.express/r/feoche-shc-2026-11
 
 ---
 layout: media
-media: qr:https://feoche.github.io/squad-health-check/#/session/BRONZE
+media: qr:https://feoche.github.io/squad-health-check/#/session/RECORD
 ---
 
 ## Demo
