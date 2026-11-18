@@ -40,7 +40,7 @@ src/                           ← tooling, rarely touched
 ├── theme/                     ← slidev-theme-feoche (layouts, components, styles/tokens.css)
 ├── templates/                 ← one snippet per layout, to copy slides from
 └── _templates/                ← Pandoc export templates (default-meta.yaml, handout.html/css)
-scripts/                       ← new-talk, serve-boards, build-boards, export-board, export-docs
+scripts/                       ← new-talk, serve-boards, build-boards, export-board, export-standalone, export-docs
 ```
 
 ## Talk structure
@@ -405,6 +405,7 @@ qrCode: qr:https://example.com/feedback
 | `pnpm dev [<slug>]`                           | Serve one talk (picker if no slug)                  |
 | `pnpm build [<slug>]`                         | Build the website (or one talk) into `dist/`        |
 | `pnpm export <slug>`                          | Export one talk to PDF in its `export/` folder      |
+| `pnpm export:standalone <slug>`               | Export one talk to a single offline HTML file       |
 | `npm run export:docs [-- --deck <slug>]`      | Export decks to Markdown, HTML handout and PDF      |
 | `pnpm prettier --write "**/*.md"`             | Format Markdown (Slidev parser)                     |
 

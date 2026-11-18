@@ -9,6 +9,7 @@
     "dev": "node scripts/serve-boards.js",
     "export": "node scripts/export-board.js",
     "export:docs": "node scripts/export-docs.js",
+    "export:standalone": "node scripts/export-standalone.js",
     "new": "node scripts/new-talk.js",
     "build:boards": "node scripts/build-boards.js"
   },

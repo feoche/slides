@@ -21,6 +21,7 @@ pnpm dev bookmarklets       # Serve a deck on :3030 (interactive picker without 
 pnpm dev showcase           # Preview every theme layout (src/common/showcase)
 pnpm build [bookmarklets]   # Build the website: every talk + home page (or one deck) into dist/
 pnpm export bookmarklets    # Export one deck to PDF in its export/ folder (requires playwright-chromium)
+pnpm export:standalone bookmarklets  # One offline HTML file (slides as images, opens from file://)
 
 # Export decks to documents (Markdown, HTML, PDF via Pandoc)
 npm run export:docs                             # Export all decks
@@ -81,7 +82,7 @@ used to preview the theme. `scripts/boards.js` discovers every `talks/**/slides.
 
 **Scripts**: `new-talk.js` (scaffold from the example), `serve-boards.js` (`pnpm dev`), `build-boards.js`
 (`pnpm build`, home page, its style and 404 fallback in `scripts/lib/`; talks shown on the home page in
-`talks/home.yaml`), `export-board.js` (`pnpm export`),
+`talks/home.yaml`), `export-board.js` (`pnpm export`), `export-standalone.js` (`pnpm export:standalone`),
 `export-docs.js` (Pandoc export using `src/_templates/` and the deck's `meta.yaml`).
 
 ## Key Conventions
