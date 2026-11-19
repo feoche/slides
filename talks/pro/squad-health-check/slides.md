@@ -82,9 +82,9 @@ src: ../../../src/common/intro.md
 
 🤚 Vous pensez que votre **équipe** va bien<br><br>
 
-<v-clicks>
-
 ### Gardez la main levée si...<br>
+
+<v-clicks>
 
 🤚 **Les gens** se sentent bien dans l'équipe<br><br>
 
@@ -174,9 +174,11 @@ flowchart LR
 
 </div>
 
-<!-- Vert ne signifie pas forcément que tout est parfait. Cela signifie simplement que l'équipe est satisfaite et ne voit pas de besoin majeur d'amélioration pour le moment. -->
-<!-- Orange signifie qu'il y a quelques problèmes à résoudre, mais que ce n'est pas catastrophique. -->
-<!-- Rouge signifie que quelque chose ne va vraiment pas et doit être amélioré. -->
+<!--
+Vert ne signifie pas forcément que tout est parfait. Cela signifie simplement que l'équipe est satisfaite et ne voit pas de besoin majeur d'amélioration pour le moment.
+Orange signifie qu'il y a quelques problèmes à résoudre, mais que ce n'est pas catastrophique.
+Rouge signifie que quelque chose ne va vraiment pas et doit être amélioré. 
+-->
 
 ---
 
@@ -426,18 +428,18 @@ layout: section
 * ### 👏 **Que demande le peuple ?**
 
 ---
+src: ../../../src/common/end.md
+qrCode: qr:https://www.codeursenseine.com/2026/programme/quicky-a-1-squad-health-check-le-radar-de-votre-equipe-francois-eoche
+---
 
+<!---
 ## Remerciements
 
 * 🌐 **Mathieu Cornic**, **Brendan Seiller** et l'équipe Domain 👋<br><br>
 * 👨‍💻 Les équipes de **Spotify** pour le modèle<br><br>
 * 🎤 **Codeurs en Seine** pour leur accueil<br><br>
 * 🥰 Et **vous** !
-
----
-src: ../../../src/common/end.md
-qrCode: qr:https://roti.express/r/feoche-shc-2026-11
----
+--->
 
 ---
 layout: media
